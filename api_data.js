@@ -34,7 +34,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "<p>String[]</p> ",
+            "type": "<p>Array</p> ",
             "optional": true,
             "field": "products",
             "defaultValue": "[]",
@@ -46,7 +46,7 @@ define({ "api": [
             "optional": true,
             "field": "active",
             "defaultValue": "True",
-            "description": "<p>Favorite list activity. <code>True</code> is active, <code>False</code> is inactive</p> "
+            "description": "<p>Favorite list activity. <code>true</code> is active, <code>false</code> is inactive</p> "
           }
         ]
       },
@@ -73,7 +73,7 @@ define({ "api": [
             "type": "<p>Boolean</p> ",
             "optional": false,
             "field": "active",
-            "description": "<p>Favorite list activity. <code>True</code> is active, <code>False</code> is inactive</p> "
+            "description": "<p>Favorite list activity. <code>true</code> is active, <code>false</code> is inactive</p> "
           },
           {
             "group": "Created 201",
@@ -84,14 +84,14 @@ define({ "api": [
           },
           {
             "group": "Created 201",
-            "type": "<p>user</p> ",
+            "type": "<p>String</p> ",
             "optional": false,
             "field": "user",
             "description": "<p>User who created the favorite list</p> "
           },
           {
             "group": "Created 201",
-            "type": "<p>String[]</p> ",
+            "type": "<p>Array</p> ",
             "optional": false,
             "field": "products",
             "description": "<p>ist of product identifiers</p> "
@@ -117,11 +117,11 @@ define({ "api": [
       {
         "title": "curl",
         "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <name>, <user>, <product-id> and <secret-key> must be replaced with valid values\ncurl -u <user>:<pword> -X POST \\\nhttps://api.tracdelight.com/v1/favorites?accesskey=<ak> \\\n-H \"X-Secret-Key: <secret-key>\" \\\n-d \"name=<name>\" \\\n-d \"user=<user>\" \\\n-d \"products=[<product-id>]\"",
-        "type": "curl"
+        "type": "bash"
       },
       {
         "title": "javascript",
-        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <name>, <user>, <product-id> and <secret-key> must be replaced with valid values\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/favorites',\n    type: 'POST',\n    username: '<user>',\n    password: '<pword>',\n    headers: {'X-Secret-Key': '<secret-key>'},\n    data: {\n        accesskey: '<ak>',\n        name: '<name>',\n        user: '<user>',\n        products: [\n            '<product-id>',\n            '<product-id>'\n        ]\n    }\n}).then(function (response) { console.log(response); });",
+        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <name>, <user>, <product-id> and <secret-key> must be replaced with valid values\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/favorites?accesskey=<ak>',\n    type: 'POST',\n    username: '<user>',\n    password: '<pword>',\n    headers: {'X-Secret-Key': '<secret-key>'},\n    data: {\n        name: '<name>',\n        user: '<user>',\n        products: [\n            '<product-id>',\n            '<product-id>'\n        ]\n    }\n}).then(function (response) { console.log(response); });",
         "type": "javascript"
       },
       {
@@ -178,7 +178,7 @@ define({ "api": [
     }
   },
   {
-    "type": "patch",
+    "type": "delete",
     "url": "/favorites/<favorite-list-id>",
     "title": "Delete a favorite list",
     "version": "1.0.0",
@@ -209,11 +209,11 @@ define({ "api": [
       {
         "title": "curl",
         "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <favorite-list-id> must be replaced with a valid favorite list id\n# <secret-key> must be replaced with valid value\ncurl -u <user>:<pword> -X DELETE \\\nhttps://api.tracdelight.com/v1/favorites/<favorite-list-id>?accesskey=<ak> \\\n-H \"X-Secret-Key: <secret-key>\"",
-        "type": "curl"
+        "type": "bash"
       },
       {
         "title": "javascript",
-        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <favorite-list-id> must be replaced with a valid favorite list id\n// <secret-key> must be replaced with valid value\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/favorites/<favorite-list-id>',\n    type: 'DELETE',\n    username: '<user>',\n    password: '<pword>',\n    headers: {'X-Secret-Key': '<secret-key>'},\n    data: {accesskey: '<ak>'}\n}).then(function (response) { console.log(response); });",
+        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <favorite-list-id> must be replaced with a valid favorite list id\n// <secret-key> must be replaced with valid value\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/favorites/<favorite-list-id>?accesskey=<ak>',\n    type: 'DELETE',\n    username: '<user>',\n    password: '<pword>',\n    headers: {'X-Secret-Key': '<secret-key>'},\n}).then(function (response) { console.log(response); });",
         "type": "javascript"
       },
       {
@@ -312,7 +312,7 @@ define({ "api": [
             "type": "<p>Boolean</p> ",
             "optional": false,
             "field": "active",
-            "description": "<p>Favorite list activity. <code>True</code> is active, <code>False</code> is inactive</p> "
+            "description": "<p>Favorite list activity. <code>true</code> is active, <code>false</code> is inactive</p> "
           },
           {
             "group": "Success 200",
@@ -323,14 +323,14 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "<p>user</p> ",
+            "type": "<p>String</p> ",
             "optional": false,
             "field": "user",
             "description": "<p>User who created the favorite list</p> "
           },
           {
             "group": "Success 200",
-            "type": "<p>String[]</p> ",
+            "type": "<p>Array</p> ",
             "optional": false,
             "field": "products",
             "description": "<p>List of product identifiers</p> "
@@ -356,7 +356,7 @@ define({ "api": [
       {
         "title": "curl",
         "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <favorite-list-id> must be replaced with a valid favorite list id\ncurl -u <user>:<pword> -X GET \\\nhttps://api.tracdelight.com/v1/favorites/<favorite-list-id>?accesskey=<ak>",
-        "type": "curl"
+        "type": "bash"
       },
       {
         "title": "javascript",
@@ -459,7 +459,7 @@ define({ "api": [
             "type": "<p>Boolean</p> ",
             "optional": false,
             "field": "active",
-            "description": "<p>Favorite list activity. <code>True</code> is active, <code>False</code> is inactive</p> "
+            "description": "<p>Favorite list activity. <code>true</code> is active, <code>false</code> is inactive</p> "
           },
           {
             "group": "Success 200",
@@ -477,7 +477,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "<p>Object[]</p> ",
+            "type": "<p>Array</p> ",
             "optional": false,
             "field": "products",
             "description": "<p>List of products</p> "
@@ -685,7 +685,7 @@ define({ "api": [
       {
         "title": "curl",
         "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <favorite-list-id> must be replaced with a valid favorite list id\ncurl -u <user>:<pword> -X GET \\\nhttps://api.tracdelight.com/v1/favorites/<favorite-list-id>/products?accesskey=<ak>",
-        "type": "curl"
+        "type": "bash"
       },
       {
         "title": "javascript",
@@ -820,7 +820,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "<p>Object[]</p> ",
+            "type": "<p>Array</p> ",
             "optional": false,
             "field": "results",
             "description": "<p>List of results</p> "
@@ -837,7 +837,7 @@ define({ "api": [
             "type": "<p>Boolean</p> ",
             "optional": false,
             "field": "results.active",
-            "description": "<p>Favorite list activity. <code>True</code> is active, <code>False</code> is inactive</p> "
+            "description": "<p>Favorite list activity. <code>true</code> is active, <code>false</code> is inactive</p> "
           },
           {
             "group": "Success 200",
@@ -848,14 +848,14 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "<p>user</p> ",
+            "type": "<p>String</p> ",
             "optional": false,
             "field": "results.user",
             "description": "<p>User who created the favorite list</p> "
           },
           {
             "group": "Success 200",
-            "type": "<p>String[]</p> ",
+            "type": "<p>Array</p> ",
             "optional": false,
             "field": "results.products",
             "description": "<p>List of product identifiers</p> "
@@ -886,7 +886,7 @@ define({ "api": [
       {
         "title": "curl",
         "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\ncurl -u <user>:<pword> -X GET https://api.tracdelight.com/v1/favorites?accesskey=<ak>",
-        "type": "curl"
+        "type": "bash"
       },
       {
         "title": "javascript",
@@ -962,7 +962,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "<p>String[]</p> ",
+            "type": "<p>Array</p> ",
             "optional": true,
             "field": "products",
             "defaultValue": "[]",
@@ -974,7 +974,7 @@ define({ "api": [
             "optional": true,
             "field": "active",
             "defaultValue": "True",
-            "description": "<p>Favorite list activity. <code>True</code> is active, <code>False</code> is inactive</p> "
+            "description": "<p>Favorite list activity. <code>true</code> is active, <code>false</code> is inactive</p> "
           }
         ]
       },
@@ -1001,7 +1001,7 @@ define({ "api": [
             "type": "<p>Boolean</p> ",
             "optional": false,
             "field": "active",
-            "description": "<p>Favorite list activity. <code>True</code> is active, <code>False</code> is inactive.</p> "
+            "description": "<p>Favorite list activity. <code>true</code> is active, <code>false</code> is inactive.</p> "
           },
           {
             "group": "Success 200",
@@ -1012,14 +1012,14 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "<p>user</p> ",
+            "type": "<p>String</p> ",
             "optional": false,
             "field": "user",
             "description": "<p>User who created the favorite list</p> "
           },
           {
             "group": "Success 200",
-            "type": "<p>String[]</p> ",
+            "type": "<p>Array</p> ",
             "optional": false,
             "field": "products",
             "description": "<p>List of product identifiers.</p> "
@@ -1045,11 +1045,11 @@ define({ "api": [
       {
         "title": "curl",
         "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <favorite-list-id> must be replaced with a valid favorite list id\n# <name>, <user>, <product-id> and <secret-key> must be replaced with valid values\ncurl -u <user>:<pword> -X PATCH \\\nhttps://api.tracdelight.com/v1/favorites/<favorite-list-id>?accesskey=<ak> \\\n-H \"X-Secret-Key: <secret-key>\" \\\n-d \"name=<name>\" \\\n-d \"user=<user>\" \\\n-d \"products=[<product-id>]\"",
-        "type": "curl"
+        "type": "bash"
       },
       {
         "title": "javascript",
-        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <favorite-list-id> must be replaced with a valid favorite list id\n// <name>, <user>, <product-id> and <secret-key> must be replaced with valid values\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/favorites/<favorite-list-id>',\n    type: 'PATCH',\n    username: '<user>',\n    password: '<pword>',\n    headers: {'X-Secret-Key': '<secret-key>'},\n    data: {\n        accesskey: '<ak>',\n        name: '<name>',\n        user: '<user>',\n        products: [\n            '<product-id>',\n            '<product-id>'\n        ]\n    }\n}).then(function (response) { console.log(response); });",
+        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <favorite-list-id> must be replaced with a valid favorite list id\n// <name>, <user>, <product-id> and <secret-key> must be replaced with valid values\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/favorites/<favorite-list-id>?accesskey=<ak>',\n    type: 'PATCH',\n    username: '<user>',\n    password: '<pword>',\n    headers: {'X-Secret-Key': '<secret-key>'},\n    data: {\n        name: '<name>',\n        user: '<user>',\n        products: [\n            '<product-id>',\n            '<product-id>'\n        ]\n    }\n}).then(function (response) { console.log(response); });",
         "type": "javascript"
       },
       {
@@ -1145,7 +1145,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "<p>String[]</p> ",
+            "type": "<p>Array</p> ",
             "optional": true,
             "field": "products",
             "defaultValue": "[]",
@@ -1157,7 +1157,7 @@ define({ "api": [
             "optional": true,
             "field": "active",
             "defaultValue": "True",
-            "description": "<p>Favorite list activity. <code>True</code> is active, <code>False</code> is inactive</p> "
+            "description": "<p>Favorite list activity. <code>true</code> is active, <code>false</code> is inactive</p> "
           }
         ]
       },
@@ -1184,7 +1184,7 @@ define({ "api": [
             "type": "<p>Boolean</p> ",
             "optional": false,
             "field": "active",
-            "description": "<p>Favorite list activity. <code>True</code> is active, <code>False</code> is inactive.</p> "
+            "description": "<p>Favorite list activity. <code>true</code> is active, <code>false</code> is inactive.</p> "
           },
           {
             "group": "Success 200",
@@ -1195,14 +1195,14 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "<p>user</p> ",
+            "type": "<p>String</p> ",
             "optional": false,
             "field": "user",
             "description": "<p>User who created the favorite list</p> "
           },
           {
             "group": "Success 200",
-            "type": "<p>String[]</p> ",
+            "type": "<p>Array</p> ",
             "optional": false,
             "field": "products",
             "description": "<p>List of product identifiers.</p> "
@@ -1228,11 +1228,11 @@ define({ "api": [
       {
         "title": "curl",
         "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <favorite-list-id> must be replaced with a valid favorite list id\n# <name>, <user>, <product-id> and <secret-key> must be replaced with valid values\ncurl -u <user>:<pword> -X PUT \\\nhttps://api.tracdelight.com/v1/favorites/<favorite-list-id>?accesskey=<ak> \\\n-H \"X-Secret-Key: <secret-key>\" \\\n-d \"name=<name>\" \\\n-d \"user=<user>\" \\\n-d \"products=[<product-id>]\"",
-        "type": "curl"
+        "type": "bash"
       },
       {
         "title": "javascript",
-        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <favorite-list-id> must be replaced with a valid favorite list id\n// <name>, <user>, <product-id> and <secret-key> must be replaced with valid values\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/favorites/<favorite-list-id>',\n    type: 'PUT',\n    username: 'user',\n    password: 'pword',\n    headers: {'X-Secret-Key': '<secret-key>'},\n    data: {\n        accesskey: '<ak>'\n        name: '<name>',\n        user: '<user>',\n        products: [\n            '<product-id>',\n            '<product-id>'\n        ]\n    }\n}).then(function (response) { console.log(response); });",
+        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <favorite-list-id> must be replaced with a valid favorite list id\n// <name>, <user>, <product-id> and <secret-key> must be replaced with valid values\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/favorites/<favorite-list-id>?accesskey=<ak>',\n    type: 'PUT',\n    username: '<user>',\n    password: '<pword>',\n    headers: {'X-Secret-Key': '<secret-key>'},\n    data: {\n        name: '<name>',\n        user: '<user>',\n        products: [\n            '<product-id>',\n            '<product-id>'\n        ]\n    }\n}).then(function (response) { console.log(response); });",
         "type": "javascript"
       },
       {
@@ -1301,7 +1301,7 @@ define({ "api": [
     }
   },
   {
-    "type": "get",
+    "type": "delete",
     "url": "/products/<product-id>",
     "title": "Delete a product",
     "version": "1.0.0",
@@ -1339,11 +1339,11 @@ define({ "api": [
       {
         "title": "curl",
         "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <product-id> must be replaced with a valid product id\n# <lc> must be replaced by a valid value\ncurl -u <user>:<pword> -X DELETE \\\nhttps://api.tracdelight.com/v1/products/<product-id>?locale=<lc>&accesskey=<ak>",
-        "type": "curl"
+        "type": "bash"
       },
       {
         "title": "javascript",
-        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <product-id> must be replaced with a valid product id\n// <lc> must be replaced by a valid value\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/products/<product-id>',\n    type: 'DELETE',\n    username: '<user>',\n    password: '<pword>',\n    data: {accesskey: '<ak>', locale: '<lc>'}\n}).then(function (response) { console.log(response); });",
+        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <product-id> must be replaced with a valid product id\n// <lc> must be replaced by a valid value\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/products/<product-id>?accesskey=<ak>',\n    type: 'DELETE',\n    username: '<user>',\n    password: '<pword>',\n    data: {locale: '<lc>'}\n}).then(function (response) { console.log(response); });",
         "type": "javascript"
       },
       {
@@ -1633,7 +1633,7 @@ define({ "api": [
       {
         "title": "curl",
         "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <product-id> must be replaced with a valid product id\n# <lc> must be replaced by a valid value\ncurl -u <user>:<pword> -X GET \\\nhttps://api.tracdelight.com/v1/products/<product-id>?locale=<lc>&accesskey=<ak>",
-        "type": "curl"
+        "type": "bash"
       },
       {
         "title": "javascript",
@@ -2096,7 +2096,7 @@ define({ "api": [
       {
         "title": "curl",
         "content": "# <user>, <pword>, and <ak> must be replaced by valid authentication details\n# <lc> must be replaced by a valid value\ncurl -u <user>:<pword> -X GET \\\nhttps://api.tracdelight.com/v1/products?locale=<lc>&accesskey=<ak>",
-        "type": "curl"
+        "type": "bash"
       },
       {
         "title": "javascript",
@@ -2194,7 +2194,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "<p>String[]</p> ",
+            "type": "<p>Array</p> ",
             "optional": true,
             "field": "products",
             "defaultValue": "[]",
@@ -2225,7 +2225,7 @@ define({ "api": [
             "type": "<p>Boolean</p> ",
             "optional": false,
             "field": "active",
-            "description": "<p>Widget activity. <code>True</code> is active, <code>False</code> is inactive</p> "
+            "description": "<p>Widget activity. <code>true</code> is active, <code>false</code> is inactive</p> "
           },
           {
             "group": "Created 201",
@@ -2236,14 +2236,14 @@ define({ "api": [
           },
           {
             "group": "Created 201",
-            "type": "<p>user</p> ",
+            "type": "<p>String</p> ",
             "optional": false,
             "field": "user",
             "description": "<p>User who created the widget</p> "
           },
           {
             "group": "Created 201",
-            "type": "<p>String[]</p> ",
+            "type": "<p>Array</p> ",
             "optional": false,
             "field": "products",
             "description": "<p>ist of product identifiers</p> "
@@ -2292,7 +2292,7 @@ define({ "api": [
           },
           {
             "group": "Created 201",
-            "type": "<p>String[]</p> ",
+            "type": "<p>Array</p> ",
             "optional": false,
             "field": "results.products",
             "description": "<p>List of product identifiers</p> "
@@ -2330,7 +2330,7 @@ define({ "api": [
             "type": "<p>Boolean</p> ",
             "optional": false,
             "field": "results.active",
-            "description": "<p>Widget activity. <code>True</code> is active, <code>False</code> is inactive</p> "
+            "description": "<p>Widget activity. <code>true</code> is active, <code>false</code> is inactive</p> "
           },
           {
             "group": "Created 201",
@@ -2381,11 +2381,11 @@ define({ "api": [
       {
         "title": "curl",
         "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <name>, <title>, <description>, <secret-key>, <product-id> and\n# <publisher> must be replaced with valid values\ncurl -u <user>:<pword> -X POST \\\nhttps://api.tracdelight.com/v1/widgets?accesskey=<ak> \\\n-H \"X-Secret-Key: <secret-key>\" \\\n-d \"name=<name>\" \\\n-d \"title=<title>\" \\\n-d \"description=<description>\" \\\n-d \"products=[<product-id>]\" \\\n-d \"publisher=<publisher>\"",
-        "type": "curl"
+        "type": "bash"
       },
       {
         "title": "javascript",
-        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <name>, <title>, <description>, <secret-key>, <product-id> and\n// <publisher> must be replaced with valid values\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/widgets',\n    type: 'POST',\n    username: '<user>',\n    password: '<pword>',\n    headers: {'X-Secret-Key': '<secret-key>'},\n    data: {\n        accesskey: '<ak>',\n        name: '<name>',\n        title: '<title>',\n        description: '<description>',\n        products: [\n            '<product-id>',\n            '<product-id>'\n        ]\n        publisher: '<publisher>',\n    }\n}).then(function (response) { console.log(response); });",
+        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <name>, <title>, <description>, <secret-key>, <product-id> and\n// <publisher> must be replaced with valid values\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/widgets?accesskey=<ak>',\n    type: 'POST',\n    username: '<user>',\n    password: '<pword>',\n    headers: {'X-Secret-Key': '<secret-key>'},\n    data: {\n        name: '<name>',\n        title: '<title>',\n        description: '<description>',\n        products: [\n            '<product-id>',\n            '<product-id>'\n        ],\n        publisher: '<publisher>',\n    }\n}).then(function (response) { console.log(response); });",
         "type": "javascript"
       },
       {
@@ -2442,7 +2442,7 @@ define({ "api": [
     }
   },
   {
-    "type": "get",
+    "type": "delete",
     "url": "/widgets/<widget-id>",
     "title": "Delete a Widget",
     "version": "1.0.0",
@@ -2473,11 +2473,11 @@ define({ "api": [
       {
         "title": "curl",
         "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <widget-id> must be replaced with a valid widget id\ncurl -u <user>:<pword> -X DELETE \\\nhttps://api.tracdelight.com/v1/widgets/<widget-id>?accesskey=<ak>",
-        "type": "curl"
+        "type": "bash"
       },
       {
         "title": "javascript",
-        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <widget-id> must be replaced with a valid widget id\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/widgets/<widget-id>',\n    type: 'DELETE',\n    username: '<user>',\n    password: '<pword>',\n    data: {accesskey: '<ak>'}\n}).then(function (response) { console.log(response); });",
+        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <widget-id> must be replaced with a valid widget id\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/widgets/<widget-id>?accesskey=<ak>',\n    type: 'DELETE',\n    username: '<user>',\n    password: '<pword>',\n}).then(function (response) { console.log(response); });",
         "type": "javascript"
       },
       {
@@ -2601,7 +2601,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "<p>String[]</p> ",
+            "type": "<p>Array</p> ",
             "optional": false,
             "field": "results.products",
             "description": "<p>List of product identifiers</p> "
@@ -2639,7 +2639,7 @@ define({ "api": [
             "type": "<p>Boolean</p> ",
             "optional": false,
             "field": "results.active",
-            "description": "<p>Widget activity. <code>True</code> is active, <code>False</code> is inactive</p> "
+            "description": "<p>Widget activity. <code>true</code> is active, <code>false</code> is inactive</p> "
           },
           {
             "group": "Success 200",
@@ -2690,7 +2690,7 @@ define({ "api": [
       {
         "title": "curl",
         "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <widget-id> must be replaced with a valid Widget identifier\ncurl -u <user>:<pword> -X GET \\\nhttps://api.tracdelight.com/v1/widgets/<widget-id>?accesskey=<ak>",
-        "type": "curl"
+        "type": "bash"
       },
       {
         "title": "javascript",
@@ -2818,7 +2818,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "<p>Object[]</p> ",
+            "type": "<p>Array</p> ",
             "optional": false,
             "field": "products",
             "description": "<p>List of products</p> "
@@ -3024,7 +3024,7 @@ define({ "api": [
             "type": "<p>Boolean</p> ",
             "optional": false,
             "field": "results.active",
-            "description": "<p>Widget activity. <code>True</code> is active, <code>False</code> is inactive</p> "
+            "description": "<p>Widget activity. <code>true</code> is active, <code>false</code> is inactive</p> "
           },
           {
             "group": "Success 200",
@@ -3080,7 +3080,7 @@ define({ "api": [
       {
         "title": "curl",
         "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <widget-id> must be replaced with a valid Widget identifier\ncurl -u <user>:<pword> -X GET \\\nhttps://api.tracdelight.com/v1/widgets/<widget-id>/products?accesskey=<ak>",
-        "type": "curl"
+        "type": "bash"
       },
       {
         "title": "javascript",
@@ -3222,7 +3222,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "<p>Object[]</p> ",
+            "type": "<p>Array</p> ",
             "optional": false,
             "field": "results",
             "description": "<p>List of results</p> "
@@ -3264,7 +3264,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "<p>String[]</p> ",
+            "type": "<p>Array</p> ",
             "optional": false,
             "field": "results.products",
             "description": "<p>List of product identifiers</p> "
@@ -3302,7 +3302,7 @@ define({ "api": [
             "type": "<p>Boolean</p> ",
             "optional": false,
             "field": "results.active",
-            "description": "<p>Widget activity. <code>True</code> is active, <code>False</code> is inactive</p> "
+            "description": "<p>Widget activity. <code>true</code> is active, <code>false</code> is inactive</p> "
           },
           {
             "group": "Success 200",
@@ -3358,7 +3358,7 @@ define({ "api": [
       {
         "title": "curl",
         "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\ncurl -u <user>:<pword> -X GET https://api.tracdelight.com/v1/widgets?accesskey=<ak>",
-        "type": "curl"
+        "type": "bash"
       },
       {
         "title": "javascript",
@@ -3456,7 +3456,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "<p>String[]</p> ",
+            "type": "<p>Array</p> ",
             "optional": true,
             "field": "products",
             "defaultValue": "[]",
@@ -3487,7 +3487,7 @@ define({ "api": [
             "type": "<p>Boolean</p> ",
             "optional": false,
             "field": "active",
-            "description": "<p>Widget activity. <code>True</code> is active, <code>False</code> is inactive</p> "
+            "description": "<p>Widget activity. <code>true</code> is active, <code>false</code> is inactive</p> "
           },
           {
             "group": "Success 200",
@@ -3498,14 +3498,14 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "<p>user</p> ",
+            "type": "<p>String</p> ",
             "optional": false,
             "field": "user",
             "description": "<p>User who created the widget</p> "
           },
           {
             "group": "Success 200",
-            "type": "<p>String[]</p> ",
+            "type": "<p>Array</p> ",
             "optional": false,
             "field": "products",
             "description": "<p>ist of product identifiers</p> "
@@ -3554,7 +3554,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "<p>String[]</p> ",
+            "type": "<p>Array</p> ",
             "optional": false,
             "field": "results.products",
             "description": "<p>List of product identifiers</p> "
@@ -3592,7 +3592,7 @@ define({ "api": [
             "type": "<p>Boolean</p> ",
             "optional": false,
             "field": "results.active",
-            "description": "<p>Widget activity. <code>True</code> is active, <code>False</code> is inactive</p> "
+            "description": "<p>Widget activity. <code>true</code> is active, <code>false</code> is inactive</p> "
           },
           {
             "group": "Success 200",
@@ -3643,11 +3643,11 @@ define({ "api": [
       {
         "title": "curl",
         "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <widget-id> must be replaced with a valid Widget identifier\n# <name>, <secret-key>, <product-id> and <publisher> must be replaced with valid values\ncurl -u <user>:<pword> -X PATCH \\\nhttps://api.tracdelight.com/v1/widgets/<widget-id>?accesskey=<ak> \\\n-H \"X-Secret-Key: <secret-key>\" \\\n-d \"name=<name>\" \\\n-d \"products=[<product-id>]\" \\\n-d \"publisher=<publisher>\"",
-        "type": "curl"
+        "type": "bash"
       },
       {
         "title": "javascript",
-        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <widget-id> must be replaced with a valid Widget identifier\n// <name>, <secret-key>, <product-id> and <publisher> must \n// be replaced with valid values\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/widgets/<widget-id>',\n    type: 'PATCH',\n    username: '<user>',\n    password: '<pword>',\n    headers: {'X-Secret-Key': '<secret-key>'},\n    data: {\n        accesskey: '<ak>',\n        name: '<name>',\n        products: [\n            '<product-id>',\n            '<product-id>'\n        ]\n        publisher: '<publisher>',\n    }\n}).then(function (response) { console.log(response); });",
+        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <widget-id> must be replaced with a valid Widget identifier\n// <name>, <secret-key>, <product-id> and <publisher> must \n// be replaced with valid values\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/widgets/<widget-id>?accesskey=<ak>',\n    type: 'PATCH',\n    username: '<user>',\n    password: '<pword>',\n    headers: {'X-Secret-Key': '<secret-key>'},\n    data: {\n        name: '<name>',\n        products: [\n            '<product-id>',\n            '<product-id>'\n        ],\n        publisher: '<publisher>',\n    }\n}).then(function (response) { console.log(response); });",
         "type": "javascript"
       },
       {
@@ -3765,7 +3765,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "<p>String[]</p> ",
+            "type": "<p>Array</p> ",
             "optional": true,
             "field": "products",
             "defaultValue": "[]",
@@ -3796,7 +3796,7 @@ define({ "api": [
             "type": "<p>Boolean</p> ",
             "optional": false,
             "field": "active",
-            "description": "<p>Widget activity. <code>True</code> is active, <code>False</code> is inactive</p> "
+            "description": "<p>Widget activity. <code>true</code> is active, <code>false</code> is inactive</p> "
           },
           {
             "group": "Success 200",
@@ -3807,14 +3807,14 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "<p>user</p> ",
+            "type": "<p>String</p> ",
             "optional": false,
             "field": "user",
             "description": "<p>User who created the widget</p> "
           },
           {
             "group": "Success 200",
-            "type": "<p>String[]</p> ",
+            "type": "<p>Array</p> ",
             "optional": false,
             "field": "products",
             "description": "<p>ist of product identifiers</p> "
@@ -3863,7 +3863,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "<p>String[]</p> ",
+            "type": "<p>Array</p> ",
             "optional": false,
             "field": "results.products",
             "description": "<p>List of product identifiers</p> "
@@ -3901,7 +3901,7 @@ define({ "api": [
             "type": "<p>Boolean</p> ",
             "optional": false,
             "field": "results.active",
-            "description": "<p>Widget activity. <code>True</code> is active, <code>False</code> is inactive</p> "
+            "description": "<p>Widget activity. <code>true</code> is active, <code>false</code> is inactive</p> "
           },
           {
             "group": "Success 200",
@@ -3952,11 +3952,11 @@ define({ "api": [
       {
         "title": "curl",
         "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <widget-id> must be replaced with a valid Widget identifier\n# <name>, <title>, <description>, <secret-key>, <product-id> and\n# <publisher> must be replaced with valid values\ncurl -u <user>:<pword> -X PUT \\\nhttps://api.tracdelight.com/v1/widgets/<widget-id>?accesskey=<ak> \\\n-H \"X-Secret-Key: <secret-key>\" \\\n-d \"name=<name>\" \\\n-d \"title=<title>\" \\\n-d \"description=<description>\" \\\n-d \"products=[<product-id>]\" \\\n-d \"publisher=<publisher>\"",
-        "type": "curl"
+        "type": "bash"
       },
       {
         "title": "javascript",
-        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <widget-id> must be replaced with a valid Widget identifier\n// <name>, <title>, <description>, <secret-key>, <product-id> and\n// <publisher> must be replaced with valid values\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/widgets/<widget-id>',\n    type: 'POST',\n    username: '<user>',\n    password: '<pword>',\n    headers: {'X-Secret-Key': '<secret-key>'},\n    data: {\n        accesskey: '<ak>',\n        name: '<name>',\n        title: '<title>',\n        description: '<description>',\n        products: [\n            '<product-id>',\n            '<product-id>'\n        ]\n        publisher: '<publisher>',\n    }\n}).then(function (response) { console.log(response); });",
+        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <widget-id> must be replaced with a valid Widget identifier\n// <name>, <title>, <description>, <secret-key>, <product-id> and\n// <publisher> must be replaced with valid values\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/widgets/<widget-id>?accesskey=<ak>',\n    type: 'POST',\n    username: '<user>',\n    password: '<pword>',\n    headers: {'X-Secret-Key': '<secret-key>'},\n    data: {\n        name: '<name>',\n        title: '<title>',\n        description: '<description>',\n        products: [\n            '<product-id>',\n            '<product-id>'\n        ],\n        publisher: '<publisher>',\n    }\n}).then(function (response) { console.log(response); });",
         "type": "javascript"
       },
       {
@@ -4023,5 +4023,33 @@ define({ "api": [
         }
       ]
     }
+  },
+  {
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "optional": false,
+            "field": "varname1",
+            "description": "<p>No type.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "varname2",
+            "description": "<p>With type.</p> "
+          }
+        ]
+      }
+    },
+    "type": "",
+    "url": "",
+    "version": "0.0.0",
+    "filename": "./doc/main.js",
+    "group": "_home_lwm_work_api_docs_api_doc_main_js",
+    "groupTitle": "_home_lwm_work_api_docs_api_doc_main_js",
+    "name": ""
   }
 ] });
