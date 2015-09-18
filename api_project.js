@@ -21,7 +21,11 @@ define({
     "CreateWidget",
     "UpdateWidget",
     "PartialUpdateWidget",
-    "DeleteWidget"
+    "DeleteWidget",
+    "GetToolTypeId",
+    "GetToolTypeIdProducts",
+    "GetToolTypeCombined",
+    "GetToolTypeAggregated"
   ],
   "header": {
     "title": "Tracdelight API",
@@ -36,7 +40,7 @@ define({
   "apidoc": "0.2.0",
   "generator": {
     "name": "apidoc",
-    "time": "2015-09-16T14:52:14.192Z",
+    "time": "2015-09-18T07:50:12.851Z",
     "url": "http://apidocjs.com",
     "version": "0.13.1"
   }

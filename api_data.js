@@ -689,7 +689,7 @@ define({ "api": [
       },
       {
         "title": "javascript",
-        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <favorite-list-id> must be replaced with a valid favorite list id\n$.ajax({\n    url: 'https://api-admin.tracdelight.com/v1/favorites/<favorite-list-id>/products',\n    type: 'GET',\n    username: '<user>',\n    password: '<pword>',\n    data: {accesskey: '<ak>'}\n}).then(function (response) { console.log(response); });",
+        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <favorite-list-id> must be replaced with a valid favorite list id\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/favorites/<favorite-list-id>/products',\n    type: 'GET',\n    username: '<user>',\n    password: '<pword>',\n    data: {accesskey: '<ak>'}\n}).then(function (response) { console.log(response); });",
         "type": "javascript"
       },
       {
@@ -2139,6 +2139,825 @@ define({ "api": [
         {
           "title": "HTTPMethodNotAllowed",
           "content": "{\"detail\": \"Method \\\"PATCH\\\" not allowed.\"}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/stats/<tool-type>/aggregated",
+    "title": "Get aggregated statistics for all tools of an account",
+    "version": "1.0.0",
+    "name": "GetToolTypeAggregated",
+    "group": "Statistics",
+    "description": "<p>Get aggregated statistics for all tools of an account</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "accesskey",
+            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "publisher_id",
+            "description": "<p><code>publisher_id</code> is a parameter which can be used instead of the <code>accesskey</code> for session/basic authentication</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request example",
+          "content": "{\n   \"accesskey\": \"00f74dc12bdd0c35\",\n   \"publisher_id\": \"A1RFFaUGrH9YEbRJ\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "to",
+            "description": "<p>End date of statistics</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "from",
+            "description": "<p>Start date of statistics</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "publisher_id",
+            "description": "<p>Publisher identifier</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Array</p> ",
+            "optional": false,
+            "field": "results",
+            "description": "<p>List of results</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "results.tool_id",
+            "description": "<p>Tool identifier</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "results.calls",
+            "description": "<p>Number of calls</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "results.views",
+            "description": "<p>Number of Views</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "results.clicks",
+            "description": "<p>Number of clicks</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "results.tool_name",
+            "description": "<p>Name of tool</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "results.product_views",
+            "description": "<p>Number of product views</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Result example",
+          "content": "{\n     \"from\": \"2015-09-08\",\n     \"publisher_id\": \"10ddc445d8cd412f\",\n     \"results\": [\n         {\n             \"tool_id\": \"16qiebk3mdns25wr\",\n             \"calls\": 0,\n             \"views\": 0,\n             \"clicks\": 0,\n             \"tool_name\": \"test1\",\n             \"product_views\": 0\n         },\n         {\n             \"tool_id\": \"a27975d637c546f3\",\n             \"calls\": 0,\n             \"views\": 0,\n             \"clicks\": 0,\n             \"tool_name\": \"test1\",\n             \"product_views\": 0\n         }\n     ],\n     \"to\": \"2015-09-15\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "curl",
+        "content": "# <user>, <pword> <ak> must be replaced by valid authentication details\n# <tool-type> must be replaced with valid details\ncurl -u <user>:<pword> -X GET \\\nhttps://api.tracdelight.com/v1/<tool-type>/aggregated?accesskey=<ak>",
+        "type": "bash"
+      },
+      {
+        "title": "javascript",
+        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <tool-type> must be replaced with valid details\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/stats/<tool-type>/aggregated',\n    type: 'GET',\n    username: '<user>',\n    password: '<pword>',\n    data: {accesskey: '<ak>'}\n}).then(function (response) { console.log(response); });",
+        "type": "javascript"
+      },
+      {
+        "title": "python",
+        "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <tool-type> must be replaced with valid details\n>>> import requests\n>>> url = \"https://api.tracdelight.com/v1/stats/{}/aggregated?accesskey={}\".format(\n>>>     \"<tool-type>\", \"<ak>\"\n>>> )\n>>> user, pword = \"<user>\", \"<pword>\"\n>>> r = requests.get(url, auth=(user, pword))\n>>> r.json()",
+        "type": "python"
+      }
+    ],
+    "filename": "./stats.py",
+    "groupTitle": "Statistics",
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "<p>401</p> ",
+            "optional": false,
+            "field": "NoAuthenticationCredentials",
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "type": "<p>405</p> ",
+            "optional": false,
+            "field": "HTTPMethodNotAllowed",
+            "description": "<p>Disallowed HTTP method was requested</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "type": "<p>400</p> ",
+            "optional": false,
+            "field": "NoPublisherId",
+            "description": "<p>Bad request format</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "NoAuthenticationCredentials",
+          "content": "{\"detail\": \"Authentication credentials were not provided.\"}",
+          "type": "json"
+        },
+        {
+          "title": "HTTPMethodNotAllowed",
+          "content": "{\"detail\": \"Method \\\"PATCH\\\" not allowed.\"}",
+          "type": "json"
+        },
+        {
+          "title": "NoPublisherId",
+          "content": "[\"publisher_id parameter needs to be specified for this resource\"]",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/stats/<tool-type>/combined",
+    "title": "Get combined statistics for all tools of an account",
+    "version": "1.0.0",
+    "name": "GetToolTypeCombined",
+    "group": "Statistics",
+    "description": "<p>Get combined statistics for all tools of an account</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "accesskey",
+            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "publisher_id",
+            "description": "<p><code>publisher_id</code> is a parameter which can be used instead of the <code>accesskey</code> for session/basic authentication</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request example",
+          "content": "{\n   \"accesskey\": \"00f74dc12bdd0c35\",\n   \"publisher_id\": \"A1RFFaUGrH9YEbRJ\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "to",
+            "description": "<p>End date of statistics</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "from",
+            "description": "<p>Start date of statistics</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Object</p> ",
+            "optional": false,
+            "field": "calls",
+            "description": "<p>Calls object</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "calls.year-month-day",
+            "description": "<p>Number of calls this day</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "tool_id",
+            "description": "<p>Tool type identifier</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Object</p> ",
+            "optional": false,
+            "field": "views",
+            "description": "<p>Views object</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "views.year-month-day",
+            "description": "<p>Number of views this day</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "publisher_id",
+            "description": "<p>Publisher identifier</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Object</p> ",
+            "optional": false,
+            "field": "clicks",
+            "description": "<p>Clicks object</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "clicks.year-month-day",
+            "description": "<p>Number of clicks this day</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Object</p> ",
+            "optional": false,
+            "field": "product_views",
+            "description": "<p>Product views object</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "product_views.year-month-day",
+            "description": "<p>Number of product views this day</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Non-paginated result example",
+          "content": "{\n     \"to\": \"2015-09-15\",\n     \"from\": \"2015-09-08\",\n     \"calls\": {\n         \"2015-09-10\": 0,\n         \"2015-09-11\": 0,\n         \"2015-09-12\": 0,\n         \"2015-09-13\": 0,\n         \"2015-09-14\": 0,\n         \"2015-09-15\": 0,\n         \"2015-09-09\": 0,\n         \"2015-09-08\": 0\n     },\n     \"tool_id\": \"gm37vkbjx40ql5ne\",\n     \"views\": {\n         \"2015-09-10\": 0,\n         \"2015-09-11\": 0,\n         \"2015-09-12\": 0,\n         \"2015-09-13\": 0,\n         \"2015-09-14\": 0,\n         \"2015-09-15\": 0,\n         \"2015-09-09\": 0,\n         \"2015-09-08\": 0\n     },\n     \"publisher_id\": \"A1RFFaUGrH9YEbRJ\",\n     \"clicks\": {\n         \"2015-09-10\": 0,\n         \"2015-09-11\": 0,\n         \"2015-09-12\": 0,\n         \"2015-09-13\": 0,\n         \"2015-09-14\": 0,\n         \"2015-09-15\": 0,\n         \"2015-09-09\": 0,\n         \"2015-09-08\": 0\n     },\n     \"product_views\": {\n         \"2015-09-10\": 0,\n         \"2015-09-11\": 0,\n         \"2015-09-12\": 0,\n         \"2015-09-13\": 0,\n         \"2015-09-14\": 0,\n         \"2015-09-15\": 0,\n         \"2015-09-09\": 0,\n         \"2015-09-08\": 0\n     }\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "curl",
+        "content": "# <user>, <pword> <ak> must be replaced by valid authentication details\n# <tool-type> must be replaced with valid details\ncurl -u <user>:<pword> -X GET \\\nhttps://api.tracdelight.com/v1/<tool-type>/combined?accesskey=<ak>",
+        "type": "bash"
+      },
+      {
+        "title": "javascript",
+        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <tool-type> must be replaced with valid details\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/stats/<tool-type>/combined',\n    type: 'GET',\n    username: '<user>',\n    password: '<pword>',\n    data: {accesskey: '<ak>'}\n}).then(function (response) { console.log(response); });",
+        "type": "javascript"
+      },
+      {
+        "title": "python",
+        "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <tool-type> must be replaced with valid details\n>>> import requests\n>>> url = \"https://api.tracdelight.com/v1/stats/{}/combined?accesskey={}\".format(\n>>>     \"<tool-type>\", \"<ak>\"\n>>> )\n>>> user, pword = \"<user>\", \"<pword>\"\n>>> r = requests.get(url, auth=(user, pword))\n>>> r.json()",
+        "type": "python"
+      }
+    ],
+    "filename": "./stats.py",
+    "groupTitle": "Statistics",
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "<p>401</p> ",
+            "optional": false,
+            "field": "NoAuthenticationCredentials",
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "type": "<p>405</p> ",
+            "optional": false,
+            "field": "HTTPMethodNotAllowed",
+            "description": "<p>Disallowed HTTP method was requested</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "type": "<p>400</p> ",
+            "optional": false,
+            "field": "NoPublisherId",
+            "description": "<p>Bad request format</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "NoAuthenticationCredentials",
+          "content": "{\"detail\": \"Authentication credentials were not provided.\"}",
+          "type": "json"
+        },
+        {
+          "title": "HTTPMethodNotAllowed",
+          "content": "{\"detail\": \"Method \\\"PATCH\\\" not allowed.\"}",
+          "type": "json"
+        },
+        {
+          "title": "NoPublisherId",
+          "content": "[\"publisher_id parameter needs to be specified for this resource\"]",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/stats/<tool-type>/<tool-id>",
+    "title": "Retrieve statistics for a particular tool type and id",
+    "version": "1.0.0",
+    "name": "GetToolTypeId",
+    "group": "Statistics",
+    "description": "<p>Retrieve statistics for a particular tool type and id</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "accesskey",
+            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "publisher_id",
+            "description": "<p><code>publisher_id</code> is a parameter which can be used instead of the <code>accesskey</code> for session/basic authentication</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request example",
+          "content": "{\n   \"accesskey\": \"00f74dc12bdd0c35\",\n   \"publisher_id\": \"A1RFFaUGrH9YEbRJ\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "to",
+            "description": "<p>End date of statistics</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "from",
+            "description": "<p>Start date of statistics</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Object</p> ",
+            "optional": false,
+            "field": "calls",
+            "description": "<p>Calls object</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "calls.year-month-day",
+            "description": "<p>Number of calls this day</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "tool_id",
+            "description": "<p>Tool type identifier</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Object</p> ",
+            "optional": false,
+            "field": "views",
+            "description": "<p>Views object</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "views.year-month-day",
+            "description": "<p>Number of views this day</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "publisher_id",
+            "description": "<p>Publisher identifier</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Object</p> ",
+            "optional": false,
+            "field": "clicks",
+            "description": "<p>Clicks object</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "clicks.year-month-day",
+            "description": "<p>Number of clicks this day</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Object</p> ",
+            "optional": false,
+            "field": "product_views",
+            "description": "<p>Product views object</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "product_views.year-month-day",
+            "description": "<p>Number of product views this day</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Result example",
+          "content": "{\n     \"to\": \"2015-09-15\",\n     \"from\": \"2015-09-08\",\n     \"calls\": {\n         \"2015-09-10\": 0,\n         \"2015-09-11\": 0,\n         \"2015-09-12\": 0,\n         \"2015-09-13\": 0,\n         \"2015-09-14\": 0,\n         \"2015-09-15\": 0,\n         \"2015-09-09\": 0,\n         \"2015-09-08\": 0\n     },\n     \"tool_id\": \"gm37vkbjx40ql5ne\",\n     \"views\": {\n         \"2015-09-10\": 0,\n         \"2015-09-11\": 0,\n         \"2015-09-12\": 0,\n         \"2015-09-13\": 0,\n         \"2015-09-14\": 0,\n         \"2015-09-15\": 0,\n         \"2015-09-09\": 0,\n         \"2015-09-08\": 0\n     },\n     \"publisher_id\": \"A1RFFaUGrH9YEbRJ\",\n     \"clicks\": {\n         \"2015-09-10\": 0,\n         \"2015-09-11\": 0,\n         \"2015-09-12\": 0,\n         \"2015-09-13\": 0,\n         \"2015-09-14\": 0,\n         \"2015-09-15\": 0,\n         \"2015-09-09\": 0,\n         \"2015-09-08\": 0\n     },\n     \"product_views\": {\n         \"2015-09-10\": 0,\n         \"2015-09-11\": 0,\n         \"2015-09-12\": 0,\n         \"2015-09-13\": 0,\n         \"2015-09-14\": 0,\n         \"2015-09-15\": 0,\n         \"2015-09-09\": 0,\n         \"2015-09-08\": 0\n     }\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "curl",
+        "content": "# <user>, <pword> <ak> must be replaced by valid authentication details\n# <tool-type> and <tool-id> must be replaced with valid details\ncurl -u <user>:<pword> -X GET \\\nhttps://api.tracdelight.com/v1/stats/<tool-type>/<tool-id>?accesskey=<ak>",
+        "type": "bash"
+      },
+      {
+        "title": "javascript",
+        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <tool-type> and <tool-id> must be replaced with valid details\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/stats/<tool-type>/<tool-id>',\n    type: 'GET',\n    username: '<user>',\n    password: '<pword>',\n    data: {accesskey: '<ak>'}\n}).then(function (response) { console.log(response); });",
+        "type": "javascript"
+      },
+      {
+        "title": "python",
+        "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n>>> import requests\n>>> url = \"https://api.tracdelight.com/v1/stats/{}/{}?accesskey={}\".format(\n>>>     \"<tool-type>\", \"<tool-id>\", \"<ak>\"\n>>> )\n>>> user, pword = \"<user>\", \"<pword>\"\n>>> r = requests.get(url, auth=(user, pword))\n>>> r.json()",
+        "type": "python"
+      }
+    ],
+    "filename": "./stats.py",
+    "groupTitle": "Statistics",
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "<p>401</p> ",
+            "optional": false,
+            "field": "NoAuthenticationCredentials",
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "type": "<p>405</p> ",
+            "optional": false,
+            "field": "HTTPMethodNotAllowed",
+            "description": "<p>Disallowed HTTP method was requested</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "type": "<p>400</p> ",
+            "optional": false,
+            "field": "NoPublisherId",
+            "description": "<p>Bad request format</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "NoAuthenticationCredentials",
+          "content": "{\"detail\": \"Authentication credentials were not provided.\"}",
+          "type": "json"
+        },
+        {
+          "title": "HTTPMethodNotAllowed",
+          "content": "{\"detail\": \"Method \\\"PATCH\\\" not allowed.\"}",
+          "type": "json"
+        },
+        {
+          "title": "NoPublisherId",
+          "content": "[\"publisher_id parameter needs to be specified for this resource\"]",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/stats/<tool-type>/<tool-id>/products",
+    "title": "Retrieve statistics for all products of a particular tool type and id",
+    "version": "1.0.0",
+    "name": "GetToolTypeIdProducts",
+    "group": "Statistics",
+    "description": "<p>Retrieve statistics for all products of a particular tool type and id</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "accesskey",
+            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "publisher_id",
+            "description": "<p><code>publisher_id</code> is a parameter which can be used instead of the <code>accesskey</code> for session/basic authentication</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request example",
+          "content": "{\n   \"accesskey\": \"00f74dc12bdd0c35\",\n   \"publisher_id\": \"A1RFFaUGrH9YEbRJ\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Object</p> ",
+            "optional": false,
+            "field": "shop",
+            "description": "<p>Shop object</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "shop.id",
+            "description": "<p>Identifier of the shop</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "shop.name",
+            "description": "<p>Name of the shop</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Name of product</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "views",
+            "description": "<p>Number of views for the product</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Object</p> ",
+            "optional": false,
+            "field": "image",
+            "description": "<p>Image object</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "image.url",
+            "description": "<p>Image URL</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "image.url_template",
+            "description": "<p>Template of image URL</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Object</p> ",
+            "optional": false,
+            "field": "price",
+            "description": "<p>Price object</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "price.current",
+            "description": "<p>Current price</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "price.currency",
+            "description": "<p>Currency of price</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "price.base",
+            "description": "<p>Price per unit</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "price.old",
+            "description": "<p>Original price</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "price.delivery_time",
+            "description": "<p>Time to deliver</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Object</p> ",
+            "optional": false,
+            "field": "brand",
+            "description": "<p>Brand object</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "brand.id",
+            "description": "<p>Unique brand identifier</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "brand.name",
+            "description": "<p>Brand name</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Product id</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "clicks",
+            "description": "<p>Number of clicks for this product</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Result example",
+          "content": "[\n    {\n        \"shop\": {\n            \"id\": \"g7507lnlvd8qot02\",\n            \"name\": \"YOOX\"\n        },\n        \"name\": \"Sneakers & Tennis basses - PHILIPPE MODEL\",\n        \"views\": 0,\n        \"image\": {\n            \"url\": \"http://images.itemsearch.edelight.biz/resized/normal/220/znpduy2ofgx034k7.jpg\",\n            \"url_template\": \"http://images.itemsearch.edelight.biz/resized/normal/{0}/znpduy2ofgx034k7.jpg\"\n        },\n        \"price\": {\n            \"current\": 75.0,\n            \"currency\": \"EUR\",\n            \"base\": \"\",\n            \"old\": 139.0,\n            \"delivery_time\": null\n        },\n        \"brand\": {\n            \"id\": \"uty7o8kevz921r5x\",\n            \"name\": \"Philippe Model Paris\"\n        },\n        \"id\": \"znpduy2ofgx034k7\",\n        \"clicks\": 0\n    },\n    {\n        \"shop\": {\n            \"id\": \"g7507lnlvd8qot02\",\n            \"name\": \"YOOX\"\n        },\n        \"name\": \"Sneakers & Tennis basses - PHILIPPE MODEL\",\n        \"views\": 0,\n        \"image\": {\n            \"url\": \"http://images.itemsearch.edelight.biz/resized/normal/220/fvpd6qjawioxcrhl.jpg\",\n            \"url_template\": \"http://images.itemsearch.edelight.biz/resized/normal/{0}/fvpd6qjawioxcrhl.jpg\"\n        },\n        \"price\": {\n            \"current\": 47.0,\n            \"currency\": \"EUR\",\n            \"base\": \"\",\n            \"old\": 92.0,\n            \"delivery_time\": null\n        },\n        \"brand\": {\n            \"id\": \"uty7o8kevz921r5x\",\n            \"name\": \"Philippe Model Paris\"\n        },\n        \"id\": \"fvpd6qjawioxcrhl\",\n        \"clicks\": 0\n    }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "curl",
+        "content": "# <user>, <pword> <ak> must be replaced by valid authentication details\n# <tool-type> and <tool-id> must be replaced with valid details\ncurl -u <user>:<pword> -X GET \\\nhttps://api.racdelight.com/v1/stats/<tool-type>/<tool-id>/products?accesskey=<ak>",
+        "type": "bash"
+      },
+      {
+        "title": "javascript",
+        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <tool-type> and <tool-id> must be replaced with valid details\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/stats/<tool-type>/<tool-id>/products',\n    type: 'GET',\n    username: '<user>',\n    password: '<pword>',\n    data: {accesskey: '<ak>'}\n}).then(function (response) { console.log(response); });",
+        "type": "javascript"
+      },
+      {
+        "title": "python",
+        "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <tool-type> and <tool-id> must be replaced with valid details\n>>> import requests\n>>> url = \"https://api.tracdelight.com/v1/stats/{}/{}/products?accesskey={}\".format(\n>>>     \"<tool-type>\", \"<tool-id>\", \"<ak>\"\n>>> )\n>>> user, pword = \"<user>\", \"<pword>\"\n>>> r = requests.get(url, auth=(user, pword))\n>>> r.json()",
+        "type": "python"
+      }
+    ],
+    "filename": "./stats.py",
+    "groupTitle": "Statistics",
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "<p>401</p> ",
+            "optional": false,
+            "field": "NoAuthenticationCredentials",
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "type": "<p>405</p> ",
+            "optional": false,
+            "field": "HTTPMethodNotAllowed",
+            "description": "<p>Disallowed HTTP method was requested</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "type": "<p>400</p> ",
+            "optional": false,
+            "field": "NoPublisherId",
+            "description": "<p>Bad request format</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "NoAuthenticationCredentials",
+          "content": "{\"detail\": \"Authentication credentials were not provided.\"}",
+          "type": "json"
+        },
+        {
+          "title": "HTTPMethodNotAllowed",
+          "content": "{\"detail\": \"Method \\\"PATCH\\\" not allowed.\"}",
+          "type": "json"
+        },
+        {
+          "title": "NoPublisherId",
+          "content": "[\"publisher_id parameter needs to be specified for this resource\"]",
           "type": "json"
         }
       ]
