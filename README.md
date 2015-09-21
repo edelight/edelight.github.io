@@ -44,7 +44,7 @@ $ docker-compose run docs apidoc -i docs/api -o build/apidocs
 $ docker-compose up
 ```
 
-You can now, again, visit ``http://localhost:8080`` and see the documentation
+You can now, again, visit ``http://localhost:8010`` and see the documentation
 that ``docker`` has built.
 
 # Working with versioning
