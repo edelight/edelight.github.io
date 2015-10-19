@@ -7,6 +7,13 @@ define({ "api": [
     "name": "CreateFavorite",
     "group": "Favorites",
     "description": "<p>Create a new favorite list.</p> ",
+    "permission": [
+      {
+        "name": "IsAuthenticated",
+        "title": "Authenticated full access.",
+        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+      }
+    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -185,6 +192,13 @@ define({ "api": [
     "name": "DeleteFavorite",
     "group": "Favorites",
     "description": "<p>Delete a favorite list. The <strong>favorite-list-id</strong> is a unique 16 character hash.</p> ",
+    "permission": [
+      {
+        "name": "IsAuthenticated",
+        "title": "Authenticated full access.",
+        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+      }
+    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -277,6 +291,13 @@ define({ "api": [
     "name": "GetFavoriteListId",
     "group": "Favorites",
     "description": "<p>Retrieve a single favorite list. The <strong>favorite-list-id</strong> is a unique 16 character hash.</p> ",
+    "permission": [
+      {
+        "name": "IsAuthenticated",
+        "title": "Authenticated full access.",
+        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+      }
+    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -424,6 +445,13 @@ define({ "api": [
     "name": "GetFavoriteProducts",
     "group": "Favorites",
     "description": "<p>List all favorite list products. The <strong>favorite-list-id</strong> is a unique 16 character hash.</p> ",
+    "permission": [
+      {
+        "name": "IsAuthenticated",
+        "title": "Authenticated full access.",
+        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+      }
+    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -753,6 +781,13 @@ define({ "api": [
     "name": "GetFavorites",
     "group": "Favorites",
     "description": "<p>List all favorite lists.</p> ",
+    "permission": [
+      {
+        "name": "IsAuthenticated",
+        "title": "Authenticated full access.",
+        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+      }
+    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -942,6 +977,13 @@ define({ "api": [
     "name": "PartialUpdateFavorite",
     "group": "Favorites",
     "description": "<p>Partially update a favorite list. The <strong>favorite-list-id</strong> is a unique 16 character hash.</p> ",
+    "permission": [
+      {
+        "name": "IsAuthenticated",
+        "title": "Authenticated full access.",
+        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+      }
+    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1125,6 +1167,13 @@ define({ "api": [
     "name": "UpdateFavorite",
     "group": "Favorites",
     "description": "<p>Update a favorite list. The <strong>favorite-list-id</strong> is a unique 16 character hash.</p> ",
+    "permission": [
+      {
+        "name": "IsAuthenticated",
+        "title": "Authenticated full access.",
+        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+      }
+    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1301,6 +1350,1035 @@ define({ "api": [
     }
   },
   {
+    "type": "post",
+    "url": "/linkgenerator",
+    "title": "Create a new config",
+    "version": "1.0.0",
+    "name": "CreateConfig",
+    "group": "Linkgenerator",
+    "description": "<p>Create a new config for given advertiser. An advertiser can't have more than one config.</p> ",
+    "permission": [
+      {
+        "name": "IsAdminOrReadOnly",
+        "title": "Authenticated access for safe HTTP methods",
+        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p> "
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "regexp",
+            "description": "<p>Regular expression for domain searching</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "deeplink_builder",
+            "description": "<p>Layout to generate deeplinks</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Boolean</p> ",
+            "optional": false,
+            "field": "active",
+            "description": "<p>Config activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "comment",
+            "description": "<p>A comment about the advertiser's config</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Array</p> ",
+            "optional": false,
+            "field": "domains",
+            "description": "<p>List of domains for the advertiser config</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request example",
+          "content": "{\n   \"advertiser\": \"esf6ck92qogj0hn4\",\n   \"regexp\": \"(http|https)\\\\:\\\\/\\\\/shop.boo.de/(.*)\",\n   \"deeplink_builder\": \"$1\",\n   \"active\": false,\n   \"comment\": \"Comment for new config\",\n   \"domains\": [\n       {\n           \"stripped_domain\": \"shop.boo.fr\"\n       }\n   ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Unique Config identifier</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "advertiser",
+            "description": "<p>Unique Advertiser identifier</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "regexp",
+            "description": "<p>Regular expression for domain searching</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "deeplink_builder",
+            "description": "<p>Layout to generate deeplinks</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Boolean</p> ",
+            "optional": false,
+            "field": "active",
+            "description": "<p>Config activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "comment",
+            "description": "<p>A comment about the advertiser's config</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Array</p> ",
+            "optional": false,
+            "field": "domains",
+            "description": "<p>List of domains for the advertiser config</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "domains.stripped_domain",
+            "description": "<p>Publisher’s domain</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Result example",
+          "content": "{\n     \"id\": \"z50s4a8xurev6y9d\",\n     \"advertiser\": \"esf6ck92qogj0hn4\",\n     \"regexp\": \"(http|https)\\\\:\\\\/\\\\/shop.boo.de/(.*)\",\n     \"deeplink_builder\": \"$1\",\n     \"active\": false,\n     \"comment\": \"Comment for new config\",\n     \"domains\": [\n         {\n             \"stripped_domain\": \"shop.boo.fr\"\n         }\n     ]\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "curl",
+        "content": "# <user> and <pword> must be replaced by valid authentication details\ncurl -u <user>:<pword> -X POST \\\nhttps://api.tracdelight.com/v1/linkgenerator",
+        "type": "bash"
+      },
+      {
+        "title": "javascript",
+        "content": "// <user> and <pword> must be replaced by valid authentication details\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/linkgenerator',\n    type: 'POST',\n    username: '<user>',\n    password: '<pword>'\n}).then(function (response) { console.log(response); });",
+        "type": "javascript"
+      },
+      {
+        "title": "python",
+        "content": "# <user> and <pword> must be replaced by valid authentication details\n>>> import requests\n>>> url = \"https://api.tracdelight.com/v1/linkgenerator\"\n>>> user, pword = \"<user>\", \"<pword>\"\n>>> r = requests.post(url, auth=(user, pword))\n>>> r.json()",
+        "type": "python"
+      }
+    ],
+    "filename": "./linkgenerator.py",
+    "groupTitle": "Linkgenerator",
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "<p>401</p> ",
+            "optional": false,
+            "field": "NoAuthenticationCredentials",
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "type": "<p>405</p> ",
+            "optional": false,
+            "field": "HTTPMethodNotAllowed",
+            "description": "<p>Disallowed HTTP method was requested</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "type": "<p>400</p> ",
+            "optional": false,
+            "field": "NoPublisherId",
+            "description": "<p>Bad request format</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "NoAuthenticationCredentials",
+          "content": "{\"detail\": \"Authentication credentials were not provided.\"}",
+          "type": "json"
+        },
+        {
+          "title": "HTTPMethodNotAllowed",
+          "content": "{\"detail\": \"Method \\\"PATCH\\\" not allowed.\"}",
+          "type": "json"
+        },
+        {
+          "title": "NoPublisherId",
+          "content": "[\"publisher_id parameter needs to be specified for this resource\"]",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/linkgenerator/advertisers",
+    "title": "List advertisers",
+    "version": "1.0.0",
+    "name": "GetLinkgeneratorAdvertisers",
+    "group": "Linkgenerator",
+    "description": "<p>List advertisers that have LinkGeneratorConfig and at least one LinkGeneratorDomain</p> ",
+    "permission": [
+      {
+        "name": "IsLinkGeneratorPublisher",
+        "title": "Authenticated access for link generator publishers",
+        "description": "<p>Grants all HTTP methods to authenticated link generator publishers</p> "
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "accesskey",
+            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "publisher_id",
+            "description": "<p><code>publisher_id</code> is a parameter which can be used instead of the <code>accesskey</code> for session/basic authentication</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request example",
+          "content": "{\n   \"accesskey\": \"00f74dc12bdd0c35\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Array</p> ",
+            "optional": false,
+            "field": "advertisers",
+            "description": "<p>List of advertisers</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "advertisers.advertiser_id",
+            "description": "<p>Advertiser identifier</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Array</p> ",
+            "optional": false,
+            "field": "advertisers.domains",
+            "description": "<p>List of domains for the advertiser config</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Result example",
+          "content": "{\n     \"advertisers\": [\n         {\n             \"advertiser_id\": \"smw72jontuegyvph\",\n             \"domains\": [\n                 \"bs8qkze5dtfn9y1w\",\n                 \"esf6ck92qogj0hn4\",\n                 \"gc9s3qr4z2t1xeua\"\n             ]\n         },\n         {\n             \"advertiser_id\": \"bwu4veiacq1fdpmt\",\n             \"domains\": [\n                 \"jpwdaxq41u8be6sv\",\n                 \"4jwtvga0sxp6u813\"\n             ]\n         },\n     ]\n\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "curl",
+        "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\ncurl -u <user>:<pword> -X GET \\\nhttps://api.tracdelight.com/v1/linkgenerator/advertisers?accesskey=<ak>",
+        "type": "bash"
+      },
+      {
+        "title": "javascript",
+        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/linkgenerator/advertisers',\n    type: 'GET',\n    username: '<user>',\n    password: '<pword>',\n    data: {accesskey: '<ak>'}\n}).then(function (response) { console.log(response); });",
+        "type": "javascript"
+      },
+      {
+        "title": "python",
+        "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n>>> import requests\n>>> url = \"https://api.tracdelight.com/v1/linkgenerator/advertisers?accesskey={}\".format(\n>>>     \"<ak>\"\n>>> )\n>>> user, pword = \"<user>\", \"<pword>\"\n>>> r = requests.get(url, auth=(user, pword))\n>>> r.json()",
+        "type": "python"
+      }
+    ],
+    "filename": "./linkgenerator.py",
+    "groupTitle": "Linkgenerator",
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "<p>401</p> ",
+            "optional": false,
+            "field": "NoAuthenticationCredentials",
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "type": "<p>405</p> ",
+            "optional": false,
+            "field": "HTTPMethodNotAllowed",
+            "description": "<p>Disallowed HTTP method was requested</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "type": "<p>400</p> ",
+            "optional": false,
+            "field": "NoPublisherId",
+            "description": "<p>Bad request format</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "NoAuthenticationCredentials",
+          "content": "{\"detail\": \"Authentication credentials were not provided.\"}",
+          "type": "json"
+        },
+        {
+          "title": "HTTPMethodNotAllowed",
+          "content": "{\"detail\": \"Method \\\"PATCH\\\" not allowed.\"}",
+          "type": "json"
+        },
+        {
+          "title": "NoPublisherId",
+          "content": "[\"publisher_id parameter needs to be specified for this resource\"]",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/linkgenerator/<advertiser-id>",
+    "title": "Retrieve config",
+    "version": "1.0.0",
+    "name": "GetLinkgeneratorConfig",
+    "group": "Linkgenerator",
+    "description": "<p>Retrieve the config and domains for given advertiser. The <strong>advertiser-id</strong> is a unique 16 character hash.</p> ",
+    "permission": [
+      {
+        "name": "IsLinkGeneratorPublisher",
+        "title": "Authenticated access for link generator publishers",
+        "description": "<p>Grants all HTTP methods to authenticated link generator publishers</p> "
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "accesskey",
+            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "publisher_id",
+            "description": "<p><code>publisher_id</code> is a parameter which can be used instead of the <code>accesskey</code> for session/basic authentication</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request example",
+          "content": "{\n   \"accesskey\": \"00f74dc12bdd0c35\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Unique Config identifier</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "advertiser",
+            "description": "<p>Unique Advertiser identifier</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "regexp",
+            "description": "<p>Regular expression for domain searching</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "deeplink_builder",
+            "description": "<p>Layout to generate deeplinks</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Boolean</p> ",
+            "optional": false,
+            "field": "active",
+            "description": "<p>Config activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "comment",
+            "description": "<p>A comment about the advertiser's config</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Array</p> ",
+            "optional": false,
+            "field": "domains",
+            "description": "<p>List of domains for the advertiser config</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "domains.stripped_domain",
+            "description": "<p>Publisher’s domain</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Result example",
+          "content": "{\n     \"id\": \"z50s4a8xurev6y9d\",\n     \"advertiser\": \"esf6ck92qogj0hn4\",\n     \"regexp\": \"(http|https)\\\\:\\\\/\\\\/shop.boo.de/(.*)\",\n     \"deeplink_builder\": \"$1\",\n     \"active\": true,\n     \"comment\": \"Some comment here\",\n     \"domains\": [\n         {\n             \"stripped_domain\": \"shop.boo.de\"\n         }\n     ]\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "curl",
+        "content": "# <user>, <pword>, <ak> and <advertiser-id> must be replaced by valid authentication details\ncurl -u <user>:<pword> -X GET \\\nhttps://api.tracdelight.com/v1/linkgenerator/<advertiser-id>?accesskey=<ak>",
+        "type": "bash"
+      },
+      {
+        "title": "javascript",
+        "content": "// <user>, <pword>, <ak> and <advertiser-id> must be replaced by valid authentication details\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/linkgenerator/<advertiser-id>',\n    type: 'GET',\n    username: '<user>',\n    password: '<pword>',\n    data: {accesskey: '<ak>'}\n}).then(function (response) { console.log(response); });",
+        "type": "javascript"
+      },
+      {
+        "title": "python",
+        "content": "# <user>, <pword>, <ak> and <advertiser-id> must be replaced by valid authentication details\n>>> import requests\n>>> url = \"https://api.tracdelight.com/v1/linkgenerator/<advertiser-id>?accesskey={}\".format(\n>>>     \"<ak>\"\n>>> )\n>>> user, pword = \"<user>\", \"<pword>\"\n>>> r = requests.get(url, auth=(user, pword))\n>>> r.json()",
+        "type": "python"
+      }
+    ],
+    "filename": "./linkgenerator.py",
+    "groupTitle": "Linkgenerator",
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "<p>401</p> ",
+            "optional": false,
+            "field": "NoAuthenticationCredentials",
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "type": "<p>405</p> ",
+            "optional": false,
+            "field": "HTTPMethodNotAllowed",
+            "description": "<p>Disallowed HTTP method was requested</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "type": "<p>400</p> ",
+            "optional": false,
+            "field": "NoPublisherId",
+            "description": "<p>Bad request format</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "NoAuthenticationCredentials",
+          "content": "{\"detail\": \"Authentication credentials were not provided.\"}",
+          "type": "json"
+        },
+        {
+          "title": "HTTPMethodNotAllowed",
+          "content": "{\"detail\": \"Method \\\"PATCH\\\" not allowed.\"}",
+          "type": "json"
+        },
+        {
+          "title": "NoPublisherId",
+          "content": "[\"publisher_id parameter needs to be specified for this resource\"]",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/linkgenerator/links",
+    "title": "Retrieve tracking url",
+    "version": "1.0.0",
+    "name": "GetLinkgeneratorLinks",
+    "group": "Linkgenerator",
+    "description": "<p>Retrieve tracking_url for a particular url</p> ",
+    "permission": [
+      {
+        "name": "IsLinkGeneratorPublisher",
+        "title": "Authenticated access for link generator publishers",
+        "description": "<p>Grants all HTTP methods to authenticated link generator publishers</p> "
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "accesskey",
+            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "publisher_id",
+            "description": "<p><code>publisher_id</code> is a parameter which can be used instead of the <code>accesskey</code> for session/basic authentication</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request example",
+          "content": "{\n   \"accesskey\": \"00f74dc12bdd0c35\",\n   \"publisher_id\": \"A1RFFaUGrH9YEbRJ\",\n   \"url\": \"http://shop.boo.de/products/1\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "tracking_url",
+            "description": "<p>Built url with Advertiser, Publisher and Deeplink</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Result example",
+          "content": "{\n     \"tracking_url\": \"http://staging.td.edelight.net/cl/?tt=slg&aaid=v8nukjw3c6wkmjoh&paid=00f74dc12bdd0c35&link=http://shop.boo.de/products/1\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "curl",
+        "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <url> must be replaced with valid url\ncurl -u <user>:<pword> -X GET \\\nhttps://api.tracdelight.com/v1/linkgenerator/links?accesskey=<ak>&url=<url>",
+        "type": "bash"
+      },
+      {
+        "title": "javascript",
+        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n# <url> must be replaced with valid url\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/linkgenerator/links',\n    type: 'GET',\n    username: '<user>',\n    password: '<pword>',\n    data: {accesskey: '<ak>', url: '<url>'}\n}).then(function (response) { console.log(response); });",
+        "type": "javascript"
+      },
+      {
+        "title": "python",
+        "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n>>> import requests\n>>> url = \"https://api.tracdelight.com/v1/linkgenerator/links?accesskey={}&url={}\".format(\n>>>     \"<ak>\", \"<url>\"\n>>> )\n>>> user, pword = \"<user>\", \"<pword>\"\n>>> r = requests.get(url, auth=(user, pword))\n>>> r.json()",
+        "type": "python"
+      }
+    ],
+    "filename": "./linkgenerator.py",
+    "groupTitle": "Linkgenerator",
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "<p>401</p> ",
+            "optional": false,
+            "field": "NoAuthenticationCredentials",
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "type": "<p>405</p> ",
+            "optional": false,
+            "field": "HTTPMethodNotAllowed",
+            "description": "<p>Disallowed HTTP method was requested</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "type": "<p>400</p> ",
+            "optional": false,
+            "field": "NoPublisherId",
+            "description": "<p>Bad request format</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "NoAuthenticationCredentials",
+          "content": "{\"detail\": \"Authentication credentials were not provided.\"}",
+          "type": "json"
+        },
+        {
+          "title": "HTTPMethodNotAllowed",
+          "content": "{\"detail\": \"Method \\\"PATCH\\\" not allowed.\"}",
+          "type": "json"
+        },
+        {
+          "title": "NoPublisherId",
+          "content": "[\"publisher_id parameter needs to be specified for this resource\"]",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "patch",
+    "url": "/linkgenerator/<advertiser-id>",
+    "title": "Partially update a config",
+    "version": "1.0.0",
+    "name": "PartialUpdateLinkgeneratorConfigs",
+    "group": "Linkgenerator",
+    "description": "<p>Partially update config for given advertiser. The <strong>advertiser-id</strong> is a unique 16 character hash.</p> ",
+    "permission": [
+      {
+        "name": "IsAdminOrReadOnly",
+        "title": "Authenticated access for safe HTTP methods",
+        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p> "
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "regexp",
+            "description": "<p>Regular expression for domain searching</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "deeplink_builder",
+            "description": "<p>Layout to generate deeplinks</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Boolean</p> ",
+            "optional": true,
+            "field": "active",
+            "description": "<p>Config activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "comment",
+            "description": "<p>A comment about the advertiser's config</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Array</p> ",
+            "optional": true,
+            "field": "domains",
+            "description": "<p>List of domains for the advertiser config</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request example",
+          "content": "{\n   \"active\": false\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Unique Config identifier</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "advertiser",
+            "description": "<p>Unique Advertiser identifier</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "regexp",
+            "description": "<p>Regular expression for domain searching</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "deeplink_builder",
+            "description": "<p>Layout to generate deeplinks</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Boolean</p> ",
+            "optional": false,
+            "field": "active",
+            "description": "<p>Config activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "comment",
+            "description": "<p>A comment about the advertiser's config</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Array</p> ",
+            "optional": false,
+            "field": "domains",
+            "description": "<p>List of domains for the advertiser config</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "domains.stripped_domain",
+            "description": "<p>Publisher’s domain</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Result example",
+          "content": "{\n     \"id\": \"z50s4a8xurev6y9d\",\n     \"advertiser\": \"esf6ck92qogj0hn4\",\n     \"regexp\": \"(http|https)\\\\:\\\\/\\\\/shop.boo.de/(.*)\",\n     \"deeplink_builder\": \"$1\",\n     \"active\": false,\n     \"comment\": \"Updated comment\",\n     \"domains\": [\n         {\n             \"stripped_domain\": \"shop.boo.fr\"\n         }\n     ]\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "curl",
+        "content": "# <user>, <pword> and <advertiser-id> must be replaced by valid authentication details\ncurl -u <user>:<pword> -X PATCH \\\nhttps://api.tracdelight.com/v1/linkgenerator/<advertiser-id>",
+        "type": "bash"
+      },
+      {
+        "title": "javascript",
+        "content": "// <user>, <pword> and <advertiser-id> must be replaced by valid authentication details\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/linkgenerator/<advertiser-id>',\n    type: 'PATCH',\n    username: '<user>',\n    password: '<pword>'\n}).then(function (response) { console.log(response); });",
+        "type": "javascript"
+      },
+      {
+        "title": "python",
+        "content": "# <user>, <pword> and <advertiser-id> must be replaced by valid authentication details\n>>> import requests\n>>> url = \"https://api.tracdelight.com/v1/linkgenerator/<advertiser-id>\"\n>>> user, pword = \"<user>\", \"<pword>\"\n>>> r = requests.patch(url, auth=(user, pword))\n>>> r.json()",
+        "type": "python"
+      }
+    ],
+    "filename": "./linkgenerator.py",
+    "groupTitle": "Linkgenerator",
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "<p>401</p> ",
+            "optional": false,
+            "field": "NoAuthenticationCredentials",
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "type": "<p>405</p> ",
+            "optional": false,
+            "field": "HTTPMethodNotAllowed",
+            "description": "<p>Disallowed HTTP method was requested</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "type": "<p>400</p> ",
+            "optional": false,
+            "field": "NoPublisherId",
+            "description": "<p>Bad request format</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "NoAuthenticationCredentials",
+          "content": "{\"detail\": \"Authentication credentials were not provided.\"}",
+          "type": "json"
+        },
+        {
+          "title": "HTTPMethodNotAllowed",
+          "content": "{\"detail\": \"Method \\\"PATCH\\\" not allowed.\"}",
+          "type": "json"
+        },
+        {
+          "title": "NoPublisherId",
+          "content": "[\"publisher_id parameter needs to be specified for this resource\"]",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "put",
+    "url": "/linkgenerator/<advertiser-id>",
+    "title": "Update a config",
+    "version": "1.0.0",
+    "name": "UpdateLinkgeneratorConfigs",
+    "group": "Linkgenerator",
+    "description": "<p>Full update config for given advertiser. The <strong>advertiser-id</strong> is a unique 16 character hash.</p> ",
+    "permission": [
+      {
+        "name": "IsAdminOrReadOnly",
+        "title": "Authenticated access for safe HTTP methods",
+        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p> "
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "regexp",
+            "description": "<p>Regular expression for domain searching</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "deeplink_builder",
+            "description": "<p>Layout to generate deeplinks</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Boolean</p> ",
+            "optional": false,
+            "field": "active",
+            "description": "<p>Config activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "comment",
+            "description": "<p>A comment about the advertiser's config</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Array</p> ",
+            "optional": false,
+            "field": "domains",
+            "description": "<p>List of domains for the advertiser config</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request example",
+          "content": "{\n   \"regexp\": \"(http|https)\\\\:\\\\/\\\\/shop.boo.de/(.*)\",\n   \"deeplink_builder\": \"$1\",\n   \"active\": false,\n   \"comment\": \"Updated comment\",\n   \"domains\": [\n       {\n           \"stripped_domain\": \"shop.boo.fr\"\n       }\n   ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Unique Config identifier</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "advertiser",
+            "description": "<p>Unique Advertiser identifier</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "regexp",
+            "description": "<p>Regular expression for domain searching</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "deeplink_builder",
+            "description": "<p>Layout to generate deeplinks</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Boolean</p> ",
+            "optional": false,
+            "field": "active",
+            "description": "<p>Config activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "comment",
+            "description": "<p>A comment about the advertiser's config</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Array</p> ",
+            "optional": false,
+            "field": "domains",
+            "description": "<p>List of domains for the advertiser config</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "domains.stripped_domain",
+            "description": "<p>Publisher’s domain</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Result example",
+          "content": "{\n     \"id\": \"z50s4a8xurev6y9d\",\n     \"advertiser\": \"esf6ck92qogj0hn4\",\n     \"regexp\": \"(http|https)\\\\:\\\\/\\\\/shop.boo.de/(.*)\",\n     \"deeplink_builder\": \"$1\",\n     \"active\": false,\n     \"comment\": \"Updated comment\",\n     \"domains\": [\n         {\n             \"stripped_domain\": \"shop.boo.fr\"\n         }\n     ]\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "curl",
+        "content": "# <user>, <pword> and <advertiser-id> must be replaced by valid authentication details\ncurl -u <user>:<pword> -X PUT \\\nhttps://api.tracdelight.com/v1/linkgenerator/<advertiser-id>",
+        "type": "bash"
+      },
+      {
+        "title": "javascript",
+        "content": "// <user>, <pword> and <advertiser-id> must be replaced by valid authentication details\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/linkgenerator/<advertiser-id>',\n    type: 'PUT',\n    username: '<user>',\n    password: '<pword>'\n}).then(function (response) { console.log(response); });",
+        "type": "javascript"
+      },
+      {
+        "title": "python",
+        "content": "# <user>, <pword> and <advertiser-id> must be replaced by valid authentication details\n>>> import requests\n>>> url = \"https://api.tracdelight.com/v1/linkgenerator/<advertiser-id>\"\n>>> user, pword = \"<user>\", \"<pword>\"\n>>> r = requests.put(url, auth=(user, pword))\n>>> r.json()",
+        "type": "python"
+      }
+    ],
+    "filename": "./linkgenerator.py",
+    "groupTitle": "Linkgenerator",
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "<p>401</p> ",
+            "optional": false,
+            "field": "NoAuthenticationCredentials",
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "type": "<p>405</p> ",
+            "optional": false,
+            "field": "HTTPMethodNotAllowed",
+            "description": "<p>Disallowed HTTP method was requested</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "type": "<p>400</p> ",
+            "optional": false,
+            "field": "NoPublisherId",
+            "description": "<p>Bad request format</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "NoAuthenticationCredentials",
+          "content": "{\"detail\": \"Authentication credentials were not provided.\"}",
+          "type": "json"
+        },
+        {
+          "title": "HTTPMethodNotAllowed",
+          "content": "{\"detail\": \"Method \\\"PATCH\\\" not allowed.\"}",
+          "type": "json"
+        },
+        {
+          "title": "NoPublisherId",
+          "content": "[\"publisher_id parameter needs to be specified for this resource\"]",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
     "type": "delete",
     "url": "/products/<product-id>",
     "title": "Delete a product",
@@ -1308,6 +2386,18 @@ define({ "api": [
     "name": "DeleteProduct",
     "group": "Products",
     "description": "<p>Delete a product. The <strong>product-id</strong> is a unique 16 character hash.</p> ",
+    "permission": [
+      {
+        "name": "IsAuthenticated",
+        "title": "Authenticated full access.",
+        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+      },
+      {
+        "name": "IsAdminOrReadOnly",
+        "title": "Authenticated access for safe HTTP methods",
+        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p> "
+      }
+    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1407,6 +2497,18 @@ define({ "api": [
     "name": "GetProductId",
     "group": "Products",
     "description": "<p>Retrieve a single product. The <strong>product-id</strong> is a unique 16 character hash.</p> ",
+    "permission": [
+      {
+        "name": "IsAuthenticated",
+        "title": "Authenticated full access.",
+        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+      },
+      {
+        "name": "IsAdminOrReadOnly",
+        "title": "Authenticated access for safe HTTP methods",
+        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p> "
+      }
+    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1701,6 +2803,18 @@ define({ "api": [
     "name": "GetProducts",
     "group": "Products",
     "description": "<p>List all products</p> ",
+    "permission": [
+      {
+        "name": "IsAuthenticated",
+        "title": "Authenticated full access.",
+        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+      },
+      {
+        "name": "IsAdminOrReadOnly",
+        "title": "Authenticated access for safe HTTP methods",
+        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p> "
+      }
+    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2147,11 +3261,23 @@ define({ "api": [
   {
     "type": "get",
     "url": "/stats/<tool-type>/aggregated",
-    "title": "Get aggregated statistics for all tools of an account",
+    "title": "Aggregate for all tools of an account",
     "version": "1.0.0",
     "name": "GetToolTypeAggregated",
     "group": "Statistics",
-    "description": "<p>Get aggregated statistics for all tools of an account</p> ",
+    "description": "<p>Retrieve aggregated statistical data of tool <code>&lt;tool-type&gt;</code>. Aggregated data is data for every tool of an account without combining results.</p> <ul> <li>how many times the tools were called</li> <li>how many times the tools were viewed (visible in viewport)</li> <li>how many times every product was clicked on</li> <li>how many times every product was viewed</li> </ul> ",
+    "permission": [
+      {
+        "name": "IsAuthenticated",
+        "title": "Authenticated full access.",
+        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+      },
+      {
+        "name": "IsAdminOrReadOnly",
+        "title": "Authenticated access for safe HTTP methods",
+        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p> "
+      }
+    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2168,6 +3294,27 @@ define({ "api": [
             "optional": true,
             "field": "publisher_id",
             "description": "<p><code>publisher_id</code> is a parameter which can be used instead of the <code>accesskey</code> for session/basic authentication</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "from",
+            "description": "<p><code>from</code> parameter specifies the starting date for statistical data. Defaults to 7 days ago</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "to",
+            "description": "<p><code>to</code> parameter specifies the ending date for statistical data. Defaults to today</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "all",
+            "description": "<p><code>all</code> parameter specifies if inactive tools should also be included in response</p> "
           }
         ]
       },
@@ -2329,11 +3476,28 @@ define({ "api": [
   {
     "type": "get",
     "url": "/stats/<tool-type>/combined",
-    "title": "Get combined statistics for all tools of an account",
+    "title": "Combine for all tools of an account",
     "version": "1.0.0",
     "name": "GetToolTypeCombined",
     "group": "Statistics",
-    "description": "<p>Get combined statistics for all tools of an account</p> ",
+    "description": "<p>Retrieve combined statistical data of tool <code>&lt;tool-type&gt;</code>. Combined data is the sum of all statistical data for every tool of an account. Statistical data corresponds to:</p> <ul> <li>how many times the tools were called</li> <li>how many times the tools were viewed (visible in viewport)</li> <li>how many times every product was clicked on</li> <li>how many times every product was viewed</li> </ul> ",
+    "permission": [
+      {
+        "name": "IsAuthenticated",
+        "title": "Authenticated full access.",
+        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+      },
+      {
+        "name": "IsAdminOrReadOnly",
+        "title": "Authenticated access for safe HTTP methods",
+        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p> "
+      },
+      {
+        "name": "IsAPIClient",
+        "title": "Authenticated full access",
+        "description": "<p>APIClient is an internal Tracdelight API consumer.</p> "
+      }
+    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2349,7 +3513,28 @@ define({ "api": [
             "type": "<p>String</p> ",
             "optional": true,
             "field": "publisher_id",
-            "description": "<p><code>publisher_id</code> is a parameter which can be used instead of the <code>accesskey</code> for session/basic authentication</p> "
+            "description": "<p><code>publisher_id</code> is a parameter which can be used instead of the <code>accesskey</code> for session/basic authentication. If request has <code>APIClient</code> authentication and <code>IsAPIClient</code> permissions and omits the <code>publisher_id</code>, network wide statistics will be retrieved.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "from",
+            "description": "<p><code>from</code> parameter specifies the starting date for statistical data. Defaults to 7 days ago</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "to",
+            "description": "<p><code>to</code> parameter specifies the ending date for statistical data. Defaults to today</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "all",
+            "description": "<p><code>all</code> parameter specifies if inactive tools should also be included in response</p> "
           }
         ]
       },
@@ -2525,11 +3710,23 @@ define({ "api": [
   {
     "type": "get",
     "url": "/stats/<tool-type>/<tool-id>",
-    "title": "Retrieve statistics for a particular tool type and id",
+    "title": "Retrieve for a single tool",
     "version": "1.0.0",
     "name": "GetToolTypeId",
     "group": "Statistics",
-    "description": "<p>Retrieve statistics for a particular tool type and id</p> ",
+    "description": "<p>Retrieve statistical data of tool <code>&lt;tool-type&gt;</code> which has <code>&lt;tool-id&gt;</code> identifier. Statistical data corresponds to:</p> <ul> <li>how many times the tool was called</li> <li>how many times the tool was viewed (visible in viewport)</li> <li>how many times each product was clicked on</li> <li>how many times each product was viewed</li> </ul> ",
+    "permission": [
+      {
+        "name": "IsAuthenticated",
+        "title": "Authenticated full access.",
+        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+      },
+      {
+        "name": "IsAdminOrReadOnly",
+        "title": "Authenticated access for safe HTTP methods",
+        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p> "
+      }
+    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2546,6 +3743,20 @@ define({ "api": [
             "optional": true,
             "field": "publisher_id",
             "description": "<p><code>publisher_id</code> is a parameter which can be used instead of the <code>accesskey</code> for session/basic authentication</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "from",
+            "description": "<p><code>from</code> parameter specifies the starting date for statistical data. Defaults to 7 days ago</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "to",
+            "description": "<p><code>to</code> parameter specifies the ending date for statistical data. Defaults to today</p> "
           }
         ]
       },
@@ -2721,11 +3932,23 @@ define({ "api": [
   {
     "type": "get",
     "url": "/stats/<tool-type>/<tool-id>/products",
-    "title": "Retrieve statistics for all products of a particular tool type and id",
+    "title": "Retrieve for all products of a single tool",
     "version": "1.0.0",
     "name": "GetToolTypeIdProducts",
     "group": "Statistics",
-    "description": "<p>Retrieve statistics for all products of a particular tool type and id</p> ",
+    "description": "<p>Retrieve statistics for all products of tool <code>&lt;tool-type&gt;</code> with <code>&lt;tool-id&gt;</code> identifier. Statistical data corresponds to:</p> <ul> <li>how many times each product was clicked on</li> <li>how many times each product was viewed</li> </ul> ",
+    "permission": [
+      {
+        "name": "IsAuthenticated",
+        "title": "Authenticated full access.",
+        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+      },
+      {
+        "name": "IsAdminOrReadOnly",
+        "title": "Authenticated access for safe HTTP methods",
+        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p> "
+      }
+    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2742,6 +3965,20 @@ define({ "api": [
             "optional": true,
             "field": "publisher_id",
             "description": "<p><code>publisher_id</code> is a parameter which can be used instead of the <code>accesskey</code> for session/basic authentication</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "from",
+            "description": "<p><code>from</code> parameter specifies the starting date for statistical data. Defaults to 7 days ago</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "to",
+            "description": "<p><code>to</code> parameter specifies the ending date for statistical data. Defaults to today</p> "
           }
         ]
       },
@@ -2971,6 +4208,13 @@ define({ "api": [
     "name": "CreateWidget",
     "group": "Widgets",
     "description": "<p>Create a new widget</p> ",
+    "permission": [
+      {
+        "name": "IsWidgetPublisher",
+        "title": "Authenticated access for Widget publishers",
+        "description": "<p>Grants all HTTP methods to authenticated widget users</p> "
+      }
+    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -3209,7 +4453,7 @@ define({ "api": [
       },
       {
         "title": "python",
-        "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <name>, <title>, <description>, <secret-key>, <product-id> and\n# <publisher> must be replaced with valid values\n>>> import requests\n>>> url = \"https://api.tracdelight.com/v1/widgets/accesskey={}\".format(\"<ak>\")\n>>> user, pword = \"<user>\", \"<pword>\"\n>>> payload = {\n>>>     \"user\": \"<user>\", \"title\": \"<title>\", \n>>>     \"description\": \"<description>\", \"products\": [\"<product-id>\"],\n>>>     \"publisher\": \"<publisher>\"\n>>> }\n>>> headers = {\"X-Secret-Key\": \"<secret-key>\"}\n>>> requests.post(\n>>>     url, auth=(user, pword), data=payload, headers=headers\n>>> )",
+        "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <name>, <title>, <description>, <secret-key>, <product-id> and\n# <publisher> must be replaced with valid values\n>>> import requests\n>>> url = \"https://api.tracdelight.com/v1/widgets/accesskey={}\".format(\"<ak>\")\n>>> user, pword = \"<user>\", \"<pword>\"\n>>> payload = {\n>>>     \"user\": \"<user>\", \"title\": \"<title>\",\n>>>     \"description\": \"<description>\", \"products\": [\"<product-id>\"],\n>>>     \"publisher\": \"<publisher>\"\n>>> }\n>>> headers = {\"X-Secret-Key\": \"<secret-key>\"}\n>>> requests.post(\n>>>     url, auth=(user, pword), data=payload, headers=headers\n>>> )",
         "type": "python"
       }
     ],
@@ -3268,6 +4512,13 @@ define({ "api": [
     "name": "DeleteWidget",
     "group": "Widgets",
     "description": "<p>Delete a widget. The <strong>widget-id</strong> is a unique 16 character hash.</p> ",
+    "permission": [
+      {
+        "name": "IsWidgetPublisher",
+        "title": "Authenticated access for Widget publishers",
+        "description": "<p>Grants all HTTP methods to authenticated widget users</p> "
+      }
+    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -3360,6 +4611,13 @@ define({ "api": [
     "name": "GetWidgetId",
     "group": "Widgets",
     "description": "<p>Retrieve a single widget. The <strong>widget-id</strong> is a unique 16 character hash.</p> ",
+    "permission": [
+      {
+        "name": "IsWidgetPublisher",
+        "title": "Authenticated access for Widget publishers",
+        "description": "<p>Grants all HTTP methods to authenticated widget users</p> "
+      }
+    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -3577,6 +4835,13 @@ define({ "api": [
     "name": "GetWidgetProducts",
     "group": "Widgets",
     "description": "<p>List all widget products. The <strong>widget-id</strong> is a unique 16 character hash.</p> ",
+    "permission": [
+      {
+        "name": "IsWidgetPublisher",
+        "title": "Authenticated access for Widget publishers",
+        "description": "<p>Grants all HTTP methods to authenticated widget users</p> "
+      }
+    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -3967,6 +5232,13 @@ define({ "api": [
     "name": "GetWidgets",
     "group": "Widgets",
     "description": "<p>List all widgets</p> ",
+    "permission": [
+      {
+        "name": "IsWidgetPublisher",
+        "title": "Authenticated access for Widget publishers",
+        "description": "<p>Grants all HTTP methods to authenticated widget users</p> "
+      }
+    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -4233,6 +5505,13 @@ define({ "api": [
     "name": "PartialUpdateWidget",
     "group": "Widgets",
     "description": "<p>Partially update a widget. The <strong>widget-id</strong> is a unique 16 character hash.</p> ",
+    "permission": [
+      {
+        "name": "IsWidgetPublisher",
+        "title": "Authenticated access for Widget publishers",
+        "description": "<p>Grants all HTTP methods to authenticated widget users</p> "
+      }
+    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -4466,7 +5745,7 @@ define({ "api": [
       },
       {
         "title": "javascript",
-        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <widget-id> must be replaced with a valid Widget identifier\n// <name>, <secret-key>, <product-id> and <publisher> must \n// be replaced with valid values\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/widgets/<widget-id>?accesskey=<ak>',\n    type: 'PATCH',\n    username: '<user>',\n    password: '<pword>',\n    headers: {'X-Secret-Key': '<secret-key>'},\n    data: {\n        name: '<name>',\n        products: [\n            '<product-id>',\n            '<product-id>'\n        ],\n        publisher: '<publisher>',\n    }\n}).then(function (response) { console.log(response); });",
+        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <widget-id> must be replaced with a valid Widget identifier\n// <name>, <secret-key>, <product-id> and <publisher> must\n// be replaced with valid values\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/widgets/<widget-id>?accesskey=<ak>',\n    type: 'PATCH',\n    username: '<user>',\n    password: '<pword>',\n    headers: {'X-Secret-Key': '<secret-key>'},\n    data: {\n        name: '<name>',\n        products: [\n            '<product-id>',\n            '<product-id>'\n        ],\n        publisher: '<publisher>',\n    }\n}).then(function (response) { console.log(response); });",
         "type": "javascript"
       },
       {
@@ -4542,6 +5821,13 @@ define({ "api": [
     "name": "UpdateWidget",
     "group": "Widgets",
     "description": "<p>Update a widget. The <strong>widget-id</strong> is a unique 16 character hash.</p> ",
+    "permission": [
+      {
+        "name": "IsWidgetPublisher",
+        "title": "Authenticated access for Widget publishers",
+        "description": "<p>Grants all HTTP methods to authenticated widget users</p> "
+      }
+    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -4780,7 +6066,7 @@ define({ "api": [
       },
       {
         "title": "python",
-        "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <widget-id> must be replaced with a valid Widget identifier\n# <name>, <title>, <description>, <secret-key>, <product-id> and\n# <publisher> must be replaced with valid values\n>>> import requests\n>>> url = \"https://api.tracdelight.com/v1/widgets/<widget-id>/accesskey={}\".format(\"<ak>\")\n>>> user, pword = \"<user>\", \"<pword>\"\n>>> payload = {\n>>>     \"user\": \"<user>\", \"title\": \"<title>\", \n>>>     \"description\": \"<description>\", \"products\": [\"<product-id>\"],\n>>>     \"publisher\": \"<publisher>\"\n>>> }\n>>> headers = {\"X-Secret-Key\": \"<secret-key>\"}\n>>> requests.post(\n>>>     url, auth=(user, pword), data=payload, headers=headers\n>>> )",
+        "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <widget-id> must be replaced with a valid Widget identifier\n# <name>, <title>, <description>, <secret-key>, <product-id> and\n# <publisher> must be replaced with valid values\n>>> import requests\n>>> url = \"https://api.tracdelight.com/v1/widgets/<widget-id>/accesskey={}\".format(\"<ak>\")\n>>> user, pword = \"<user>\", \"<pword>\"\n>>> payload = {\n>>>     \"user\": \"<user>\", \"title\": \"<title>\",\n>>>     \"description\": \"<description>\", \"products\": [\"<product-id>\"],\n>>>     \"publisher\": \"<publisher>\"\n>>> }\n>>> headers = {\"X-Secret-Key\": \"<secret-key>\"}\n>>> requests.post(\n>>>     url, auth=(user, pword), data=payload, headers=headers\n>>> )",
         "type": "python"
       }
     ],

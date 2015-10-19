@@ -25,7 +25,13 @@
     "GetToolTypeId",
     "GetToolTypeIdProducts",
     "GetToolTypeCombined",
-    "GetToolTypeAggregated"
+    "GetToolTypeAggregated",
+    "GetLinkgeneratorLinks",
+    "GetLinkgeneratorAdvertisers",
+    "GetLinkgeneratorConfig",
+    "CreateConfig",
+    "UpdateLinkgeneratorConfigs",
+    "PartialUpdateLinkgeneratorConfigs"
   ],
   "header": {
     "title": "Tracdelight API",
@@ -40,7 +46,7 @@
   "apidoc": "0.2.0",
   "generator": {
     "name": "apidoc",
-    "time": "2015-09-18T07:50:12.851Z",
+    "time": "2015-10-19T12:29:18.342Z",
     "url": "http://apidocjs.com",
     "version": "0.13.1"
   }
