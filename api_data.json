@@ -3260,7 +3260,7 @@
   },
   {
     "type": "get",
-    "url": "/stats/<tool-type>/aggregated",
+    "url": "/analytics/<tool-type>/aggregated",
     "title": "Aggregate for all tools of an account",
     "version": "1.0.0",
     "name": "GetToolTypeAggregated",
@@ -3417,12 +3417,12 @@
       },
       {
         "title": "javascript",
-        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <tool-type> must be replaced with valid details\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/stats/<tool-type>/aggregated',\n    type: 'GET',\n    username: '<user>',\n    password: '<pword>',\n    data: {accesskey: '<ak>'}\n}).then(function (response) { console.log(response); });",
+        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <tool-type> must be replaced with valid details\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/analytics/<tool-type>/aggregated',\n    type: 'GET',\n    username: '<user>',\n    password: '<pword>',\n    data: {accesskey: '<ak>'}\n}).then(function (response) { console.log(response); });",
         "type": "javascript"
       },
       {
         "title": "python",
-        "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <tool-type> must be replaced with valid details\n>>> import requests\n>>> url = \"https://api.tracdelight.com/v1/stats/{}/aggregated?accesskey={}\".format(\n>>>     \"<tool-type>\", \"<ak>\"\n>>> )\n>>> user, pword = \"<user>\", \"<pword>\"\n>>> r = requests.get(url, auth=(user, pword))\n>>> r.json()",
+        "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <tool-type> must be replaced with valid details\n>>> import requests\n>>> url = \"https://api.tracdelight.com/v1/analytics/{}/aggregated?accesskey={}\".format(\n>>>     \"<tool-type>\", \"<ak>\"\n>>> )\n>>> user, pword = \"<user>\", \"<pword>\"\n>>> r = requests.get(url, auth=(user, pword))\n>>> r.json()",
         "type": "python"
       }
     ],
@@ -3475,7 +3475,7 @@
   },
   {
     "type": "get",
-    "url": "/stats/<tool-type>/combined",
+    "url": "/analytics/<tool-type>/combined",
     "title": "Combine for all tools of an account",
     "version": "1.0.0",
     "name": "GetToolTypeCombined",
@@ -3651,12 +3651,12 @@
       },
       {
         "title": "javascript",
-        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <tool-type> must be replaced with valid details\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/stats/<tool-type>/combined',\n    type: 'GET',\n    username: '<user>',\n    password: '<pword>',\n    data: {accesskey: '<ak>'}\n}).then(function (response) { console.log(response); });",
+        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <tool-type> must be replaced with valid details\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/analytics/<tool-type>/combined',\n    type: 'GET',\n    username: '<user>',\n    password: '<pword>',\n    data: {accesskey: '<ak>'}\n}).then(function (response) { console.log(response); });",
         "type": "javascript"
       },
       {
         "title": "python",
-        "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <tool-type> must be replaced with valid details\n>>> import requests\n>>> url = \"https://api.tracdelight.com/v1/stats/{}/combined?accesskey={}\".format(\n>>>     \"<tool-type>\", \"<ak>\"\n>>> )\n>>> user, pword = \"<user>\", \"<pword>\"\n>>> r = requests.get(url, auth=(user, pword))\n>>> r.json()",
+        "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <tool-type> must be replaced with valid details\n>>> import requests\n>>> url = \"https://api.tracdelight.com/v1/analytics/{}/combined?accesskey={}\".format(\n>>>     \"<tool-type>\", \"<ak>\"\n>>> )\n>>> user, pword = \"<user>\", \"<pword>\"\n>>> r = requests.get(url, auth=(user, pword))\n>>> r.json()",
         "type": "python"
       }
     ],
@@ -3709,7 +3709,7 @@
   },
   {
     "type": "get",
-    "url": "/stats/<tool-type>/<tool-id>",
+    "url": "/analytics/<tool-type>/<tool-id>",
     "title": "Retrieve for a single tool",
     "version": "1.0.0",
     "name": "GetToolTypeId",
@@ -3868,17 +3868,17 @@
     "examples": [
       {
         "title": "curl",
-        "content": "# <user>, <pword> <ak> must be replaced by valid authentication details\n# <tool-type> and <tool-id> must be replaced with valid details\ncurl -u <user>:<pword> -X GET \\\nhttps://api.tracdelight.com/v1/stats/<tool-type>/<tool-id>?accesskey=<ak>",
+        "content": "# <user>, <pword> <ak> must be replaced by valid authentication details\n# <tool-type> and <tool-id> must be replaced with valid details\ncurl -u <user>:<pword> -X GET \\\nhttps://api.tracdelight.com/v1/analytics/<tool-type>/<tool-id>?accesskey=<ak>",
         "type": "bash"
       },
       {
         "title": "javascript",
-        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <tool-type> and <tool-id> must be replaced with valid details\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/stats/<tool-type>/<tool-id>',\n    type: 'GET',\n    username: '<user>',\n    password: '<pword>',\n    data: {accesskey: '<ak>'}\n}).then(function (response) { console.log(response); });",
+        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <tool-type> and <tool-id> must be replaced with valid details\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/analytics/<tool-type>/<tool-id>',\n    type: 'GET',\n    username: '<user>',\n    password: '<pword>',\n    data: {accesskey: '<ak>'}\n}).then(function (response) { console.log(response); });",
         "type": "javascript"
       },
       {
         "title": "python",
-        "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n>>> import requests\n>>> url = \"https://api.tracdelight.com/v1/stats/{}/{}?accesskey={}\".format(\n>>>     \"<tool-type>\", \"<tool-id>\", \"<ak>\"\n>>> )\n>>> user, pword = \"<user>\", \"<pword>\"\n>>> r = requests.get(url, auth=(user, pword))\n>>> r.json()",
+        "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n>>> import requests\n>>> url = \"https://api.tracdelight.com/v1/analytics/{}/{}?accesskey={}\".format(\n>>>     \"<tool-type>\", \"<tool-id>\", \"<ak>\"\n>>> )\n>>> user, pword = \"<user>\", \"<pword>\"\n>>> r = requests.get(url, auth=(user, pword))\n>>> r.json()",
         "type": "python"
       }
     ],
@@ -3931,7 +3931,7 @@
   },
   {
     "type": "get",
-    "url": "/stats/<tool-type>/<tool-id>/products",
+    "url": "/analytics/<tool-type>/<tool-id>/products",
     "title": "Retrieve for all products of a single tool",
     "version": "1.0.0",
     "name": "GetToolTypeIdProducts",
@@ -4139,17 +4139,17 @@
     "examples": [
       {
         "title": "curl",
-        "content": "# <user>, <pword> <ak> must be replaced by valid authentication details\n# <tool-type> and <tool-id> must be replaced with valid details\ncurl -u <user>:<pword> -X GET \\\nhttps://api.racdelight.com/v1/stats/<tool-type>/<tool-id>/products?accesskey=<ak>",
+        "content": "# <user>, <pword> <ak> must be replaced by valid authentication details\n# <tool-type> and <tool-id> must be replaced with valid details\ncurl -u <user>:<pword> -X GET \\\nhttps://api.tracdelight.com/v1/analytics/<tool-type>/<tool-id>/products?accesskey=<ak>",
         "type": "bash"
       },
       {
         "title": "javascript",
-        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <tool-type> and <tool-id> must be replaced with valid details\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/stats/<tool-type>/<tool-id>/products',\n    type: 'GET',\n    username: '<user>',\n    password: '<pword>',\n    data: {accesskey: '<ak>'}\n}).then(function (response) { console.log(response); });",
+        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n// <tool-type> and <tool-id> must be replaced with valid details\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/analytics/<tool-type>/<tool-id>/products',\n    type: 'GET',\n    username: '<user>',\n    password: '<pword>',\n    data: {accesskey: '<ak>'}\n}).then(function (response) { console.log(response); });",
         "type": "javascript"
       },
       {
         "title": "python",
-        "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <tool-type> and <tool-id> must be replaced with valid details\n>>> import requests\n>>> url = \"https://api.tracdelight.com/v1/stats/{}/{}/products?accesskey={}\".format(\n>>>     \"<tool-type>\", \"<tool-id>\", \"<ak>\"\n>>> )\n>>> user, pword = \"<user>\", \"<pword>\"\n>>> r = requests.get(url, auth=(user, pword))\n>>> r.json()",
+        "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <tool-type> and <tool-id> must be replaced with valid details\n>>> import requests\n>>> url = \"https://api.tracdelight.com/v1/analytics/{}/{}/products?accesskey={}\".format(\n>>>     \"<tool-type>\", \"<tool-id>\", \"<ak>\"\n>>> )\n>>> user, pword = \"<user>\", \"<pword>\"\n>>> r = requests.get(url, auth=(user, pword))\n>>> r.json()",
         "type": "python"
       }
     ],
