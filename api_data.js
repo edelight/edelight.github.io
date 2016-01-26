@@ -6,12 +6,12 @@ define({ "api": [
     "version": "1.0.0",
     "name": "CreateFavorite",
     "group": "Favorites",
-    "description": "<p>Create a new favorite list.</p> ",
+    "description": "<p>Create a new favorite list.</p>",
     "permission": [
       {
         "name": "IsAuthenticated",
         "title": "Authenticated full access.",
-        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+        "description": "<p>Grants all HTTP methods to authenticated users.</p>"
       }
     ],
     "parameter": {
@@ -19,41 +19,41 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "accesskey",
-            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+            "description": "<p><code>accesskey</code> parameter is always necessary</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "user",
-            "description": "<p>User who created the favorite list</p> "
+            "description": "<p>User who created the favorite list</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "name",
             "defaultValue": "''",
-            "description": "<p>Name of the favorite list</p> "
+            "description": "<p>Name of the favorite list</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": true,
             "field": "products",
             "defaultValue": "[]",
-            "description": "<p>List of unique product identifiers</p> "
+            "description": "<p>List of unique product identifiers</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "active",
             "defaultValue": "True",
-            "description": "<p>Favorite list activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+            "description": "<p>Favorite list activity. <code>true</code> is active, <code>false</code> is inactive</p>"
           }
         ]
       },
@@ -70,45 +70,45 @@ define({ "api": [
         "Created 201": [
           {
             "group": "Created 201",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>Unique favorite list identifier</p> "
+            "description": "<p>Unique favorite list identifier</p>"
           },
           {
             "group": "Created 201",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "active",
-            "description": "<p>Favorite list activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+            "description": "<p>Favorite list activity. <code>true</code> is active, <code>false</code> is inactive</p>"
           },
           {
             "group": "Created 201",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "name",
-            "description": "<p>Name of favorite list</p> "
+            "description": "<p>Name of favorite list</p>"
           },
           {
             "group": "Created 201",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "user",
-            "description": "<p>User who created the favorite list</p> "
+            "description": "<p>User who created the favorite list</p>"
           },
           {
             "group": "Created 201",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": false,
             "field": "products",
-            "description": "<p>ist of product identifiers</p> "
+            "description": "<p>ist of product identifiers</p>"
           },
           {
             "group": "Created 201",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "publisher",
-            "description": "<p>Unique publisher identifier</p> "
+            "description": "<p>Unique publisher identifier</p>"
           }
         ]
       },
@@ -144,24 +144,24 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "<p>401</p> ",
+            "type": "401",
             "optional": false,
             "field": "NoAuthenticationCredentials",
-            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>405</p> ",
+            "type": "405",
             "optional": false,
             "field": "HTTPMethodNotAllowed",
-            "description": "<p>Disallowed HTTP method was requested</p> "
+            "description": "<p>Disallowed HTTP method was requested</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>400</p> ",
+            "type": "400",
             "optional": false,
             "field": "BadRequest",
-            "description": "<p>Bad request format</p> "
+            "description": "<p>Bad request format</p>"
           }
         ]
       },
@@ -191,12 +191,12 @@ define({ "api": [
     "version": "1.0.0",
     "name": "DeleteFavorite",
     "group": "Favorites",
-    "description": "<p>Delete a favorite list. The <strong>favorite-list-id</strong> is a unique 16 character hash.</p> ",
+    "description": "<p>Delete a favorite list. The <strong>favorite-list-id</strong> is a unique 16 character hash.</p>",
     "permission": [
       {
         "name": "IsAuthenticated",
         "title": "Authenticated full access.",
-        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+        "description": "<p>Grants all HTTP methods to authenticated users.</p>"
       }
     ],
     "parameter": {
@@ -204,10 +204,10 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "accesskey",
-            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+            "description": "<p><code>accesskey</code> parameter is always necessary</p>"
           }
         ]
       },
@@ -243,24 +243,24 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "<p>401</p> ",
+            "type": "401",
             "optional": false,
             "field": "NoAuthenticationCredentials",
-            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>405</p> ",
+            "type": "405",
             "optional": false,
             "field": "HTTPMethodNotAllowed",
-            "description": "<p>Disallowed HTTP method was requested</p> "
+            "description": "<p>Disallowed HTTP method was requested</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>404</p> ",
+            "type": "404",
             "optional": false,
             "field": "NotFound",
-            "description": "<p>Resource could not be found</p> "
+            "description": "<p>Resource could not be found</p>"
           }
         ]
       },
@@ -290,12 +290,12 @@ define({ "api": [
     "version": "1.0.0",
     "name": "GetFavoriteListId",
     "group": "Favorites",
-    "description": "<p>Retrieve a single favorite list. The <strong>favorite-list-id</strong> is a unique 16 character hash.</p> ",
+    "description": "<p>Retrieve a single favorite list. The <strong>favorite-list-id</strong> is a unique 16 character hash.</p>",
     "permission": [
       {
         "name": "IsAuthenticated",
         "title": "Authenticated full access.",
-        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+        "description": "<p>Grants all HTTP methods to authenticated users.</p>"
       }
     ],
     "parameter": {
@@ -303,10 +303,10 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "accesskey",
-            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+            "description": "<p><code>accesskey</code> parameter is always necessary</p>"
           }
         ]
       },
@@ -323,45 +323,45 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>Unique favorite list identifier</p> "
+            "description": "<p>Unique favorite list identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "active",
-            "description": "<p>Favorite list activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+            "description": "<p>Favorite list activity. <code>true</code> is active, <code>false</code> is inactive</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "name",
-            "description": "<p>Name of favorite list</p> "
+            "description": "<p>Name of favorite list</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "user",
-            "description": "<p>User who created the favorite list</p> "
+            "description": "<p>User who created the favorite list</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": false,
             "field": "products",
-            "description": "<p>List of product identifiers</p> "
+            "description": "<p>List of product identifiers</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "publisher",
-            "description": "<p>Unique publisher identifier</p> "
+            "description": "<p>Unique publisher identifier</p>"
           }
         ]
       },
@@ -397,24 +397,24 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "<p>401</p> ",
+            "type": "401",
             "optional": false,
             "field": "NoAuthenticationCredentials",
-            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>405</p> ",
+            "type": "405",
             "optional": false,
             "field": "HTTPMethodNotAllowed",
-            "description": "<p>Disallowed HTTP method was requested</p> "
+            "description": "<p>Disallowed HTTP method was requested</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>404</p> ",
+            "type": "404",
             "optional": false,
             "field": "NotFound",
-            "description": "<p>Resource could not be found</p> "
+            "description": "<p>Resource could not be found</p>"
           }
         ]
       },
@@ -444,12 +444,12 @@ define({ "api": [
     "version": "1.0.0",
     "name": "GetFavoriteProducts",
     "group": "Favorites",
-    "description": "<p>List all favorite list products. The <strong>favorite-list-id</strong> is a unique 16 character hash.</p> ",
+    "description": "<p>List all favorite list products. The <strong>favorite-list-id</strong> is a unique 16 character hash.</p>",
     "permission": [
       {
         "name": "IsAuthenticated",
         "title": "Authenticated full access.",
-        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+        "description": "<p>Grants all HTTP methods to authenticated users.</p>"
       }
     ],
     "parameter": {
@@ -457,10 +457,10 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "accesskey",
-            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+            "description": "<p><code>accesskey</code> parameter is always necessary</p>"
           }
         ]
       },
@@ -477,227 +477,227 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>Unique favorite list identifier</p> "
+            "description": "<p>Unique favorite list identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "active",
-            "description": "<p>Favorite list activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+            "description": "<p>Favorite list activity. <code>true</code> is active, <code>false</code> is inactive</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "name",
-            "description": "<p>Name of favorite list</p> "
+            "description": "<p>Name of favorite list</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "user",
-            "description": "<p>User who created the favorite list</p> "
+            "description": "<p>User who created the favorite list</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": false,
             "field": "products",
-            "description": "<p>List of products</p> "
+            "description": "<p>List of products</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.id",
-            "description": "<p>Unique product indentifier</p> "
+            "description": "<p>Unique product indentifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.url",
-            "description": "<p>Product URL</p> "
+            "description": "<p>Product URL</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.title",
-            "description": "<p>Product title</p> "
+            "description": "<p>Product title</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.description",
-            "description": "<p>Product description</p> "
+            "description": "<p>Product description</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "products.category",
-            "description": "<p>Category object</p> "
+            "description": "<p>Category object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.category.id",
-            "description": "<p>Unique category identifier</p> "
+            "description": "<p>Unique category identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.category.name",
-            "description": "<p>Category name</p> "
+            "description": "<p>Category name</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "products.brand",
-            "description": "<p>Brand object</p> "
+            "description": "<p>Brand object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.brand.id",
-            "description": "<p>Unique brand identifier</p> "
+            "description": "<p>Unique brand identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.brand.name",
-            "description": "<p>Brand name</p> "
+            "description": "<p>Brand name</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "products.shop",
-            "description": "<p>Shop object</p> "
+            "description": "<p>Shop object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.shop.id",
-            "description": "<p>Unique shop identifier</p> "
+            "description": "<p>Unique shop identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.shop.name",
-            "description": "<p>Shop name</p> "
+            "description": "<p>Shop name</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "products.list_price",
-            "description": "<p>List price object</p> "
+            "description": "<p>List price object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.list.current",
-            "description": "<p>Current price</p> "
+            "description": "<p>Current price</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.list.currency",
-            "description": "<p>Currency of price</p> "
+            "description": "<p>Currency of price</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.list.base",
-            "description": "<p>Price per unit</p> "
+            "description": "<p>Price per unit</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.list.old",
-            "description": "<p>Original price</p> "
+            "description": "<p>Original price</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.list.delivery_time",
-            "description": "<p>Time to deliver</p> "
+            "description": "<p>Time to deliver</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "products.tags",
-            "description": "<p>Tags object</p> "
+            "description": "<p>Tags object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.tags.color",
-            "description": "<p>Color tag</p> "
+            "description": "<p>Color tag</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.tags.agegroup",
-            "description": "<p>Age group tag</p> "
+            "description": "<p>Age group tag</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "products.images",
-            "description": "<p>Image object</p> "
+            "description": "<p>Image object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.images.url",
-            "description": "<p>URL link</p> "
+            "description": "<p>URL link</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.images.url_template",
-            "description": "<p>URL template link</p> "
+            "description": "<p>URL template link</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.tracking",
-            "description": "<p>Tracking link</p> "
+            "description": "<p>Tracking link</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "publisher",
-            "description": "<p>Unique publisher identifier</p> "
+            "description": "<p>Unique publisher identifier</p>"
           }
         ]
       },
@@ -733,24 +733,24 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "<p>401</p> ",
+            "type": "401",
             "optional": false,
             "field": "NoAuthenticationCredentials",
-            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>405</p> ",
+            "type": "405",
             "optional": false,
             "field": "HTTPMethodNotAllowed",
-            "description": "<p>Disallowed HTTP method was requested</p> "
+            "description": "<p>Disallowed HTTP method was requested</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>404</p> ",
+            "type": "404",
             "optional": false,
             "field": "NotFound",
-            "description": "<p>Resource could not be found</p> "
+            "description": "<p>Resource could not be found</p>"
           }
         ]
       },
@@ -780,12 +780,12 @@ define({ "api": [
     "version": "1.0.0",
     "name": "GetFavorites",
     "group": "Favorites",
-    "description": "<p>List all favorite lists.</p> ",
+    "description": "<p>List all favorite lists.</p>",
     "permission": [
       {
         "name": "IsAuthenticated",
         "title": "Authenticated full access.",
-        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+        "description": "<p>Grants all HTTP methods to authenticated users.</p>"
       }
     ],
     "parameter": {
@@ -793,24 +793,24 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "accesskey",
-            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+            "description": "<p><code>accesskey</code> parameter is always necessary</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "page",
-            "description": "<p>Specifies the page number. If not provided, page 1 is rendered. Max value is 1000</p> "
+            "description": "<p>Specifies the page number. If not provided, page 1 is rendered. Max value is 1000</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "page_size",
-            "description": "<p>Specifies the page size. If not provided, results are paginated by 40. Max value is 100</p> "
+            "description": "<p>Specifies the page size. If not provided, results are paginated by 40. Max value is 100</p>"
           }
         ]
       },
@@ -827,80 +827,80 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "count",
-            "description": "<p>Number of returned results</p> "
+            "description": "<p>Number of returned results</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "next",
-            "description": "<p>Pagination 'next' link</p> "
+            "description": "<p>Pagination 'next' link</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "previous",
-            "description": "<p>Pagination 'previous' link</p> "
+            "description": "<p>Pagination 'previous' link</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "pages_total",
-            "description": "<p>Pagination count for total pages</p> "
+            "description": "<p>Pagination count for total pages</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": false,
             "field": "results",
-            "description": "<p>List of results</p> "
+            "description": "<p>List of results</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.id",
-            "description": "<p>Unique favorite list identifier</p> "
+            "description": "<p>Unique favorite list identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "results.active",
-            "description": "<p>Favorite list activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+            "description": "<p>Favorite list activity. <code>true</code> is active, <code>false</code> is inactive</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.name",
-            "description": "<p>Name of favorite list</p> "
+            "description": "<p>Name of favorite list</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.user",
-            "description": "<p>User who created the favorite list</p> "
+            "description": "<p>User who created the favorite list</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": false,
             "field": "results.products",
-            "description": "<p>List of product identifiers</p> "
+            "description": "<p>List of product identifiers</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.publisher",
-            "description": "<p>Unique publisher identifier</p> "
+            "description": "<p>Unique publisher identifier</p>"
           }
         ]
       },
@@ -941,17 +941,17 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "<p>401</p> ",
+            "type": "401",
             "optional": false,
             "field": "NoAuthenticationCredentials",
-            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>405</p> ",
+            "type": "405",
             "optional": false,
             "field": "HTTPMethodNotAllowed",
-            "description": "<p>Disallowed HTTP method was requested</p> "
+            "description": "<p>Disallowed HTTP method was requested</p>"
           }
         ]
       },
@@ -976,12 +976,12 @@ define({ "api": [
     "version": "1.0.0",
     "name": "PartialUpdateFavorite",
     "group": "Favorites",
-    "description": "<p>Partially update a favorite list. The <strong>favorite-list-id</strong> is a unique 16 character hash.</p> ",
+    "description": "<p>Partially update a favorite list. The <strong>favorite-list-id</strong> is a unique 16 character hash.</p>",
     "permission": [
       {
         "name": "IsAuthenticated",
         "title": "Authenticated full access.",
-        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+        "description": "<p>Grants all HTTP methods to authenticated users.</p>"
       }
     ],
     "parameter": {
@@ -989,34 +989,34 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "accesskey",
-            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+            "description": "<p><code>accesskey</code> parameter is always necessary</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "name",
             "defaultValue": "''",
-            "description": "<p>Name of the favorite list</p> "
+            "description": "<p>Name of the favorite list</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": true,
             "field": "products",
             "defaultValue": "[]",
-            "description": "<p>List of unique product identifiers</p> "
+            "description": "<p>List of unique product identifiers</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "active",
             "defaultValue": "True",
-            "description": "<p>Favorite list activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+            "description": "<p>Favorite list activity. <code>true</code> is active, <code>false</code> is inactive</p>"
           }
         ]
       },
@@ -1033,45 +1033,45 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>Unique favorite list identifier</p> "
+            "description": "<p>Unique favorite list identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "active",
-            "description": "<p>Favorite list activity. <code>true</code> is active, <code>false</code> is inactive.</p> "
+            "description": "<p>Favorite list activity. <code>true</code> is active, <code>false</code> is inactive.</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "name",
-            "description": "<p>Name of favorite list</p> "
+            "description": "<p>Name of favorite list</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "user",
-            "description": "<p>User who created the favorite list</p> "
+            "description": "<p>User who created the favorite list</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": false,
             "field": "products",
-            "description": "<p>List of product identifiers.</p> "
+            "description": "<p>List of product identifiers.</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "publisher",
-            "description": "<p>Unique publisher identifier</p> "
+            "description": "<p>Unique publisher identifier</p>"
           }
         ]
       },
@@ -1107,31 +1107,31 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "<p>401</p> ",
+            "type": "401",
             "optional": false,
             "field": "NoAuthenticationCredentials",
-            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>405</p> ",
+            "type": "405",
             "optional": false,
             "field": "HTTPMethodNotAllowed",
-            "description": "<p>Disallowed HTTP method was requested</p> "
+            "description": "<p>Disallowed HTTP method was requested</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>404</p> ",
+            "type": "404",
             "optional": false,
             "field": "NotFound",
-            "description": "<p>Resource could not be found</p> "
+            "description": "<p>Resource could not be found</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>400</p> ",
+            "type": "400",
             "optional": false,
             "field": "BadRequest",
-            "description": "<p>Bad request format</p> "
+            "description": "<p>Bad request format</p>"
           }
         ]
       },
@@ -1166,12 +1166,12 @@ define({ "api": [
     "version": "1.0.0",
     "name": "UpdateFavorite",
     "group": "Favorites",
-    "description": "<p>Update a favorite list. The <strong>favorite-list-id</strong> is a unique 16 character hash.</p> ",
+    "description": "<p>Update a favorite list. The <strong>favorite-list-id</strong> is a unique 16 character hash.</p>",
     "permission": [
       {
         "name": "IsAuthenticated",
         "title": "Authenticated full access.",
-        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+        "description": "<p>Grants all HTTP methods to authenticated users.</p>"
       }
     ],
     "parameter": {
@@ -1179,34 +1179,34 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "accesskey",
-            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+            "description": "<p><code>accesskey</code> parameter is always necessary</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "name",
             "defaultValue": "''",
-            "description": "<p>Name of the favorite list</p> "
+            "description": "<p>Name of the favorite list</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": true,
             "field": "products",
             "defaultValue": "[]",
-            "description": "<p>List of unique product identifiers</p> "
+            "description": "<p>List of unique product identifiers</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "active",
             "defaultValue": "True",
-            "description": "<p>Favorite list activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+            "description": "<p>Favorite list activity. <code>true</code> is active, <code>false</code> is inactive</p>"
           }
         ]
       },
@@ -1223,45 +1223,45 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>Unique favorite list identifier</p> "
+            "description": "<p>Unique favorite list identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "active",
-            "description": "<p>Favorite list activity. <code>true</code> is active, <code>false</code> is inactive.</p> "
+            "description": "<p>Favorite list activity. <code>true</code> is active, <code>false</code> is inactive.</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "name",
-            "description": "<p>Name of favorite list</p> "
+            "description": "<p>Name of favorite list</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "user",
-            "description": "<p>User who created the favorite list</p> "
+            "description": "<p>User who created the favorite list</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": false,
             "field": "products",
-            "description": "<p>List of product identifiers.</p> "
+            "description": "<p>List of product identifiers.</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "publisher",
-            "description": "<p>Unique publisher identifier</p> "
+            "description": "<p>Unique publisher identifier</p>"
           }
         ]
       },
@@ -1297,31 +1297,31 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "<p>401</p> ",
+            "type": "401",
             "optional": false,
             "field": "NoAuthenticationCredentials",
-            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>405</p> ",
+            "type": "405",
             "optional": false,
             "field": "HTTPMethodNotAllowed",
-            "description": "<p>Disallowed HTTP method was requested</p> "
+            "description": "<p>Disallowed HTTP method was requested</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>404</p> ",
+            "type": "404",
             "optional": false,
             "field": "NotFound",
-            "description": "<p>Resource could not be found</p> "
+            "description": "<p>Resource could not be found</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>400</p> ",
+            "type": "400",
             "optional": false,
             "field": "BadRequest",
-            "description": "<p>Bad request format</p> "
+            "description": "<p>Bad request format</p>"
           }
         ]
       },
@@ -1356,12 +1356,12 @@ define({ "api": [
     "version": "1.0.0",
     "name": "CreateConfig",
     "group": "Linkgenerator",
-    "description": "<p>Create a new config for given advertiser. An advertiser can't have more than one config.</p> ",
+    "description": "<p>Create a new config for given advertiser. An advertiser can't have more than one config.</p>",
     "permission": [
       {
         "name": "IsAdminOrReadOnly",
         "title": "Authenticated access for safe HTTP methods",
-        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p> "
+        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p>"
       }
     ],
     "parameter": {
@@ -1369,38 +1369,38 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "regexp",
-            "description": "<p>Regular expression for domain searching</p> "
+            "description": "<p>Regular expression for domain searching</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "deeplink_builder",
-            "description": "<p>Layout to generate deeplinks</p> "
+            "description": "<p>Layout to generate deeplinks</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "active",
-            "description": "<p>Config activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+            "description": "<p>Config activity. <code>true</code> is active, <code>false</code> is inactive</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "comment",
-            "description": "<p>A comment about the advertiser's config</p> "
+            "description": "<p>A comment about the advertiser's config</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": false,
             "field": "domains",
-            "description": "<p>List of domains for the advertiser config</p> "
+            "description": "<p>List of domains for the advertiser config</p>"
           }
         ]
       },
@@ -1417,59 +1417,59 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>Unique Config identifier</p> "
+            "description": "<p>Unique Config identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "advertiser",
-            "description": "<p>Unique Advertiser identifier</p> "
+            "description": "<p>Unique Advertiser identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "regexp",
-            "description": "<p>Regular expression for domain searching</p> "
+            "description": "<p>Regular expression for domain searching</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "deeplink_builder",
-            "description": "<p>Layout to generate deeplinks</p> "
+            "description": "<p>Layout to generate deeplinks</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "active",
-            "description": "<p>Config activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+            "description": "<p>Config activity. <code>true</code> is active, <code>false</code> is inactive</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "comment",
-            "description": "<p>A comment about the advertiser's config</p> "
+            "description": "<p>A comment about the advertiser's config</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": false,
             "field": "domains",
-            "description": "<p>List of domains for the advertiser config</p> "
+            "description": "<p>List of domains for the advertiser config</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "domains.stripped_domain",
-            "description": "<p>Publisher’s domain</p> "
+            "description": "<p>Publisher’s domain</p>"
           }
         ]
       },
@@ -1505,24 +1505,24 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "<p>401</p> ",
+            "type": "401",
             "optional": false,
             "field": "NoAuthenticationCredentials",
-            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>405</p> ",
+            "type": "405",
             "optional": false,
             "field": "HTTPMethodNotAllowed",
-            "description": "<p>Disallowed HTTP method was requested</p> "
+            "description": "<p>Disallowed HTTP method was requested</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>400</p> ",
+            "type": "400",
             "optional": false,
             "field": "NoPublisherId",
-            "description": "<p>Bad request format</p> "
+            "description": "<p>Bad request format</p>"
           }
         ]
       },
@@ -1552,12 +1552,12 @@ define({ "api": [
     "version": "1.0.0",
     "name": "GetLinkgeneratorAdvertisers",
     "group": "Linkgenerator",
-    "description": "<p>List advertisers that have LinkGeneratorConfig and at least one LinkGeneratorDomain</p> ",
+    "description": "<p>List advertisers that have LinkGeneratorConfig and at least one LinkGeneratorDomain</p>",
     "permission": [
       {
         "name": "IsLinkGeneratorPublisher",
         "title": "Authenticated access for link generator publishers",
-        "description": "<p>Grants all HTTP methods to authenticated link generator publishers</p> "
+        "description": "<p>Grants all HTTP methods to authenticated link generator publishers</p>"
       }
     ],
     "parameter": {
@@ -1565,17 +1565,17 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "accesskey",
-            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+            "description": "<p><code>accesskey</code> parameter is always necessary</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "publisher_id",
-            "description": "<p><code>publisher_id</code> is a parameter which can be used instead of the <code>accesskey</code> for session/basic authentication</p> "
+            "description": "<p><code>publisher_id</code> is a parameter which can be used instead of the <code>accesskey</code> for session/basic authentication</p>"
           }
         ]
       },
@@ -1592,24 +1592,24 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": false,
             "field": "advertisers",
-            "description": "<p>List of advertisers</p> "
+            "description": "<p>List of advertisers</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "advertisers.advertiser_id",
-            "description": "<p>Advertiser identifier</p> "
+            "description": "<p>Advertiser identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": false,
             "field": "advertisers.domains",
-            "description": "<p>List of domains for the advertiser config</p> "
+            "description": "<p>List of domains for the advertiser config</p>"
           }
         ]
       },
@@ -1645,24 +1645,24 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "<p>401</p> ",
+            "type": "401",
             "optional": false,
             "field": "NoAuthenticationCredentials",
-            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>405</p> ",
+            "type": "405",
             "optional": false,
             "field": "HTTPMethodNotAllowed",
-            "description": "<p>Disallowed HTTP method was requested</p> "
+            "description": "<p>Disallowed HTTP method was requested</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>400</p> ",
+            "type": "400",
             "optional": false,
             "field": "NoPublisherId",
-            "description": "<p>Bad request format</p> "
+            "description": "<p>Bad request format</p>"
           }
         ]
       },
@@ -1692,12 +1692,12 @@ define({ "api": [
     "version": "1.0.0",
     "name": "GetLinkgeneratorConfig",
     "group": "Linkgenerator",
-    "description": "<p>Retrieve the config and domains for given advertiser. The <strong>advertiser-id</strong> is a unique 16 character hash.</p> ",
+    "description": "<p>Retrieve the config and domains for given advertiser. The <strong>advertiser-id</strong> is a unique 16 character hash.</p>",
     "permission": [
       {
         "name": "IsLinkGeneratorPublisher",
         "title": "Authenticated access for link generator publishers",
-        "description": "<p>Grants all HTTP methods to authenticated link generator publishers</p> "
+        "description": "<p>Grants all HTTP methods to authenticated link generator publishers</p>"
       }
     ],
     "parameter": {
@@ -1705,17 +1705,17 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "accesskey",
-            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+            "description": "<p><code>accesskey</code> parameter is always necessary</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "publisher_id",
-            "description": "<p><code>publisher_id</code> is a parameter which can be used instead of the <code>accesskey</code> for session/basic authentication</p> "
+            "description": "<p><code>publisher_id</code> is a parameter which can be used instead of the <code>accesskey</code> for session/basic authentication</p>"
           }
         ]
       },
@@ -1732,59 +1732,59 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>Unique Config identifier</p> "
+            "description": "<p>Unique Config identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "advertiser",
-            "description": "<p>Unique Advertiser identifier</p> "
+            "description": "<p>Unique Advertiser identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "regexp",
-            "description": "<p>Regular expression for domain searching</p> "
+            "description": "<p>Regular expression for domain searching</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "deeplink_builder",
-            "description": "<p>Layout to generate deeplinks</p> "
+            "description": "<p>Layout to generate deeplinks</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "active",
-            "description": "<p>Config activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+            "description": "<p>Config activity. <code>true</code> is active, <code>false</code> is inactive</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "comment",
-            "description": "<p>A comment about the advertiser's config</p> "
+            "description": "<p>A comment about the advertiser's config</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": false,
             "field": "domains",
-            "description": "<p>List of domains for the advertiser config</p> "
+            "description": "<p>List of domains for the advertiser config</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "domains.stripped_domain",
-            "description": "<p>Publisher’s domain</p> "
+            "description": "<p>Publisher’s domain</p>"
           }
         ]
       },
@@ -1820,24 +1820,24 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "<p>401</p> ",
+            "type": "401",
             "optional": false,
             "field": "NoAuthenticationCredentials",
-            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>405</p> ",
+            "type": "405",
             "optional": false,
             "field": "HTTPMethodNotAllowed",
-            "description": "<p>Disallowed HTTP method was requested</p> "
+            "description": "<p>Disallowed HTTP method was requested</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>400</p> ",
+            "type": "400",
             "optional": false,
             "field": "NoPublisherId",
-            "description": "<p>Bad request format</p> "
+            "description": "<p>Bad request format</p>"
           }
         ]
       },
@@ -1861,18 +1861,18 @@ define({ "api": [
     }
   },
   {
-    "type": "get",
+    "type": "post",
     "url": "/linkgenerator/links",
     "title": "Retrieve tracking url",
     "version": "1.0.0",
     "name": "GetLinkgeneratorLinks",
     "group": "Linkgenerator",
-    "description": "<p>Retrieve tracking_url for a particular url</p> ",
+    "description": "<p>Retrieve tracking_url for a particular url</p>",
     "permission": [
       {
         "name": "IsLinkGeneratorPublisher",
         "title": "Authenticated access for link generator publishers",
-        "description": "<p>Grants all HTTP methods to authenticated link generator publishers</p> "
+        "description": "<p>Grants all HTTP methods to authenticated link generator publishers</p>"
       }
     ],
     "parameter": {
@@ -1880,17 +1880,17 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "accesskey",
-            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+            "description": "<p><code>accesskey</code> parameter is always necessary</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "publisher_id",
-            "description": "<p><code>publisher_id</code> is a parameter which can be used instead of the <code>accesskey</code> for session/basic authentication</p> "
+            "description": "<p><code>publisher_id</code> is a parameter which can be used instead of the <code>accesskey</code> for session/basic authentication</p>"
           }
         ]
       },
@@ -1907,10 +1907,10 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "tracking_url",
-            "description": "<p>Built url with Advertiser, Publisher and Deeplink</p> "
+            "description": "<p>Built url with Advertiser, Publisher and Deeplink</p>"
           }
         ]
       },
@@ -1925,17 +1925,17 @@ define({ "api": [
     "examples": [
       {
         "title": "curl",
-        "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <url> must be replaced with valid url\ncurl -u <user>:<pword> -X GET \\\nhttps://api.tracdelight.com/v1/linkgenerator/links?accesskey=<ak>&url=<url>",
+        "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n# <url> must be replaced with valid url\ncurl -u <user>:<pword> -X POST \\\nhttps://api.tracdelight.com/v1/linkgenerator/links?accesskey=<ak>",
         "type": "bash"
       },
       {
         "title": "javascript",
-        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n# <url> must be replaced with valid url\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/linkgenerator/links',\n    type: 'GET',\n    username: '<user>',\n    password: '<pword>',\n    data: {accesskey: '<ak>', url: '<url>'}\n}).then(function (response) { console.log(response); });",
+        "content": "// <user>, <pword> and <ak> must be replaced by valid authentication details\n# <url> must be replaced with valid url\n$.ajax({\n    url: 'https://api.tracdelight.com/v1/linkgenerator/links',\n    type: 'POST',\n    username: '<user>',\n    password: '<pword>',\n    data: {accesskey: '<ak>', url: '<url>'}\n}).then(function (response) { console.log(response); });",
         "type": "javascript"
       },
       {
         "title": "python",
-        "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n>>> import requests\n>>> url = \"https://api.tracdelight.com/v1/linkgenerator/links?accesskey={}&url={}\".format(\n>>>     \"<ak>\", \"<url>\"\n>>> )\n>>> user, pword = \"<user>\", \"<pword>\"\n>>> r = requests.get(url, auth=(user, pword))\n>>> r.json()",
+        "content": "# <user>, <pword> and <ak> must be replaced by valid authentication details\n>>> import requests\n>>> url = \"https://api.tracdelight.com/v1/linkgenerator/links?accesskey={}\".format(\n>>>     \"<ak>\"\n>>> )\n>>> user, pword = \"<user>\", \"<pword>\"\n>>> r = requests.post(url, auth=(user, pword))\n>>> r.json()",
         "type": "python"
       }
     ],
@@ -1946,24 +1946,24 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "<p>401</p> ",
+            "type": "401",
             "optional": false,
             "field": "NoAuthenticationCredentials",
-            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>405</p> ",
+            "type": "405",
             "optional": false,
             "field": "HTTPMethodNotAllowed",
-            "description": "<p>Disallowed HTTP method was requested</p> "
+            "description": "<p>Disallowed HTTP method was requested</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>400</p> ",
+            "type": "400",
             "optional": false,
             "field": "NoPublisherId",
-            "description": "<p>Bad request format</p> "
+            "description": "<p>Bad request format</p>"
           }
         ]
       },
@@ -1993,12 +1993,12 @@ define({ "api": [
     "version": "1.0.0",
     "name": "PartialUpdateLinkgeneratorConfigs",
     "group": "Linkgenerator",
-    "description": "<p>Partially update config for given advertiser. The <strong>advertiser-id</strong> is a unique 16 character hash.</p> ",
+    "description": "<p>Partially update config for given advertiser. The <strong>advertiser-id</strong> is a unique 16 character hash.</p>",
     "permission": [
       {
         "name": "IsAdminOrReadOnly",
         "title": "Authenticated access for safe HTTP methods",
-        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p> "
+        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p>"
       }
     ],
     "parameter": {
@@ -2006,38 +2006,38 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "regexp",
-            "description": "<p>Regular expression for domain searching</p> "
+            "description": "<p>Regular expression for domain searching</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "deeplink_builder",
-            "description": "<p>Layout to generate deeplinks</p> "
+            "description": "<p>Layout to generate deeplinks</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "active",
-            "description": "<p>Config activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+            "description": "<p>Config activity. <code>true</code> is active, <code>false</code> is inactive</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "comment",
-            "description": "<p>A comment about the advertiser's config</p> "
+            "description": "<p>A comment about the advertiser's config</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": true,
             "field": "domains",
-            "description": "<p>List of domains for the advertiser config</p> "
+            "description": "<p>List of domains for the advertiser config</p>"
           }
         ]
       },
@@ -2054,59 +2054,59 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>Unique Config identifier</p> "
+            "description": "<p>Unique Config identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "advertiser",
-            "description": "<p>Unique Advertiser identifier</p> "
+            "description": "<p>Unique Advertiser identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "regexp",
-            "description": "<p>Regular expression for domain searching</p> "
+            "description": "<p>Regular expression for domain searching</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "deeplink_builder",
-            "description": "<p>Layout to generate deeplinks</p> "
+            "description": "<p>Layout to generate deeplinks</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "active",
-            "description": "<p>Config activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+            "description": "<p>Config activity. <code>true</code> is active, <code>false</code> is inactive</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "comment",
-            "description": "<p>A comment about the advertiser's config</p> "
+            "description": "<p>A comment about the advertiser's config</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": false,
             "field": "domains",
-            "description": "<p>List of domains for the advertiser config</p> "
+            "description": "<p>List of domains for the advertiser config</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "domains.stripped_domain",
-            "description": "<p>Publisher’s domain</p> "
+            "description": "<p>Publisher’s domain</p>"
           }
         ]
       },
@@ -2142,24 +2142,24 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "<p>401</p> ",
+            "type": "401",
             "optional": false,
             "field": "NoAuthenticationCredentials",
-            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>405</p> ",
+            "type": "405",
             "optional": false,
             "field": "HTTPMethodNotAllowed",
-            "description": "<p>Disallowed HTTP method was requested</p> "
+            "description": "<p>Disallowed HTTP method was requested</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>400</p> ",
+            "type": "400",
             "optional": false,
             "field": "NoPublisherId",
-            "description": "<p>Bad request format</p> "
+            "description": "<p>Bad request format</p>"
           }
         ]
       },
@@ -2189,12 +2189,12 @@ define({ "api": [
     "version": "1.0.0",
     "name": "UpdateLinkgeneratorConfigs",
     "group": "Linkgenerator",
-    "description": "<p>Full update config for given advertiser. The <strong>advertiser-id</strong> is a unique 16 character hash.</p> ",
+    "description": "<p>Full update config for given advertiser. The <strong>advertiser-id</strong> is a unique 16 character hash.</p>",
     "permission": [
       {
         "name": "IsAdminOrReadOnly",
         "title": "Authenticated access for safe HTTP methods",
-        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p> "
+        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p>"
       }
     ],
     "parameter": {
@@ -2202,38 +2202,38 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "regexp",
-            "description": "<p>Regular expression for domain searching</p> "
+            "description": "<p>Regular expression for domain searching</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "deeplink_builder",
-            "description": "<p>Layout to generate deeplinks</p> "
+            "description": "<p>Layout to generate deeplinks</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "active",
-            "description": "<p>Config activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+            "description": "<p>Config activity. <code>true</code> is active, <code>false</code> is inactive</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "comment",
-            "description": "<p>A comment about the advertiser's config</p> "
+            "description": "<p>A comment about the advertiser's config</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": false,
             "field": "domains",
-            "description": "<p>List of domains for the advertiser config</p> "
+            "description": "<p>List of domains for the advertiser config</p>"
           }
         ]
       },
@@ -2250,59 +2250,59 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>Unique Config identifier</p> "
+            "description": "<p>Unique Config identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "advertiser",
-            "description": "<p>Unique Advertiser identifier</p> "
+            "description": "<p>Unique Advertiser identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "regexp",
-            "description": "<p>Regular expression for domain searching</p> "
+            "description": "<p>Regular expression for domain searching</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "deeplink_builder",
-            "description": "<p>Layout to generate deeplinks</p> "
+            "description": "<p>Layout to generate deeplinks</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "active",
-            "description": "<p>Config activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+            "description": "<p>Config activity. <code>true</code> is active, <code>false</code> is inactive</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "comment",
-            "description": "<p>A comment about the advertiser's config</p> "
+            "description": "<p>A comment about the advertiser's config</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": false,
             "field": "domains",
-            "description": "<p>List of domains for the advertiser config</p> "
+            "description": "<p>List of domains for the advertiser config</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "domains.stripped_domain",
-            "description": "<p>Publisher’s domain</p> "
+            "description": "<p>Publisher’s domain</p>"
           }
         ]
       },
@@ -2338,24 +2338,24 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "<p>401</p> ",
+            "type": "401",
             "optional": false,
             "field": "NoAuthenticationCredentials",
-            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>405</p> ",
+            "type": "405",
             "optional": false,
             "field": "HTTPMethodNotAllowed",
-            "description": "<p>Disallowed HTTP method was requested</p> "
+            "description": "<p>Disallowed HTTP method was requested</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>400</p> ",
+            "type": "400",
             "optional": false,
             "field": "NoPublisherId",
-            "description": "<p>Bad request format</p> "
+            "description": "<p>Bad request format</p>"
           }
         ]
       },
@@ -2385,17 +2385,17 @@ define({ "api": [
     "version": "1.0.0",
     "name": "DeleteProduct",
     "group": "Products",
-    "description": "<p>Delete a product. The <strong>product-id</strong> is a unique 16 character hash.</p> ",
+    "description": "<p>Delete a product. The <strong>product-id</strong> is a unique 16 character hash.</p>",
     "permission": [
       {
         "name": "IsAuthenticated",
         "title": "Authenticated full access.",
-        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+        "description": "<p>Grants all HTTP methods to authenticated users.</p>"
       },
       {
         "name": "IsAdminOrReadOnly",
         "title": "Authenticated access for safe HTTP methods",
-        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p> "
+        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p>"
       }
     ],
     "parameter": {
@@ -2403,17 +2403,17 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "accesskey",
-            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+            "description": "<p><code>accesskey</code> parameter is always necessary</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "locale",
-            "description": "<p><code>locale</code> parameter is always necessary. Locale of the product</p> "
+            "description": "<p><code>locale</code> parameter is always necessary. Locale of the product</p>"
           }
         ]
       },
@@ -2449,24 +2449,24 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "<p>401</p> ",
+            "type": "401",
             "optional": false,
             "field": "NoAuthenticationCredentials",
-            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>405</p> ",
+            "type": "405",
             "optional": false,
             "field": "HTTPMethodNotAllowed",
-            "description": "<p>Disallowed HTTP method was requested</p> "
+            "description": "<p>Disallowed HTTP method was requested</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>404</p> ",
+            "type": "404",
             "optional": false,
             "field": "NotFound",
-            "description": "<p>Resource could not be found</p> "
+            "description": "<p>Resource could not be found</p>"
           }
         ]
       },
@@ -2496,17 +2496,17 @@ define({ "api": [
     "version": "1.0.0",
     "name": "GetProductId",
     "group": "Products",
-    "description": "<p>Retrieve a single product. The <strong>product-id</strong> is a unique 16 character hash.</p> ",
+    "description": "<p>Retrieve a single product. The <strong>product-id</strong> is a unique 16 character hash.</p>",
     "permission": [
       {
         "name": "IsAuthenticated",
         "title": "Authenticated full access.",
-        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+        "description": "<p>Grants all HTTP methods to authenticated users.</p>"
       },
       {
         "name": "IsAdminOrReadOnly",
         "title": "Authenticated access for safe HTTP methods",
-        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p> "
+        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p>"
       }
     ],
     "parameter": {
@@ -2514,17 +2514,17 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "accesskey",
-            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+            "description": "<p><code>accesskey</code> parameter is always necessary</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "locale",
-            "description": "<p><code>locale</code> parameter is always necessary. Locale of the product</p> "
+            "description": "<p><code>locale</code> parameter is always necessary. Locale of the product</p>"
           }
         ]
       },
@@ -2541,185 +2541,185 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>Unique product indentifier</p> "
+            "description": "<p>Unique product indentifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "url",
-            "description": "<p>Product URL</p> "
+            "description": "<p>Product URL</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "title",
-            "description": "<p>Product title</p> "
+            "description": "<p>Product title</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "description",
-            "description": "<p>Product description</p> "
+            "description": "<p>Product description</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "category",
-            "description": "<p>Category object</p> "
+            "description": "<p>Category object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "category.id",
-            "description": "<p>Unique category identifier</p> "
+            "description": "<p>Unique category identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "category.name",
-            "description": "<p>Category name</p> "
+            "description": "<p>Category name</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "brand",
-            "description": "<p>Brand object</p> "
+            "description": "<p>Brand object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "brand.id",
-            "description": "<p>Unique brand identifier</p> "
+            "description": "<p>Unique brand identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "brand.name",
-            "description": "<p>Brand name</p> "
+            "description": "<p>Brand name</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "shop",
-            "description": "<p>Shop object</p> "
+            "description": "<p>Shop object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "shop.id",
-            "description": "<p>Unique shop identifier</p> "
+            "description": "<p>Unique shop identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "shop.name",
-            "description": "<p>Shop name</p> "
+            "description": "<p>Shop name</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "list_price",
-            "description": "<p>List price object</p> "
+            "description": "<p>List price object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "list.current",
-            "description": "<p>Current price</p> "
+            "description": "<p>Current price</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "list.currency",
-            "description": "<p>Currency of price</p> "
+            "description": "<p>Currency of price</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "list.base",
-            "description": "<p>Price per unit</p> "
+            "description": "<p>Price per unit</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "list.old",
-            "description": "<p>Original price</p> "
+            "description": "<p>Original price</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "list.delivery_time",
-            "description": "<p>Time to deliver</p> "
+            "description": "<p>Time to deliver</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "tags",
-            "description": "<p>Tags object</p> "
+            "description": "<p>Tags object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "tags.color",
-            "description": "<p>Color tag</p> "
+            "description": "<p>Color tag</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "tags.agegroup",
-            "description": "<p>Age group tag</p> "
+            "description": "<p>Age group tag</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "images",
-            "description": "<p>Image object</p> "
+            "description": "<p>Image object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "images.url",
-            "description": "<p>URL link</p> "
+            "description": "<p>URL link</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "images.url_template",
-            "description": "<p>URL template link</p> "
+            "description": "<p>URL template link</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "tracking",
-            "description": "<p>Tracking link</p> "
+            "description": "<p>Tracking link</p>"
           }
         ]
       },
@@ -2755,24 +2755,24 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "<p>401</p> ",
+            "type": "401",
             "optional": false,
             "field": "NoAuthenticationCredentials",
-            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>405</p> ",
+            "type": "405",
             "optional": false,
             "field": "HTTPMethodNotAllowed",
-            "description": "<p>Disallowed HTTP method was requested</p> "
+            "description": "<p>Disallowed HTTP method was requested</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>404</p> ",
+            "type": "404",
             "optional": false,
             "field": "NotFound",
-            "description": "<p>Resource could not be found</p> "
+            "description": "<p>Resource could not be found</p>"
           }
         ]
       },
@@ -2802,17 +2802,17 @@ define({ "api": [
     "version": "1.0.0",
     "name": "GetProducts",
     "group": "Products",
-    "description": "<p>List all products</p> ",
+    "description": "<p>List all products</p>",
     "permission": [
       {
         "name": "IsAuthenticated",
         "title": "Authenticated full access.",
-        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+        "description": "<p>Grants all HTTP methods to authenticated users.</p>"
       },
       {
         "name": "IsAdminOrReadOnly",
         "title": "Authenticated access for safe HTTP methods",
-        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p> "
+        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p>"
       }
     ],
     "parameter": {
@@ -2820,129 +2820,129 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "accesskey",
-            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+            "description": "<p><code>accesskey</code> parameter is always necessary</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "locale",
-            "description": "<p><code>locale</code> parameter is always necessary. Locale of the product</p> "
+            "description": "<p><code>locale</code> parameter is always necessary. Locale of the product</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "category_id",
-            "description": "<p>Supports multiple IDs delimited by commas</p> "
+            "description": "<p>Supports multiple IDs delimited by commas</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "brand_id",
-            "description": "<p>Supports multiple IDs delimited by commas</p> "
+            "description": "<p>Supports multiple IDs delimited by commas</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "shop_id",
-            "description": "<p>Supports multiple IDs delimited by commas</p> "
+            "description": "<p>Supports multiple IDs delimited by commas</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "category",
-            "description": "<p>Filter products by category</p> "
+            "description": "<p>Filter products by category</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "gender",
-            "description": "<p>Filter products by gender</p> "
+            "description": "<p>Filter products by gender</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "agegroup",
-            "description": "<p>Filter products by age group</p> "
+            "description": "<p>Filter products by age group</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "color",
-            "description": "<p>Filter products by color</p> "
+            "description": "<p>Filter products by color</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "price_max",
-            "description": "<p>Filter products by maximum price</p> "
+            "description": "<p>Filter products by maximum price</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "price_min",
-            "description": "<p>Filter products by minimum price</p> "
+            "description": "<p>Filter products by minimum price</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "sale",
-            "description": "<p>If <code>True</code> return products with reduced price</p> "
+            "description": "<p>If <code>True</code> return products with reduced price</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": true,
             "field": "white_bg",
-            "description": "<p>If <code>True</code> products with white background will be returned. If <code>False</code>, products <em>without</em> white background will be returned</p> "
+            "description": "<p>If <code>True</code> products with white background will be returned. If <code>False</code>, products <em>without</em> white background will be returned</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "page",
-            "description": "<p>Specifies the page number. If not provided, page 1 is rendered. Max value is 1000</p> "
+            "description": "<p>Specifies the page number. If not provided, page 1 is rendered. Max value is 1000</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "page_size",
-            "description": "<p>Specifies the page size. If not provided, results are paginated by 40. Max value is 100</p> "
+            "description": "<p>Specifies the page size. If not provided, results are paginated by 40. Max value is 100</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "sorting",
-            "description": "<p>Sorts products using given ordering. Possible values are <code>popularity</code>, <code>newest</code>, <code>price_asc</code> and <code>price_desc</code>. NOTE: When performing text search queries <code>_score</code> sorting will be prioritized, and custom sorting will be used secondarily</p> "
+            "description": "<p>Sorts products using given ordering. Possible values are <code>popularity</code>, <code>newest</code>, <code>price_asc</code> and <code>price_desc</code>. NOTE: When performing text search queries <code>_score</code> sorting will be prioritized, and custom sorting will be used secondarily</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "faceting",
-            "description": "<p>Facet counts on given fields. Possible values are <code>category_id</code>, <code>brand_id</code>, <code>shop_id</code>, <code>gender</code>, <code>agegroup</code> and <code>color</code></p> "
+            "description": "<p>Facet counts on given fields. Possible values are <code>category_id</code>, <code>brand_id</code>, <code>shop_id</code>, <code>gender</code>, <code>agegroup</code> and <code>color</code></p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "faceting_limit",
-            "description": "<p>Limits the returned facet counts by a given number. Default is 20, maximum 200</p> "
+            "description": "<p>Limits the returned facet counts by a given number. Default is 20, maximum 200</p>"
           }
         ]
       },
@@ -2969,227 +2969,227 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "count",
-            "description": "<p>Number of returned results</p> "
+            "description": "<p>Number of returned results</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "next",
-            "description": "<p>Pagination 'next' link</p> "
+            "description": "<p>Pagination 'next' link</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "previous",
-            "description": "<p>Pagination 'previous' link</p> "
+            "description": "<p>Pagination 'previous' link</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "pages_total",
-            "description": "<p>Pagination count for total pages</p> "
+            "description": "<p>Pagination count for total pages</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object[]</p> ",
+            "type": "Object[]",
             "optional": false,
             "field": "results",
-            "description": "<p>List of product results</p> "
+            "description": "<p>List of product results</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.id",
-            "description": "<p>Unique product indentifier</p> "
+            "description": "<p>Unique product indentifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.url",
-            "description": "<p>Product URL</p> "
+            "description": "<p>Product URL</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.title",
-            "description": "<p>Product title</p> "
+            "description": "<p>Product title</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.description",
-            "description": "<p>Product description</p> "
+            "description": "<p>Product description</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "results.category",
-            "description": "<p>Category object</p> "
+            "description": "<p>Category object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.category.id",
-            "description": "<p>Unique category identifier</p> "
+            "description": "<p>Unique category identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.category.name",
-            "description": "<p>Category name</p> "
+            "description": "<p>Category name</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "results.brand",
-            "description": "<p>Brand object</p> "
+            "description": "<p>Brand object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.brand.id",
-            "description": "<p>Unique brand identifier</p> "
+            "description": "<p>Unique brand identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.brand.name",
-            "description": "<p>Brand name</p> "
+            "description": "<p>Brand name</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "results.shop",
-            "description": "<p>Shop object</p> "
+            "description": "<p>Shop object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.shop.id",
-            "description": "<p>Unique shop identifier</p> "
+            "description": "<p>Unique shop identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.shop.name",
-            "description": "<p>Shop name</p> "
+            "description": "<p>Shop name</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "results.list_price",
-            "description": "<p>List price object</p> "
+            "description": "<p>List price object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.list.current",
-            "description": "<p>Current price</p> "
+            "description": "<p>Current price</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.list.currency",
-            "description": "<p>Currency of price</p> "
+            "description": "<p>Currency of price</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.list.base",
-            "description": "<p>Price per unit</p> "
+            "description": "<p>Price per unit</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.list.old",
-            "description": "<p>Original price</p> "
+            "description": "<p>Original price</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.list.delivery_time",
-            "description": "<p>Time to deliver</p> "
+            "description": "<p>Time to deliver</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "results.tags",
-            "description": "<p>Tags object</p> "
+            "description": "<p>Tags object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.tags.color",
-            "description": "<p>Color tag</p> "
+            "description": "<p>Color tag</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.tags.agegroup",
-            "description": "<p>Age group tag</p> "
+            "description": "<p>Age group tag</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "results.images",
-            "description": "<p>Image object</p> "
+            "description": "<p>Image object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.images.url",
-            "description": "<p>URL link</p> "
+            "description": "<p>URL link</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.images.url_template",
-            "description": "<p>URL template link</p> "
+            "description": "<p>URL template link</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.tracking",
-            "description": "<p>Tracking link</p> "
+            "description": "<p>Tracking link</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object[]</p> ",
+            "type": "Object[]",
             "optional": false,
             "field": "facets",
-            "description": "<p>Facet list. Depends on <code>faceting</code> parameter</p> "
+            "description": "<p>Facet list. Depends on <code>faceting</code> parameter</p>"
           }
         ]
       },
@@ -3230,17 +3230,17 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "<p>401</p> ",
+            "type": "401",
             "optional": false,
             "field": "NoAuthenticationCredentials",
-            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>405</p> ",
+            "type": "405",
             "optional": false,
             "field": "HTTPMethodNotAllowed",
-            "description": "<p>Disallowed HTTP method was requested</p> "
+            "description": "<p>Disallowed HTTP method was requested</p>"
           }
         ]
       },
@@ -3265,17 +3265,17 @@ define({ "api": [
     "version": "1.0.0",
     "name": "GetToolTypeAggregated",
     "group": "Statistics",
-    "description": "<p>Retrieve aggregated statistical data of tool <code>&lt;tool-type&gt;</code>. Aggregated data is data for every tool of an account without combining results.</p> <ul> <li>how many times the tools were called</li> <li>how many times the tools were viewed (visible in viewport)</li> <li>how many times every product was clicked on</li> <li>how many times every product was viewed</li> </ul> ",
+    "description": "<p>Retrieve aggregated statistical data of tool <code>&lt;tool-type&gt;</code>. Aggregated data is data for every tool of an account without combining results.</p> <ul> <li>how many times the tools were called</li> <li>how many times the tools were viewed (visible in viewport)</li> <li>how many times every product was clicked on</li> <li>how many times every product was viewed</li> </ul>",
     "permission": [
       {
         "name": "IsAuthenticated",
         "title": "Authenticated full access.",
-        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+        "description": "<p>Grants all HTTP methods to authenticated users.</p>"
       },
       {
         "name": "IsAdminOrReadOnly",
         "title": "Authenticated access for safe HTTP methods",
-        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p> "
+        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p>"
       }
     ],
     "parameter": {
@@ -3283,38 +3283,38 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "accesskey",
-            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+            "description": "<p><code>accesskey</code> parameter is always necessary</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "publisher_id",
-            "description": "<p><code>publisher_id</code> is a parameter which can be used instead of the <code>accesskey</code> for session/basic authentication</p> "
+            "description": "<p><code>publisher_id</code> is a parameter which can be used instead of the <code>accesskey</code> for session/basic authentication</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "from",
-            "description": "<p><code>from</code> parameter specifies the starting date for statistical data. Defaults to 7 days ago</p> "
+            "description": "<p><code>from</code> parameter specifies the starting date for statistical data. Defaults to 7 days ago</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "to",
-            "description": "<p><code>to</code> parameter specifies the ending date for statistical data. Defaults to today</p> "
+            "description": "<p><code>to</code> parameter specifies the ending date for statistical data. Defaults to today</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "all",
-            "description": "<p><code>all</code> parameter specifies if inactive tools should also be included in response</p> "
+            "description": "<p><code>all</code> parameter specifies if inactive tools should also be included in response</p>"
           }
         ]
       },
@@ -3331,73 +3331,73 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "to",
-            "description": "<p>End date of statistics</p> "
+            "description": "<p>End date of statistics</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "from",
-            "description": "<p>Start date of statistics</p> "
+            "description": "<p>Start date of statistics</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "publisher_id",
-            "description": "<p>Publisher identifier</p> "
+            "description": "<p>Publisher identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": false,
             "field": "results",
-            "description": "<p>List of results</p> "
+            "description": "<p>List of results</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.tool_id",
-            "description": "<p>Tool identifier</p> "
+            "description": "<p>Tool identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.calls",
-            "description": "<p>Number of calls</p> "
+            "description": "<p>Number of calls</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.views",
-            "description": "<p>Number of Views</p> "
+            "description": "<p>Number of Views</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.clicks",
-            "description": "<p>Number of clicks</p> "
+            "description": "<p>Number of clicks</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.tool_name",
-            "description": "<p>Name of tool</p> "
+            "description": "<p>Name of tool</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.product_views",
-            "description": "<p>Number of product views</p> "
+            "description": "<p>Number of product views</p>"
           }
         ]
       },
@@ -3433,24 +3433,24 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "<p>401</p> ",
+            "type": "401",
             "optional": false,
             "field": "NoAuthenticationCredentials",
-            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>405</p> ",
+            "type": "405",
             "optional": false,
             "field": "HTTPMethodNotAllowed",
-            "description": "<p>Disallowed HTTP method was requested</p> "
+            "description": "<p>Disallowed HTTP method was requested</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>400</p> ",
+            "type": "400",
             "optional": false,
             "field": "NoPublisherId",
-            "description": "<p>Bad request format</p> "
+            "description": "<p>Bad request format</p>"
           }
         ]
       },
@@ -3480,22 +3480,22 @@ define({ "api": [
     "version": "1.0.0",
     "name": "GetToolTypeCombined",
     "group": "Statistics",
-    "description": "<p>Retrieve combined statistical data of tool <code>&lt;tool-type&gt;</code>. Combined data is the sum of all statistical data for every tool of an account. Statistical data corresponds to:</p> <ul> <li>how many times the tools were called</li> <li>how many times the tools were viewed (visible in viewport)</li> <li>how many times every product was clicked on</li> <li>how many times every product was viewed</li> </ul> ",
+    "description": "<p>Retrieve combined statistical data of tool <code>&lt;tool-type&gt;</code>. Combined data is the sum of all statistical data for every tool of an account. Statistical data corresponds to:</p> <ul> <li>how many times the tools were called</li> <li>how many times the tools were viewed (visible in viewport)</li> <li>how many times every product was clicked on</li> <li>how many times every product was viewed</li> </ul>",
     "permission": [
       {
         "name": "IsAuthenticated",
         "title": "Authenticated full access.",
-        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+        "description": "<p>Grants all HTTP methods to authenticated users.</p>"
       },
       {
         "name": "IsAdminOrReadOnly",
         "title": "Authenticated access for safe HTTP methods",
-        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p> "
+        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p>"
       },
       {
         "name": "IsAPIClient",
         "title": "Authenticated full access",
-        "description": "<p>APIClient is an internal Tracdelight API consumer.</p> "
+        "description": "<p>APIClient is an internal Tracdelight API consumer.</p>"
       }
     ],
     "parameter": {
@@ -3503,38 +3503,38 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "accesskey",
-            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+            "description": "<p><code>accesskey</code> parameter is always necessary</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "publisher_id",
-            "description": "<p><code>publisher_id</code> is a parameter which can be used instead of the <code>accesskey</code> for session/basic authentication. If request has <code>APIClient</code> authentication and <code>IsAPIClient</code> permissions and omits the <code>publisher_id</code>, network wide statistics will be retrieved.</p> "
+            "description": "<p><code>publisher_id</code> is a parameter which can be used instead of the <code>accesskey</code> for session/basic authentication. If request has <code>APIClient</code> authentication and <code>IsAPIClient</code> permissions and omits the <code>publisher_id</code>, network wide statistics will be retrieved.</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "from",
-            "description": "<p><code>from</code> parameter specifies the starting date for statistical data. Defaults to 7 days ago</p> "
+            "description": "<p><code>from</code> parameter specifies the starting date for statistical data. Defaults to 7 days ago</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "to",
-            "description": "<p><code>to</code> parameter specifies the ending date for statistical data. Defaults to today</p> "
+            "description": "<p><code>to</code> parameter specifies the ending date for statistical data. Defaults to today</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "all",
-            "description": "<p><code>all</code> parameter specifies if inactive tools should also be included in response</p> "
+            "description": "<p><code>all</code> parameter specifies if inactive tools should also be included in response</p>"
           }
         ]
       },
@@ -3551,87 +3551,87 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "to",
-            "description": "<p>End date of statistics</p> "
+            "description": "<p>End date of statistics</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "from",
-            "description": "<p>Start date of statistics</p> "
+            "description": "<p>Start date of statistics</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "calls",
-            "description": "<p>Calls object</p> "
+            "description": "<p>Calls object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "calls.year-month-day",
-            "description": "<p>Number of calls this day</p> "
+            "description": "<p>Number of calls this day</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "tool_id",
-            "description": "<p>Tool type identifier</p> "
+            "description": "<p>Tool type identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "views",
-            "description": "<p>Views object</p> "
+            "description": "<p>Views object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "views.year-month-day",
-            "description": "<p>Number of views this day</p> "
+            "description": "<p>Number of views this day</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "publisher_id",
-            "description": "<p>Publisher identifier</p> "
+            "description": "<p>Publisher identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "clicks",
-            "description": "<p>Clicks object</p> "
+            "description": "<p>Clicks object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "clicks.year-month-day",
-            "description": "<p>Number of clicks this day</p> "
+            "description": "<p>Number of clicks this day</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "product_views",
-            "description": "<p>Product views object</p> "
+            "description": "<p>Product views object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "product_views.year-month-day",
-            "description": "<p>Number of product views this day</p> "
+            "description": "<p>Number of product views this day</p>"
           }
         ]
       },
@@ -3667,24 +3667,24 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "<p>401</p> ",
+            "type": "401",
             "optional": false,
             "field": "NoAuthenticationCredentials",
-            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>405</p> ",
+            "type": "405",
             "optional": false,
             "field": "HTTPMethodNotAllowed",
-            "description": "<p>Disallowed HTTP method was requested</p> "
+            "description": "<p>Disallowed HTTP method was requested</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>400</p> ",
+            "type": "400",
             "optional": false,
             "field": "NoPublisherId",
-            "description": "<p>Bad request format</p> "
+            "description": "<p>Bad request format</p>"
           }
         ]
       },
@@ -3714,17 +3714,17 @@ define({ "api": [
     "version": "1.0.0",
     "name": "GetToolTypeId",
     "group": "Statistics",
-    "description": "<p>Retrieve statistical data of tool <code>&lt;tool-type&gt;</code> which has <code>&lt;tool-id&gt;</code> identifier. Statistical data corresponds to:</p> <ul> <li>how many times the tool was called</li> <li>how many times the tool was viewed (visible in viewport)</li> <li>how many times each product was clicked on</li> <li>how many times each product was viewed</li> </ul> ",
+    "description": "<p>Retrieve statistical data of tool <code>&lt;tool-type&gt;</code> which has <code>&lt;tool-id&gt;</code> identifier. Statistical data corresponds to:</p> <ul> <li>how many times the tool was called</li> <li>how many times the tool was viewed (visible in viewport)</li> <li>how many times each product was clicked on</li> <li>how many times each product was viewed</li> </ul>",
     "permission": [
       {
         "name": "IsAuthenticated",
         "title": "Authenticated full access.",
-        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+        "description": "<p>Grants all HTTP methods to authenticated users.</p>"
       },
       {
         "name": "IsAdminOrReadOnly",
         "title": "Authenticated access for safe HTTP methods",
-        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p> "
+        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p>"
       }
     ],
     "parameter": {
@@ -3732,31 +3732,31 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "accesskey",
-            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+            "description": "<p><code>accesskey</code> parameter is always necessary</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "publisher_id",
-            "description": "<p><code>publisher_id</code> is a parameter which can be used instead of the <code>accesskey</code> for session/basic authentication</p> "
+            "description": "<p><code>publisher_id</code> is a parameter which can be used instead of the <code>accesskey</code> for session/basic authentication</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "from",
-            "description": "<p><code>from</code> parameter specifies the starting date for statistical data. Defaults to 7 days ago</p> "
+            "description": "<p><code>from</code> parameter specifies the starting date for statistical data. Defaults to 7 days ago</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "to",
-            "description": "<p><code>to</code> parameter specifies the ending date for statistical data. Defaults to today</p> "
+            "description": "<p><code>to</code> parameter specifies the ending date for statistical data. Defaults to today</p>"
           }
         ]
       },
@@ -3773,87 +3773,87 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "to",
-            "description": "<p>End date of statistics</p> "
+            "description": "<p>End date of statistics</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "from",
-            "description": "<p>Start date of statistics</p> "
+            "description": "<p>Start date of statistics</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "calls",
-            "description": "<p>Calls object</p> "
+            "description": "<p>Calls object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "calls.year-month-day",
-            "description": "<p>Number of calls this day</p> "
+            "description": "<p>Number of calls this day</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "tool_id",
-            "description": "<p>Tool type identifier</p> "
+            "description": "<p>Tool type identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "views",
-            "description": "<p>Views object</p> "
+            "description": "<p>Views object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "views.year-month-day",
-            "description": "<p>Number of views this day</p> "
+            "description": "<p>Number of views this day</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "publisher_id",
-            "description": "<p>Publisher identifier</p> "
+            "description": "<p>Publisher identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "clicks",
-            "description": "<p>Clicks object</p> "
+            "description": "<p>Clicks object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "clicks.year-month-day",
-            "description": "<p>Number of clicks this day</p> "
+            "description": "<p>Number of clicks this day</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "product_views",
-            "description": "<p>Product views object</p> "
+            "description": "<p>Product views object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "product_views.year-month-day",
-            "description": "<p>Number of product views this day</p> "
+            "description": "<p>Number of product views this day</p>"
           }
         ]
       },
@@ -3889,24 +3889,24 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "<p>401</p> ",
+            "type": "401",
             "optional": false,
             "field": "NoAuthenticationCredentials",
-            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>405</p> ",
+            "type": "405",
             "optional": false,
             "field": "HTTPMethodNotAllowed",
-            "description": "<p>Disallowed HTTP method was requested</p> "
+            "description": "<p>Disallowed HTTP method was requested</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>400</p> ",
+            "type": "400",
             "optional": false,
             "field": "NoPublisherId",
-            "description": "<p>Bad request format</p> "
+            "description": "<p>Bad request format</p>"
           }
         ]
       },
@@ -3936,17 +3936,17 @@ define({ "api": [
     "version": "1.0.0",
     "name": "GetToolTypeIdProducts",
     "group": "Statistics",
-    "description": "<p>Retrieve statistics for all products of tool <code>&lt;tool-type&gt;</code> with <code>&lt;tool-id&gt;</code> identifier. Statistical data corresponds to:</p> <ul> <li>how many times each product was clicked on</li> <li>how many times each product was viewed</li> </ul> ",
+    "description": "<p>Retrieve statistics for all products of tool <code>&lt;tool-type&gt;</code> with <code>&lt;tool-id&gt;</code> identifier. Statistical data corresponds to:</p> <ul> <li>how many times each product was clicked on</li> <li>how many times each product was viewed</li> </ul>",
     "permission": [
       {
         "name": "IsAuthenticated",
         "title": "Authenticated full access.",
-        "description": "<p>Grants all HTTP methods to authenticated users.</p> "
+        "description": "<p>Grants all HTTP methods to authenticated users.</p>"
       },
       {
         "name": "IsAdminOrReadOnly",
         "title": "Authenticated access for safe HTTP methods",
-        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p> "
+        "description": "<p>Grants all safe (GET, OPTION, HEAD) HTTP methods to authenticated users.</p>"
       }
     ],
     "parameter": {
@@ -3954,31 +3954,31 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "accesskey",
-            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+            "description": "<p><code>accesskey</code> parameter is always necessary</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "publisher_id",
-            "description": "<p><code>publisher_id</code> is a parameter which can be used instead of the <code>accesskey</code> for session/basic authentication</p> "
+            "description": "<p><code>publisher_id</code> is a parameter which can be used instead of the <code>accesskey</code> for session/basic authentication</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "from",
-            "description": "<p><code>from</code> parameter specifies the starting date for statistical data. Defaults to 7 days ago</p> "
+            "description": "<p><code>from</code> parameter specifies the starting date for statistical data. Defaults to 7 days ago</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "to",
-            "description": "<p><code>to</code> parameter specifies the ending date for statistical data. Defaults to today</p> "
+            "description": "<p><code>to</code> parameter specifies the ending date for statistical data. Defaults to today</p>"
           }
         ]
       },
@@ -3995,136 +3995,136 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "shop",
-            "description": "<p>Shop object</p> "
+            "description": "<p>Shop object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "shop.id",
-            "description": "<p>Identifier of the shop</p> "
+            "description": "<p>Identifier of the shop</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "shop.name",
-            "description": "<p>Name of the shop</p> "
+            "description": "<p>Name of the shop</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "name",
-            "description": "<p>Name of product</p> "
+            "description": "<p>Name of product</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "views",
-            "description": "<p>Number of views for the product</p> "
+            "description": "<p>Number of views for the product</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "image",
-            "description": "<p>Image object</p> "
+            "description": "<p>Image object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "image.url",
-            "description": "<p>Image URL</p> "
+            "description": "<p>Image URL</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "image.url_template",
-            "description": "<p>Template of image URL</p> "
+            "description": "<p>Template of image URL</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "price",
-            "description": "<p>Price object</p> "
+            "description": "<p>Price object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "price.current",
-            "description": "<p>Current price</p> "
+            "description": "<p>Current price</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "price.currency",
-            "description": "<p>Currency of price</p> "
+            "description": "<p>Currency of price</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "price.base",
-            "description": "<p>Price per unit</p> "
+            "description": "<p>Price per unit</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "price.old",
-            "description": "<p>Original price</p> "
+            "description": "<p>Original price</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "price.delivery_time",
-            "description": "<p>Time to deliver</p> "
+            "description": "<p>Time to deliver</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "brand",
-            "description": "<p>Brand object</p> "
+            "description": "<p>Brand object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "brand.id",
-            "description": "<p>Unique brand identifier</p> "
+            "description": "<p>Unique brand identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "brand.name",
-            "description": "<p>Brand name</p> "
+            "description": "<p>Brand name</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>Product id</p> "
+            "description": "<p>Product id</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "clicks",
-            "description": "<p>Number of clicks for this product</p> "
+            "description": "<p>Number of clicks for this product</p>"
           }
         ]
       },
@@ -4160,24 +4160,24 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "<p>401</p> ",
+            "type": "401",
             "optional": false,
             "field": "NoAuthenticationCredentials",
-            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>405</p> ",
+            "type": "405",
             "optional": false,
             "field": "HTTPMethodNotAllowed",
-            "description": "<p>Disallowed HTTP method was requested</p> "
+            "description": "<p>Disallowed HTTP method was requested</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>400</p> ",
+            "type": "400",
             "optional": false,
             "field": "NoPublisherId",
-            "description": "<p>Bad request format</p> "
+            "description": "<p>Bad request format</p>"
           }
         ]
       },
@@ -4207,12 +4207,12 @@ define({ "api": [
     "version": "1.0.0",
     "name": "CreateWidget",
     "group": "Widgets",
-    "description": "<p>Create a new widget</p> ",
+    "description": "<p>Create a new widget</p>",
     "permission": [
       {
         "name": "IsWidgetPublisher",
         "title": "Authenticated access for Widget publishers",
-        "description": "<p>Grants all HTTP methods to authenticated widget users</p> "
+        "description": "<p>Grants all HTTP methods to authenticated widget users</p>"
       }
     ],
     "parameter": {
@@ -4220,48 +4220,48 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "accesskey",
-            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+            "description": "<p><code>accesskey</code> parameter is always necessary</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "name",
-            "description": "<p>Name of the widget</p> "
+            "description": "<p>Name of the widget</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "publisher",
-            "description": "<p>Publisher of widget</p> "
+            "description": "<p>Publisher of widget</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "description",
             "defaultValue": "''",
-            "description": "<p>Description of widget</p> "
+            "description": "<p>Description of widget</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "title",
             "defaultValue": "''",
-            "description": "<p>Title of widget</p> "
+            "description": "<p>Title of widget</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": true,
             "field": "products",
             "defaultValue": "[]",
-            "description": "<p>List of unique product identifiers</p> "
+            "description": "<p>List of unique product identifiers</p>"
           }
         ]
       },
@@ -4278,157 +4278,157 @@ define({ "api": [
         "Created 201": [
           {
             "group": "Created 201",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>Unique widget identifier</p> "
+            "description": "<p>Unique widget identifier</p>"
           },
           {
             "group": "Created 201",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "active",
-            "description": "<p>Widget activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+            "description": "<p>Widget activity. <code>true</code> is active, <code>false</code> is inactive</p>"
           },
           {
             "group": "Created 201",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "name",
-            "description": "<p>Name of widget</p> "
+            "description": "<p>Name of widget</p>"
           },
           {
             "group": "Created 201",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "user",
-            "description": "<p>User who created the widget</p> "
+            "description": "<p>User who created the widget</p>"
           },
           {
             "group": "Created 201",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": false,
             "field": "products",
-            "description": "<p>ist of product identifiers</p> "
+            "description": "<p>ist of product identifiers</p>"
           },
           {
             "group": "Created 201",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "publisher",
-            "description": "<p>Unique publisher identifier</p> "
+            "description": "<p>Unique publisher identifier</p>"
           },
           {
             "group": "Created 201",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.id",
-            "description": "<p>Unique widget identifier</p> "
+            "description": "<p>Unique widget identifier</p>"
           },
           {
             "group": "Created 201",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.url",
-            "description": "<p>URL of widget</p> "
+            "description": "<p>URL of widget</p>"
           },
           {
             "group": "Created 201",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.name",
-            "description": "<p>Name of widget</p> "
+            "description": "<p>Name of widget</p>"
           },
           {
             "group": "Created 201",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.title",
-            "description": "<p>Title of widget</p> "
+            "description": "<p>Title of widget</p>"
           },
           {
             "group": "Created 201",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.description",
-            "description": "<p>Description of widget</p> "
+            "description": "<p>Description of widget</p>"
           },
           {
             "group": "Created 201",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": false,
             "field": "results.products",
-            "description": "<p>List of product identifiers</p> "
+            "description": "<p>List of product identifiers</p>"
           },
           {
             "group": "Created 201",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "results.layout",
-            "description": "<p>Layout object</p> "
+            "description": "<p>Layout object</p>"
           },
           {
             "group": "Created 201",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.layout.columns",
-            "description": "<p>Number of columns for widget layout</p> "
+            "description": "<p>Number of columns for widget layout</p>"
           },
           {
             "group": "Created 201",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.publisher",
-            "description": "<p>Unique publisher identifier</p> "
+            "description": "<p>Unique publisher identifier</p>"
           },
           {
             "group": "Created 201",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.image",
-            "description": "<p>Image of widget</p> "
+            "description": "<p>Image of widget</p>"
           },
           {
             "group": "Created 201",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "results.active",
-            "description": "<p>Widget activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+            "description": "<p>Widget activity. <code>true</code> is active, <code>false</code> is inactive</p>"
           },
           {
             "group": "Created 201",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.created",
-            "description": "<p>Time of widget creation</p> "
+            "description": "<p>Time of widget creation</p>"
           },
           {
             "group": "Created 201",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.modified",
-            "description": "<p>Last time of modification of widget</p> "
+            "description": "<p>Last time of modification of widget</p>"
           },
           {
             "group": "Created 201",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "results.keep_unavailable",
-            "description": "<p>Determines if a Widget shows 'sold-out' products or not. <code>True</code> will hide products, <code>False</code> will show products.</p> "
+            "description": "<p>Determines if a Widget shows 'sold-out' products or not. <code>True</code> will hide products, <code>False</code> will show products.</p>"
           },
           {
             "group": "Created 201",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.locale",
-            "description": "<p>Locale of widget</p> "
+            "description": "<p>Locale of widget</p>"
           },
           {
             "group": "Created 201",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "results.optimized",
-            "description": "<p>Sort products by highest CTR (click-through-rate)</p> "
+            "description": "<p>Sort products by highest CTR (click-through-rate)</p>"
           }
         ]
       },
@@ -4464,24 +4464,24 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "<p>401</p> ",
+            "type": "401",
             "optional": false,
             "field": "NoAuthenticationCredentials",
-            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>405</p> ",
+            "type": "405",
             "optional": false,
             "field": "HTTPMethodNotAllowed",
-            "description": "<p>Disallowed HTTP method was requested</p> "
+            "description": "<p>Disallowed HTTP method was requested</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>400</p> ",
+            "type": "400",
             "optional": false,
             "field": "BadRequest",
-            "description": "<p>Bad request format</p> "
+            "description": "<p>Bad request format</p>"
           }
         ]
       },
@@ -4511,12 +4511,12 @@ define({ "api": [
     "version": "1.0.0",
     "name": "DeleteWidget",
     "group": "Widgets",
-    "description": "<p>Delete a widget. The <strong>widget-id</strong> is a unique 16 character hash.</p> ",
+    "description": "<p>Delete a widget. The <strong>widget-id</strong> is a unique 16 character hash.</p>",
     "permission": [
       {
         "name": "IsWidgetPublisher",
         "title": "Authenticated access for Widget publishers",
-        "description": "<p>Grants all HTTP methods to authenticated widget users</p> "
+        "description": "<p>Grants all HTTP methods to authenticated widget users</p>"
       }
     ],
     "parameter": {
@@ -4524,10 +4524,10 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "accesskey",
-            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+            "description": "<p><code>accesskey</code> parameter is always necessary</p>"
           }
         ]
       },
@@ -4563,24 +4563,24 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "<p>401</p> ",
+            "type": "401",
             "optional": false,
             "field": "NoAuthenticationCredentials",
-            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>405</p> ",
+            "type": "405",
             "optional": false,
             "field": "HTTPMethodNotAllowed",
-            "description": "<p>Disallowed HTTP method was requested</p> "
+            "description": "<p>Disallowed HTTP method was requested</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>404</p> ",
+            "type": "404",
             "optional": false,
             "field": "NotFound",
-            "description": "<p>Resource could not be found</p> "
+            "description": "<p>Resource could not be found</p>"
           }
         ]
       },
@@ -4610,12 +4610,12 @@ define({ "api": [
     "version": "1.0.0",
     "name": "GetWidgetId",
     "group": "Widgets",
-    "description": "<p>Retrieve a single widget. The <strong>widget-id</strong> is a unique 16 character hash.</p> ",
+    "description": "<p>Retrieve a single widget. The <strong>widget-id</strong> is a unique 16 character hash.</p>",
     "permission": [
       {
         "name": "IsWidgetPublisher",
         "title": "Authenticated access for Widget publishers",
-        "description": "<p>Grants all HTTP methods to authenticated widget users</p> "
+        "description": "<p>Grants all HTTP methods to authenticated widget users</p>"
       }
     ],
     "parameter": {
@@ -4623,10 +4623,10 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "accesskey",
-            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+            "description": "<p><code>accesskey</code> parameter is always necessary</p>"
           }
         ]
       },
@@ -4643,115 +4643,115 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.id",
-            "description": "<p>Unique widget identifier</p> "
+            "description": "<p>Unique widget identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.url",
-            "description": "<p>URL of widget</p> "
+            "description": "<p>URL of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.name",
-            "description": "<p>Name of widget</p> "
+            "description": "<p>Name of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.title",
-            "description": "<p>Title of widget</p> "
+            "description": "<p>Title of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.description",
-            "description": "<p>Description of widget</p> "
+            "description": "<p>Description of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": false,
             "field": "results.products",
-            "description": "<p>List of product identifiers</p> "
+            "description": "<p>List of product identifiers</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "results.layout",
-            "description": "<p>Layout object</p> "
+            "description": "<p>Layout object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.layout.columns",
-            "description": "<p>Number of columns for widget layout</p> "
+            "description": "<p>Number of columns for widget layout</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.publisher",
-            "description": "<p>Unique publisher identifier</p> "
+            "description": "<p>Unique publisher identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.image",
-            "description": "<p>Image of widget</p> "
+            "description": "<p>Image of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "results.active",
-            "description": "<p>Widget activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+            "description": "<p>Widget activity. <code>true</code> is active, <code>false</code> is inactive</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.created",
-            "description": "<p>Time of widget creation</p> "
+            "description": "<p>Time of widget creation</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.modified",
-            "description": "<p>Last time of modification of widget</p> "
+            "description": "<p>Last time of modification of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "results.keep_unavailable",
-            "description": "<p>Determines if a Widget shows 'sold-out' products or not. <code>True</code> will hide products, <code>False</code> will show products.</p> "
+            "description": "<p>Determines if a Widget shows 'sold-out' products or not. <code>True</code> will hide products, <code>False</code> will show products.</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.locale",
-            "description": "<p>Locale of widget</p> "
+            "description": "<p>Locale of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "results.optimized",
-            "description": "<p>Sort products by highest CTR (click-through-rate)</p> "
+            "description": "<p>Sort products by highest CTR (click-through-rate)</p>"
           }
         ]
       },
@@ -4787,24 +4787,24 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "<p>401</p> ",
+            "type": "401",
             "optional": false,
             "field": "NoAuthenticationCredentials",
-            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>405</p> ",
+            "type": "405",
             "optional": false,
             "field": "HTTPMethodNotAllowed",
-            "description": "<p>Disallowed HTTP method was requested</p> "
+            "description": "<p>Disallowed HTTP method was requested</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>404</p> ",
+            "type": "404",
             "optional": false,
             "field": "NotFound",
-            "description": "<p>Resource could not be found</p> "
+            "description": "<p>Resource could not be found</p>"
           }
         ]
       },
@@ -4834,12 +4834,12 @@ define({ "api": [
     "version": "1.0.0",
     "name": "GetWidgetProducts",
     "group": "Widgets",
-    "description": "<p>List all widget products. The <strong>widget-id</strong> is a unique 16 character hash.</p> ",
+    "description": "<p>List all widget products. The <strong>widget-id</strong> is a unique 16 character hash.</p>",
     "permission": [
       {
         "name": "IsWidgetPublisher",
         "title": "Authenticated access for Widget publishers",
-        "description": "<p>Grants all HTTP methods to authenticated widget users</p> "
+        "description": "<p>Grants all HTTP methods to authenticated widget users</p>"
       }
     ],
     "parameter": {
@@ -4847,10 +4847,10 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "accesskey",
-            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+            "description": "<p><code>accesskey</code> parameter is always necessary</p>"
           }
         ]
       },
@@ -4867,283 +4867,283 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>Unique widget identifier</p> "
+            "description": "<p>Unique widget identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "url",
-            "description": "<p>URL of the widget</p> "
+            "description": "<p>URL of the widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "name",
-            "description": "<p>Name of the widget</p> "
+            "description": "<p>Name of the widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "title",
-            "description": "<p>Title of the widget</p> "
+            "description": "<p>Title of the widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "description",
-            "description": "<p>Description of the widget</p> "
+            "description": "<p>Description of the widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": false,
             "field": "products",
-            "description": "<p>List of products</p> "
+            "description": "<p>List of products</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.id",
-            "description": "<p>Unique product indentifier</p> "
+            "description": "<p>Unique product indentifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.url",
-            "description": "<p>Product URL</p> "
+            "description": "<p>Product URL</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.title",
-            "description": "<p>Product title</p> "
+            "description": "<p>Product title</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.description",
-            "description": "<p>Product description</p> "
+            "description": "<p>Product description</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "products.category",
-            "description": "<p>Category object</p> "
+            "description": "<p>Category object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.category.id",
-            "description": "<p>Unique category identifier</p> "
+            "description": "<p>Unique category identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.category.name",
-            "description": "<p>Category name</p> "
+            "description": "<p>Category name</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "products.brand",
-            "description": "<p>Brand object</p> "
+            "description": "<p>Brand object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.brand.id",
-            "description": "<p>Unique brand identifier</p> "
+            "description": "<p>Unique brand identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.brand.name",
-            "description": "<p>Brand name</p> "
+            "description": "<p>Brand name</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "products.shop",
-            "description": "<p>Shop object</p> "
+            "description": "<p>Shop object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.shop.id",
-            "description": "<p>Unique shop identifier</p> "
+            "description": "<p>Unique shop identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.shop.name",
-            "description": "<p>Shop name</p> "
+            "description": "<p>Shop name</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "products.list_price",
-            "description": "<p>List price object</p> "
+            "description": "<p>List price object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.list.current",
-            "description": "<p>Current price</p> "
+            "description": "<p>Current price</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.list.currency",
-            "description": "<p>Currency of price</p> "
+            "description": "<p>Currency of price</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.list.base",
-            "description": "<p>Price per unit</p> "
+            "description": "<p>Price per unit</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.list.old",
-            "description": "<p>Original price</p> "
+            "description": "<p>Original price</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.list.delivery_time",
-            "description": "<p>Time to deliver</p> "
+            "description": "<p>Time to deliver</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "products.tags",
-            "description": "<p>Tags object</p> "
+            "description": "<p>Tags object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.tags.color",
-            "description": "<p>Color tag</p> "
+            "description": "<p>Color tag</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.tags.agegroup",
-            "description": "<p>Age group tag</p> "
+            "description": "<p>Age group tag</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "products.images",
-            "description": "<p>Image object</p> "
+            "description": "<p>Image object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.images.url",
-            "description": "<p>URL link</p> "
+            "description": "<p>URL link</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.images.url_template",
-            "description": "<p>URL template link</p> "
+            "description": "<p>URL template link</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "products.tracking",
-            "description": "<p>Tracking link</p> "
+            "description": "<p>Tracking link</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.publisher",
-            "description": "<p>Unique publisher identifier</p> "
+            "description": "<p>Unique publisher identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.image",
-            "description": "<p>Image of widget</p> "
+            "description": "<p>Image of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "results.active",
-            "description": "<p>Widget activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+            "description": "<p>Widget activity. <code>true</code> is active, <code>false</code> is inactive</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.created",
-            "description": "<p>Time of widget creation</p> "
+            "description": "<p>Time of widget creation</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.modified",
-            "description": "<p>Last time of modification of widget</p> "
+            "description": "<p>Last time of modification of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "results.keep_unavailable",
-            "description": "<p>Determines if a Widget shows 'sold-out' products or not. <code>True</code> will hide products, <code>False</code> will show products.</p> "
+            "description": "<p>Determines if a Widget shows 'sold-out' products or not. <code>True</code> will hide products, <code>False</code> will show products.</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.locale",
-            "description": "<p>Locale of widget</p> "
+            "description": "<p>Locale of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "results.optimized",
-            "description": "<p>Sort products by highest CTR (click-through-rate)</p> "
+            "description": "<p>Sort products by highest CTR (click-through-rate)</p>"
           }
         ]
       },
@@ -5184,24 +5184,24 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "<p>401</p> ",
+            "type": "401",
             "optional": false,
             "field": "NoAuthenticationCredentials",
-            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>405</p> ",
+            "type": "405",
             "optional": false,
             "field": "HTTPMethodNotAllowed",
-            "description": "<p>Disallowed HTTP method was requested</p> "
+            "description": "<p>Disallowed HTTP method was requested</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>404</p> ",
+            "type": "404",
             "optional": false,
             "field": "NotFound",
-            "description": "<p>Resource could not be found</p> "
+            "description": "<p>Resource could not be found</p>"
           }
         ]
       },
@@ -5231,12 +5231,12 @@ define({ "api": [
     "version": "1.0.0",
     "name": "GetWidgets",
     "group": "Widgets",
-    "description": "<p>List all widgets</p> ",
+    "description": "<p>List all widgets</p>",
     "permission": [
       {
         "name": "IsWidgetPublisher",
         "title": "Authenticated access for Widget publishers",
-        "description": "<p>Grants all HTTP methods to authenticated widget users</p> "
+        "description": "<p>Grants all HTTP methods to authenticated widget users</p>"
       }
     ],
     "parameter": {
@@ -5244,31 +5244,31 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "accesskey",
-            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+            "description": "<p><code>accesskey</code> parameter is always necessary</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "page",
-            "description": "<p>Specifies the page number. If not provided, page 1 is rendered. Max value is 1000</p> "
+            "description": "<p>Specifies the page number. If not provided, page 1 is rendered. Max value is 1000</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "page_size",
-            "description": "<p>Specifies the page size. If not provided, results are paginated by 40. Max value is 100</p> "
+            "description": "<p>Specifies the page size. If not provided, results are paginated by 40. Max value is 100</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "sorting",
-            "description": "<p>Specifies the result sorting. Available values are: <code>name</code>, <code>created</code> and <code>modified</code>. If none is given, <code>created</code> is the default sorting. To sort descending prepend the field name with a <code>-</code>, like <code>?sorting=-name</code></p> "
+            "description": "<p>Specifies the result sorting. Available values are: <code>name</code>, <code>created</code> and <code>modified</code>. If none is given, <code>created</code> is the default sorting. To sort descending prepend the field name with a <code>-</code>, like <code>?sorting=-name</code></p>"
           }
         ]
       },
@@ -5285,150 +5285,150 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "count",
-            "description": "<p>Number of returned results</p> "
+            "description": "<p>Number of returned results</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "next",
-            "description": "<p>Pagination 'next' link</p> "
+            "description": "<p>Pagination 'next' link</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "previous",
-            "description": "<p>Pagination 'previous' link</p> "
+            "description": "<p>Pagination 'previous' link</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "pages_total",
-            "description": "<p>Pagination count for total pages</p> "
+            "description": "<p>Pagination count for total pages</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": false,
             "field": "results",
-            "description": "<p>List of results</p> "
+            "description": "<p>List of results</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.id",
-            "description": "<p>Unique widget identifier</p> "
+            "description": "<p>Unique widget identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.url",
-            "description": "<p>URL of widget</p> "
+            "description": "<p>URL of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.name",
-            "description": "<p>Name of widget</p> "
+            "description": "<p>Name of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.title",
-            "description": "<p>Title of widget</p> "
+            "description": "<p>Title of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.description",
-            "description": "<p>Description of widget</p> "
+            "description": "<p>Description of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": false,
             "field": "results.products",
-            "description": "<p>List of product identifiers</p> "
+            "description": "<p>List of product identifiers</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "results.layout",
-            "description": "<p>Layout object</p> "
+            "description": "<p>Layout object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.layout.columns",
-            "description": "<p>Number of columns for widget layout</p> "
+            "description": "<p>Number of columns for widget layout</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.publisher",
-            "description": "<p>Unique publisher identifier</p> "
+            "description": "<p>Unique publisher identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.image",
-            "description": "<p>Image of widget</p> "
+            "description": "<p>Image of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "results.active",
-            "description": "<p>Widget activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+            "description": "<p>Widget activity. <code>true</code> is active, <code>false</code> is inactive</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.created",
-            "description": "<p>Time of widget creation</p> "
+            "description": "<p>Time of widget creation</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.modified",
-            "description": "<p>Last time of modification of widget</p> "
+            "description": "<p>Last time of modification of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "results.keep_unavailable",
-            "description": "<p>Determines if a Widget shows 'sold-out' products or not. <code>True</code> will hide products, <code>False</code> will show products.</p> "
+            "description": "<p>Determines if a Widget shows 'sold-out' products or not. <code>True</code> will hide products, <code>False</code> will show products.</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.locale",
-            "description": "<p>Locale of widget</p> "
+            "description": "<p>Locale of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "results.optimized",
-            "description": "<p>Sort products by highest CTR (click-through-rate)</p> "
+            "description": "<p>Sort products by highest CTR (click-through-rate)</p>"
           }
         ]
       },
@@ -5469,17 +5469,17 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "<p>401</p> ",
+            "type": "401",
             "optional": false,
             "field": "NoAuthenticationCredentials",
-            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>405</p> ",
+            "type": "405",
             "optional": false,
             "field": "HTTPMethodNotAllowed",
-            "description": "<p>Disallowed HTTP method was requested</p> "
+            "description": "<p>Disallowed HTTP method was requested</p>"
           }
         ]
       },
@@ -5504,12 +5504,12 @@ define({ "api": [
     "version": "1.0.0",
     "name": "PartialUpdateWidget",
     "group": "Widgets",
-    "description": "<p>Partially update a widget. The <strong>widget-id</strong> is a unique 16 character hash.</p> ",
+    "description": "<p>Partially update a widget. The <strong>widget-id</strong> is a unique 16 character hash.</p>",
     "permission": [
       {
         "name": "IsWidgetPublisher",
         "title": "Authenticated access for Widget publishers",
-        "description": "<p>Grants all HTTP methods to authenticated widget users</p> "
+        "description": "<p>Grants all HTTP methods to authenticated widget users</p>"
       }
     ],
     "parameter": {
@@ -5517,48 +5517,48 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "accesskey",
-            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+            "description": "<p><code>accesskey</code> parameter is always necessary</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "name",
-            "description": "<p>Name of the widget</p> "
+            "description": "<p>Name of the widget</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "publisher",
-            "description": "<p>Publisher of widget</p> "
+            "description": "<p>Publisher of widget</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "description",
             "defaultValue": "''",
-            "description": "<p>Description of widget</p> "
+            "description": "<p>Description of widget</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "title",
             "defaultValue": "''",
-            "description": "<p>Title of widget</p> "
+            "description": "<p>Title of widget</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": true,
             "field": "products",
             "defaultValue": "[]",
-            "description": "<p>List of unique product identifiers</p> "
+            "description": "<p>List of unique product identifiers</p>"
           }
         ]
       },
@@ -5575,157 +5575,157 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>Unique widget identifier</p> "
+            "description": "<p>Unique widget identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "active",
-            "description": "<p>Widget activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+            "description": "<p>Widget activity. <code>true</code> is active, <code>false</code> is inactive</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "name",
-            "description": "<p>Name of widget</p> "
+            "description": "<p>Name of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "user",
-            "description": "<p>User who created the widget</p> "
+            "description": "<p>User who created the widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": false,
             "field": "products",
-            "description": "<p>ist of product identifiers</p> "
+            "description": "<p>ist of product identifiers</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "publisher",
-            "description": "<p>Unique publisher identifier</p> "
+            "description": "<p>Unique publisher identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.id",
-            "description": "<p>Unique widget identifier</p> "
+            "description": "<p>Unique widget identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.url",
-            "description": "<p>URL of widget</p> "
+            "description": "<p>URL of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.name",
-            "description": "<p>Name of widget</p> "
+            "description": "<p>Name of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.title",
-            "description": "<p>Title of widget</p> "
+            "description": "<p>Title of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.description",
-            "description": "<p>Description of widget</p> "
+            "description": "<p>Description of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": false,
             "field": "results.products",
-            "description": "<p>List of product identifiers</p> "
+            "description": "<p>List of product identifiers</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "results.layout",
-            "description": "<p>Layout object</p> "
+            "description": "<p>Layout object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.layout.columns",
-            "description": "<p>Number of columns for widget layout</p> "
+            "description": "<p>Number of columns for widget layout</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.publisher",
-            "description": "<p>Unique publisher identifier</p> "
+            "description": "<p>Unique publisher identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.image",
-            "description": "<p>Image of widget</p> "
+            "description": "<p>Image of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "results.active",
-            "description": "<p>Widget activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+            "description": "<p>Widget activity. <code>true</code> is active, <code>false</code> is inactive</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.created",
-            "description": "<p>Time of widget creation</p> "
+            "description": "<p>Time of widget creation</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.modified",
-            "description": "<p>Last time of modification of widget</p> "
+            "description": "<p>Last time of modification of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "results.keep_unavailable",
-            "description": "<p>Determines if a Widget shows 'sold-out' products or not. <code>True</code> will hide products, <code>False</code> will show products.</p> "
+            "description": "<p>Determines if a Widget shows 'sold-out' products or not. <code>True</code> will hide products, <code>False</code> will show products.</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.locale",
-            "description": "<p>Locale of widget</p> "
+            "description": "<p>Locale of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "results.optimized",
-            "description": "<p>Sort products by highest CTR (click-through-rate)</p> "
+            "description": "<p>Sort products by highest CTR (click-through-rate)</p>"
           }
         ]
       },
@@ -5761,31 +5761,31 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "<p>401</p> ",
+            "type": "401",
             "optional": false,
             "field": "NoAuthenticationCredentials",
-            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>405</p> ",
+            "type": "405",
             "optional": false,
             "field": "HTTPMethodNotAllowed",
-            "description": "<p>Disallowed HTTP method was requested</p> "
+            "description": "<p>Disallowed HTTP method was requested</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>400</p> ",
+            "type": "400",
             "optional": false,
             "field": "BadRequest",
-            "description": "<p>Bad request format</p> "
+            "description": "<p>Bad request format</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>404</p> ",
+            "type": "404",
             "optional": false,
             "field": "NotFound",
-            "description": "<p>Resource could not be found</p> "
+            "description": "<p>Resource could not be found</p>"
           }
         ]
       },
@@ -5820,12 +5820,12 @@ define({ "api": [
     "version": "1.0.0",
     "name": "UpdateWidget",
     "group": "Widgets",
-    "description": "<p>Update a widget. The <strong>widget-id</strong> is a unique 16 character hash.</p> ",
+    "description": "<p>Update a widget. The <strong>widget-id</strong> is a unique 16 character hash.</p>",
     "permission": [
       {
         "name": "IsWidgetPublisher",
         "title": "Authenticated access for Widget publishers",
-        "description": "<p>Grants all HTTP methods to authenticated widget users</p> "
+        "description": "<p>Grants all HTTP methods to authenticated widget users</p>"
       }
     ],
     "parameter": {
@@ -5833,48 +5833,48 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "accesskey",
-            "description": "<p><code>accesskey</code> parameter is always necessary</p> "
+            "description": "<p><code>accesskey</code> parameter is always necessary</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "name",
-            "description": "<p>Name of the widget</p> "
+            "description": "<p>Name of the widget</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "publisher",
-            "description": "<p>Publisher of widget</p> "
+            "description": "<p>Publisher of widget</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "description",
             "defaultValue": "''",
-            "description": "<p>Description of widget</p> "
+            "description": "<p>Description of widget</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": true,
             "field": "title",
             "defaultValue": "''",
-            "description": "<p>Title of widget</p> "
+            "description": "<p>Title of widget</p>"
           },
           {
             "group": "Parameter",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": true,
             "field": "products",
             "defaultValue": "[]",
-            "description": "<p>List of unique product identifiers</p> "
+            "description": "<p>List of unique product identifiers</p>"
           }
         ]
       },
@@ -5891,157 +5891,157 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>Unique widget identifier</p> "
+            "description": "<p>Unique widget identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "active",
-            "description": "<p>Widget activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+            "description": "<p>Widget activity. <code>true</code> is active, <code>false</code> is inactive</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "name",
-            "description": "<p>Name of widget</p> "
+            "description": "<p>Name of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "user",
-            "description": "<p>User who created the widget</p> "
+            "description": "<p>User who created the widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": false,
             "field": "products",
-            "description": "<p>ist of product identifiers</p> "
+            "description": "<p>ist of product identifiers</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "publisher",
-            "description": "<p>Unique publisher identifier</p> "
+            "description": "<p>Unique publisher identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.id",
-            "description": "<p>Unique widget identifier</p> "
+            "description": "<p>Unique widget identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.url",
-            "description": "<p>URL of widget</p> "
+            "description": "<p>URL of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.name",
-            "description": "<p>Name of widget</p> "
+            "description": "<p>Name of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.title",
-            "description": "<p>Title of widget</p> "
+            "description": "<p>Title of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.description",
-            "description": "<p>Description of widget</p> "
+            "description": "<p>Description of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Array</p> ",
+            "type": "Array",
             "optional": false,
             "field": "results.products",
-            "description": "<p>List of product identifiers</p> "
+            "description": "<p>List of product identifiers</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Object</p> ",
+            "type": "Object",
             "optional": false,
             "field": "results.layout",
-            "description": "<p>Layout object</p> "
+            "description": "<p>Layout object</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.layout.columns",
-            "description": "<p>Number of columns for widget layout</p> "
+            "description": "<p>Number of columns for widget layout</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.publisher",
-            "description": "<p>Unique publisher identifier</p> "
+            "description": "<p>Unique publisher identifier</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.image",
-            "description": "<p>Image of widget</p> "
+            "description": "<p>Image of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "results.active",
-            "description": "<p>Widget activity. <code>true</code> is active, <code>false</code> is inactive</p> "
+            "description": "<p>Widget activity. <code>true</code> is active, <code>false</code> is inactive</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.created",
-            "description": "<p>Time of widget creation</p> "
+            "description": "<p>Time of widget creation</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.modified",
-            "description": "<p>Last time of modification of widget</p> "
+            "description": "<p>Last time of modification of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "results.keep_unavailable",
-            "description": "<p>Determines if a Widget shows 'sold-out' products or not. <code>True</code> will hide products, <code>False</code> will show products.</p> "
+            "description": "<p>Determines if a Widget shows 'sold-out' products or not. <code>True</code> will hide products, <code>False</code> will show products.</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "results.locale",
-            "description": "<p>Locale of widget</p> "
+            "description": "<p>Locale of widget</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>Boolean</p> ",
+            "type": "Boolean",
             "optional": false,
             "field": "results.optimized",
-            "description": "<p>Sort products by highest CTR (click-through-rate)</p> "
+            "description": "<p>Sort products by highest CTR (click-through-rate)</p>"
           }
         ]
       },
@@ -6077,31 +6077,31 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "<p>401</p> ",
+            "type": "401",
             "optional": false,
             "field": "NoAuthenticationCredentials",
-            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p> "
+            "description": "<p>The <code>user</code>, <code>password</code> or <code>accesskey</code> are not present</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>405</p> ",
+            "type": "405",
             "optional": false,
             "field": "HTTPMethodNotAllowed",
-            "description": "<p>Disallowed HTTP method was requested</p> "
+            "description": "<p>Disallowed HTTP method was requested</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>400</p> ",
+            "type": "400",
             "optional": false,
             "field": "BadRequest",
-            "description": "<p>Bad request format</p> "
+            "description": "<p>Bad request format</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "<p>404</p> ",
+            "type": "404",
             "optional": false,
             "field": "NotFound",
-            "description": "<p>Resource could not be found</p> "
+            "description": "<p>Resource could not be found</p>"
           }
         ]
       },
@@ -6137,14 +6137,14 @@ define({ "api": [
             "group": "Success 200",
             "optional": false,
             "field": "varname1",
-            "description": "<p>No type.</p> "
+            "description": "<p>No type.</p>"
           },
           {
             "group": "Success 200",
-            "type": "<p>String</p> ",
+            "type": "String",
             "optional": false,
             "field": "varname2",
-            "description": "<p>With type.</p> "
+            "description": "<p>With type.</p>"
           }
         ]
       }
@@ -6153,8 +6153,8 @@ define({ "api": [
     "url": "",
     "version": "0.0.0",
     "filename": "./doc/main.js",
-    "group": "_home_lwm_work_api_docs_api_doc_main_js",
-    "groupTitle": "_home_lwm_work_api_docs_api_doc_main_js",
+    "group": "_home_jenkins_workspace_api_doc_docs_api_doc_main_js",
+    "groupTitle": "_home_jenkins_workspace_api_doc_docs_api_doc_main_js",
     "name": ""
   }
 ] });
