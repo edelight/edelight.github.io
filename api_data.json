@@ -137,7 +137,7 @@
         "type": "python"
       }
     ],
-    "filename": "./favorites.py",
+    "filename": "docs/api/favorites.py",
     "groupTitle": "Favorites",
     "error": {
       "fields": {
@@ -236,7 +236,7 @@
         "type": "python"
       }
     ],
-    "filename": "./favorites.py",
+    "filename": "docs/api/favorites.py",
     "groupTitle": "Favorites",
     "error": {
       "fields": {
@@ -390,7 +390,7 @@
         "type": "python"
       }
     ],
-    "filename": "./favorites.py",
+    "filename": "docs/api/favorites.py",
     "groupTitle": "Favorites",
     "error": {
       "fields": {
@@ -726,7 +726,7 @@
         "type": "python"
       }
     ],
-    "filename": "./favorites.py",
+    "filename": "docs/api/favorites.py",
     "groupTitle": "Favorites",
     "error": {
       "fields": {
@@ -934,7 +934,7 @@
         "type": "python"
       }
     ],
-    "filename": "./favorites.py",
+    "filename": "docs/api/favorites.py",
     "groupTitle": "Favorites",
     "error": {
       "fields": {
@@ -1100,7 +1100,7 @@
         "type": "python"
       }
     ],
-    "filename": "./favorites.py",
+    "filename": "docs/api/favorites.py",
     "groupTitle": "Favorites",
     "error": {
       "fields": {
@@ -1290,7 +1290,7 @@
         "type": "python"
       }
     ],
-    "filename": "./favorites.py",
+    "filename": "docs/api/favorites.py",
     "groupTitle": "Favorites",
     "error": {
       "fields": {
@@ -1498,7 +1498,7 @@
         "type": "python"
       }
     ],
-    "filename": "./linkgenerator.py",
+    "filename": "docs/api/linkgenerator.py",
     "groupTitle": "Linkgenerator",
     "error": {
       "fields": {
@@ -1638,7 +1638,7 @@
         "type": "python"
       }
     ],
-    "filename": "./linkgenerator.py",
+    "filename": "docs/api/linkgenerator.py",
     "groupTitle": "Linkgenerator",
     "error": {
       "fields": {
@@ -1813,7 +1813,7 @@
         "type": "python"
       }
     ],
-    "filename": "./linkgenerator.py",
+    "filename": "docs/api/linkgenerator.py",
     "groupTitle": "Linkgenerator",
     "error": {
       "fields": {
@@ -1939,7 +1939,7 @@
         "type": "python"
       }
     ],
-    "filename": "./linkgenerator.py",
+    "filename": "docs/api/linkgenerator.py",
     "groupTitle": "Linkgenerator",
     "error": {
       "fields": {
@@ -2135,7 +2135,7 @@
         "type": "python"
       }
     ],
-    "filename": "./linkgenerator.py",
+    "filename": "docs/api/linkgenerator.py",
     "groupTitle": "Linkgenerator",
     "error": {
       "fields": {
@@ -2331,7 +2331,7 @@
         "type": "python"
       }
     ],
-    "filename": "./linkgenerator.py",
+    "filename": "docs/api/linkgenerator.py",
     "groupTitle": "Linkgenerator",
     "error": {
       "fields": {
@@ -2442,7 +2442,7 @@
         "type": "python"
       }
     ],
-    "filename": "./products.py",
+    "filename": "docs/api/products.py",
     "groupTitle": "Products",
     "error": {
       "fields": {
@@ -2748,7 +2748,7 @@
         "type": "python"
       }
     ],
-    "filename": "./products.py",
+    "filename": "docs/api/products.py",
     "groupTitle": "Products",
     "error": {
       "fields": {
@@ -3223,7 +3223,7 @@
         "type": "python"
       }
     ],
-    "filename": "./products.py",
+    "filename": "docs/api/products.py",
     "groupTitle": "Products",
     "error": {
       "fields": {
@@ -3426,7 +3426,7 @@
         "type": "python"
       }
     ],
-    "filename": "./stats.py",
+    "filename": "docs/api/stats.py",
     "groupTitle": "Statistics",
     "error": {
       "fields": {
@@ -3660,7 +3660,7 @@
         "type": "python"
       }
     ],
-    "filename": "./stats.py",
+    "filename": "docs/api/stats.py",
     "groupTitle": "Statistics",
     "error": {
       "fields": {
@@ -3882,7 +3882,7 @@
         "type": "python"
       }
     ],
-    "filename": "./stats.py",
+    "filename": "docs/api/stats.py",
     "groupTitle": "Statistics",
     "error": {
       "fields": {
@@ -4153,7 +4153,7 @@
         "type": "python"
       }
     ],
-    "filename": "./stats.py",
+    "filename": "docs/api/stats.py",
     "groupTitle": "Statistics",
     "error": {
       "fields": {
@@ -4457,7 +4457,7 @@
         "type": "python"
       }
     ],
-    "filename": "./widgets.py",
+    "filename": "docs/api/widgets.py",
     "groupTitle": "Widgets",
     "error": {
       "fields": {
@@ -4556,7 +4556,7 @@
         "type": "python"
       }
     ],
-    "filename": "./widgets.py",
+    "filename": "docs/api/widgets.py",
     "groupTitle": "Widgets",
     "error": {
       "fields": {
@@ -4780,7 +4780,7 @@
         "type": "python"
       }
     ],
-    "filename": "./widgets.py",
+    "filename": "docs/api/widgets.py",
     "groupTitle": "Widgets",
     "error": {
       "fields": {
@@ -5177,7 +5177,7 @@
         "type": "python"
       }
     ],
-    "filename": "./widgets.py",
+    "filename": "docs/api/widgets.py",
     "groupTitle": "Widgets",
     "error": {
       "fields": {
@@ -5462,7 +5462,7 @@
         "type": "python"
       }
     ],
-    "filename": "./widgets.py",
+    "filename": "docs/api/widgets.py",
     "groupTitle": "Widgets",
     "error": {
       "fields": {
@@ -5754,7 +5754,7 @@
         "type": "python"
       }
     ],
-    "filename": "./widgets.py",
+    "filename": "docs/api/widgets.py",
     "groupTitle": "Widgets",
     "error": {
       "fields": {
@@ -6070,7 +6070,7 @@
         "type": "python"
       }
     ],
-    "filename": "./widgets.py",
+    "filename": "docs/api/widgets.py",
     "groupTitle": "Widgets",
     "error": {
       "fields": {
@@ -6128,33 +6128,5 @@
         }
       ]
     }
-  },
-  {
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "optional": false,
-            "field": "varname1",
-            "description": "<p>No type.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "varname2",
-            "description": "<p>With type.</p>"
-          }
-        ]
-      }
-    },
-    "type": "",
-    "url": "",
-    "version": "0.0.0",
-    "filename": "./doc/main.js",
-    "group": "_home_jenkins_workspace_api_doc_docs_api_doc_main_js",
-    "groupTitle": "_home_jenkins_workspace_api_doc_docs_api_doc_main_js",
-    "name": ""
   }
 ]
