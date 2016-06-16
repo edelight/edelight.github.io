@@ -36,10 +36,6 @@ define({
     "UpdateStyle",
     "PartialUpdateStyle",
     "DeleteStyle",
-    "GetToolTypeId",
-    "GetToolTypeIdProducts",
-    "GetToolTypeCombined",
-    "GetToolTypeAggregated",
     "GetLinkgeneratorLinks",
     "GetLinkgeneratorAdvertisers",
     "GetLinkgeneratorConfig",
@@ -60,7 +56,7 @@ define({
   "apidoc": "0.2.0",
   "generator": {
     "name": "apidoc",
-    "time": "2016-04-28T13:02:33.903Z",
+    "time": "2016-06-16T14:16:25.818Z",
     "url": "http://apidocjs.com",
     "version": "0.14.0"
   }
